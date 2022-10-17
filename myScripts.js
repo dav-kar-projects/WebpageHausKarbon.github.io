@@ -5,7 +5,7 @@ console.log("connected")
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
-  if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 200) {
+  if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 700) {
     var element = document.getElementById("header");
     element.classList.add("active");
  } else {
