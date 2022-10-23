@@ -353,12 +353,7 @@ img {
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
-.address__actions {
-    padding-bottom: 20px;
-    font-family: "Josefin Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    line-height: 26px;
-    color: #484036;
-}
+
 .footer-main__newsletter--mobile {
     display: flex;
     -webkit-justify-content: flex-start;
@@ -371,6 +366,46 @@ img {
     padding-bottom: 55px;
 }
 
+.ecolabel {
+    position: absolute;
+    z-index: 0;
+    left: calc(85% - 72px);
+    top: calc(85% - 72px);
+    border-radius: 50%;
+    background-color: #cea82c;
+    width: 236px;
+    height: 236px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 14px;
+    font-size: 19px;
+    white-space: normal;
+}
+:root{
+    --ecolablesize: 236px;
+} 
+.ecolabel:after {
+    content: " ";
+    display: block;
+    width: var(--ecolablesize);
+    height: 223px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    pointer-events: none;
+    opacity: .5;
+    white-space: normal;
+}
+.ecolabel--value{
+    font-size: 30px;
+    line-height: 48px;
+}
 .nav-footer {
     display: flex;
     padding: 49px 0 47px 0;
@@ -411,6 +446,106 @@ img {
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+}
+.address__contact{
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    padding: 0 75px;
+    font-size: 18px;
+}
+.address__actions {
+    padding-bottom: 20px;
+    font-family: "Josefin Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height: 26px;
+    color: #484036;
+}
+.address__actions a{
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 22px;
+    line-height: 23px;
+    color: #484036;
+    /* text-decoration: none; */
+}
+.address__actions a i{
+    padding-right: 12px;
+
+}
+.adress_text a i{ 
+    padding-right: 12px;
+
+}
+.address__actions a:hover{
+    text-decoration: underline;
+    
+}
+i {
+    font-size: italic;
+}
+.flaticon-phone{
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 22px;
+    line-height: 23px;
+    color: #484036;
+   text-decoration: none;
+
+}
+
+.flaticon-phone::before {
+    content: ' ';
+    background-image: url('icons/phone.png');
+    background-size: 28px 28px;
+    height: 28px;
+    width: 28px;
+}
+
+.flaticon-mail{
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 22px;
+    line-height: 23px;
+    color: #484036;
+   text-decoration: none;
+   padding-left: 40px;
+}
+.adress_text{
+    display: inline-flex;
+    color: #484036;
+    font-family: "Josefin Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 22px;
+    display: flex-inline;
+    
+
+}
+
+.flaticon-mail::before {
+    content: ' ';
+    background-image: url('icons/mail.png');
+    background-size: 28px 28px;
+    height: 28px;
+    width: 28px;
+}
+.location_ref{
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: left;
+    font-size: 22px;
+    line-height: 23px;
+    color: #484036;
+   text-decoration: none;
+
+
+}
+
+.location_ref::before {
+    content: ' ';
+    background-image: url('icons/location.png');
+    background-size: 28px 28px;
+    height: 28px;
+    width: 28px;
 }
 .logo1_core{
     /*background-color: rgb(255, 201, 60);*/
