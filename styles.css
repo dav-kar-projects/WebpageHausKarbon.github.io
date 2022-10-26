@@ -626,6 +626,32 @@ i {
     width: 28px;
 }
 
+.column {
+    float: left;
+    width: 25%;
+    padding: 20px;
+    max-width: 200px;
+}
+
+
+/* Clear floats after image containers */
+
+.row_symbols::after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
+.row_symbols {
+    margin: auto;
+    width: 30%;
+}
+
+.supersymbol {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .logo1_core {
     /*background-color: rgb(255, 201, 60);*/
     position: absolute;
