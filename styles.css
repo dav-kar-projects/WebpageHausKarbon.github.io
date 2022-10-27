@@ -534,7 +534,42 @@ img {
 
 .base {
     font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 26px;
+    line-height: 35px;
+    color: #484036;
+}
+
+#car h3 {
+    font-size: 25px;
+}
+
+#bus h3 {
+    font-size: 25px;
+}
+
+#bus {
+    padding-top: 80px
+}
+
+#flugzeug h3 {
+    font-size: 25px;
+}
+
+#flugzeug {
+    padding-top: 80px
+}
+
+#zug h3 {
+    font-size: 25px;
+}
+
+#zug {
+    padding-top: 80px;
+    padding-bottom: 80px
+}
+
+.arrival_description {
+    font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 30px;
     color: #484036;
 }
 
