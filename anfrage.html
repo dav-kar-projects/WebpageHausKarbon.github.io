@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="calendar-range form__date-block hf-invalid">
+    <input type="text" id="Form.Arrival" class="calendar-arrival form__date-control flatpickr-input hf-validated hf-invalid hf-user-invalid" required="required" placeholder="Arrival" data-val="" data-val-required="The Arrival field is required." name="Form.Arrival"  aria-invalid="true"> - 
+    <input type="text" class="calendar-  form__date-control" required="required" placeholder="Departure" data-val="" data-val-required="The Departure field is required." id="Form_Departure" name="Form.Departure"  data-fp-omit="">
+     <label for="Form.Arrival">
+
+     </label>
+    </div>
+
     <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
         <div class="container">
             <div class="page-content__container">
@@ -20,25 +28,27 @@
             </div>
         </div>
     </div>
-<h3>Contact Form</h3>
+<h2 class="container_anfrage" class="h2">Kontakt Formular</h2>
 
 <div class="container_anfrage">
   <form action="/action_page.php">
-    <label for="fname">First Name</label>
+    <label for="fname">Vorname</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <h2 class="form__title"> When would you like to go on holiday?  </h2>
+    
 
-    <label for="lname">Last Name</label>
+    <label for="lname">Nachname</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-    <label for="country">Country</label>
+    <label for="country">Land</label>
     <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
+      <option value="australia">Deutschland</option>
+      <option value="canada">Italia</option>
+      <option value="usa">Österreich</option>
     </select>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="subject">Nachricht</label>
+    <textarea id="subject" name="subject" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
   </form>
