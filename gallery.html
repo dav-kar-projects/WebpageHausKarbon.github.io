@@ -1,104 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Galerie</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1 {font-family: "Montserrat", sans-serif}
-img {margin-bottom: -7px}
-.w3-row-padding img {margin-bottom: 12px}
-</style>
-</head>
-<body class = my_body>
-<!-- Top menu on small screens -->
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-      <div id = "header" class="w3-bar w3-white  w3-padding w3-card active nav_bar" style="letter-spacing:4px;">
-          <a href="/index.html#about" class="w3-bar-item w3-button">Appartment Karbon</a>
-          <!-- Right-sided navbar links. Hide them on small screens -->
-          <div class="w3-right w3-hide-small">
-              <a href="#about" class="w3-bar-item w3-button">Wohnen</a>
-              <a href="#Frühstück" class="w3-bar-item w3-button">Erleben</a>
-              <a href="#Entspannen" class="w3-bar-item w3-button">Entspannen</a>
-              <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a>
-              <a href="#Kontact" class="w3-bar-item w3-button">Contact</a>
 
-          </div>
+<head>
+  <title>Galerie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <style>
+    body,
+    h1 {
+      font-family: "Montserrat", sans-serif
+    }
+
+    img {
+      margin-bottom: -7px
+    }
+
+    .w3-row-padding img {
+      margin-bottom: 12px
+    }
+  </style>
+</head>
+
+<body class=my_body>
+  <!-- Top menu on small screens -->
+  <!-- Navbar (sit on top) -->
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div id="header" class="nav_bar" style="letter-spacing:4px;">
+      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
+        class="w3-bar-item w3-button">Kastelart</a>
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="Wohnen.html" class="w3-bar-item w3-button">Wohnen</a>
+        <a href="Erleben.html" class="w3-bar-item w3-button">Erleben</a>
+        <a href="Wellness.html" class="w3-bar-item w3-button">Entspannen</a>
+        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
+        <a href="gallery.html" class="w3-bar-item w3-button">Fotogalerie</a>
+        <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
+
       </div>
-  </div>  
-      <!-- Sidebar-->
-      <div class="side-bar row animate-in js-animate">
-        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
-        <div class="side-bar__separator"></div>
-        <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
+    </div>
+  </div>
+  <!-- Sidebar-->
+  <div class="side-bar row animate-in js-animate">
+    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+    <div class="side-bar__separator"></div>
+    <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
+  </div>
+
+  <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+      class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+      <i class="fa fa-remove"></i>
+    </a>
+    <div class="w3-bar-block w3-center">
+      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
+    </div>
+  </nav>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-content " style="max-width:90%; margin-top: 80px">
+
+    <!-- Header -->
+    <div class=" page-slide page-content page-content__nomarginbottom animate-in js-animate">
+
+      <h1>Unser Haus und Umgebung</h1>
+      <h2 class="h2">Stöbern Sie in unserer Bildergalerie nach einer großen Portion Vorfreude!</h2>
+
+      <p><b></b></p>
+      </header>
     </div>
 
-<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
-    <i class="fa fa-remove"></i>
-  </a>
-  <div class="w3-bar-block w3-center">
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
-    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
-  </div>
-</nav>
+    <!-- Photo Grid -->
+    <div class="w3-row w3-padding-16" id="myGrid" style="margin-bottom:128px; opacity: 0.8;">
+      <div class="w3-third">
+        <img src="imgs/activity.png" style="width:100%">
+        <img src="imgs/balcony_view.png" style="width:100%">
+        <img src="imgs/bathroom_big.png" style="width:100%">
+        <img src="imgs/bedroom_big.png" style="width:29%">
+        <img src="imgs/dinningroom_big.png" style="width:100%">
+        <img src="imgs/wohnen.png" style="width:100%">
+      </div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-content " style="max-width:90%; margin-top: 80px">
+      <div class="w3-third">
+        <img src="imgs/activity.png" style="width:100%">
+        <img src="imgs/balcony_view.png" style="width:100%">
+        <img src="imgs/bathroom_big.png" style="width:100%">
+        <img src="imgs/bedroom_big.png" style="width:29%">
+        <img src="imgs/dinningroom_big.png" style="width:100%">
+        <img src="imgs/wohnen.png" style="width:100%">
+      </div>
 
-<!-- Header -->
-<div class=" page-slide page-content page-content__nomarginbottom animate-in js-animate">
+      <div class="w3-third">
+        <img src="imgs/activity.png" style="width:100%">
+        <img src="imgs/balcony_view.png" style="width:100%">
+        <img src="imgs/bathroom_big.png" style="width:100%">
+        <img src="imgs/bedroom_big.png" style="width:29%">
+        <img src="imgs/dinningroom_big.png" style="width:100%">
+        <img src="imgs/wohnen.png" style="width:100%">
+      </div>
+    </div>
 
-  <h1>Unser Haus und Umgebung</h1>
-  <h2 class="h2">Stöbern Sie in unserer Bildergalerie nach einer großen Portion Vorfreude!</h2>
-
-  <p><b></b></p>
-</header>
-</div>
-
-<!-- Photo Grid -->
-<div class="w3-row w3-padding-16" id="myGrid" style="margin-bottom:128px; opacity: 0.8;">
-  <div class="w3-third">
-    <img src="imgs/activity.png" style="width:100%">
-    <img src="imgs/balcony_view.png" style="width:100%">
-    <img src="imgs/bathroom_big.png" style="width:100%">
-    <img src="imgs/bedroom_big.png" style="width:29%">
-    <img src="imgs/dinningroom_big.png" style="width:100%">
-    <img src="imgs/wohnen.png" style="width:100%">
+    <!-- End Page Content -->
   </div>
 
-  <div class="w3-third">
-    <img src="imgs/activity.png" style="width:100%">
-    <img src="imgs/balcony_view.png" style="width:100%">
-    <img src="imgs/bathroom_big.png" style="width:100%">
-    <img src="imgs/bedroom_big.png" style="width:29%">
-    <img src="imgs/dinningroom_big.png" style="width:100%">
-    <img src="imgs/wohnen.png" style="width:100%">
-  </div>
-
-  <div class="w3-third">
-    <img src="imgs/activity.png" style="width:100%">
-    <img src="imgs/balcony_view.png" style="width:100%">
-    <img src="imgs/bathroom_big.png" style="width:100%">
-    <img src="imgs/bedroom_big.png" style="width:29%">
-    <img src="imgs/dinningroom_big.png" style="width:100%">
-    <img src="imgs/wohnen.png" style="width:100%">
-  </div>
-</div>
-
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
-</footer>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+  </footer>
 
 
 </body>
+
 </html>
