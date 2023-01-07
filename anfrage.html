@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Anfrage</title>
+  <title>Anfrage</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <script src="myScripts.js"></script>
 </head>
+
 <body>
-  <div class="calendar-range form__date-block hf-invalid">
-    <input type="text" id="Form.Arrival" class="calendar-arrival form__date-control flatpickr-input hf-validated hf-invalid hf-user-invalid" required="required" placeholder="Arrival" data-val="" data-val-required="The Arrival field is required." name="Form.Arrival"  aria-invalid="true"> - 
-    <input type="text" class="calendar-  form__date-control" required="required" placeholder="Departure" data-val="" data-val-required="The Departure field is required." id="Form_Departure" name="Form.Departure"  data-fp-omit="">
-     <label for="Form.Arrival">
 
-     </label>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div id="header" class="nav_bar " style="letter-spacing:4px;">
+      <a href="/index.html" class="w3-bar-item w3-button">Kastelart</a>
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="Wohnen.html" class="w3-bar-item w3-button">Wohnen</a>
+        <a href="Frühstück.html" class="w3-bar-item w3-button">Erleben</a>
+        <a href="/Wellness.html" class="w3-bar-item w3-button">Entspannen</a>
+        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
+        <a href="gallery.html" class="w3-bar-item w3-button">Fotogalerie</a>
+        <a href="#Kontact" class="w3-bar-item w3-button">Kontakt</a>
+      </div>
     </div>
+  </div>
 
-    <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
-        <div class="container">
-            <div class="page-content__container">
-                <h1>Gleich unverbindlich anfragen</h1>
-                <h2 class="h2">Wir sind für Sie da</h2>
-            </div>
-            <div class="page-content__content">
-                <div class="page-content__main-content">
-                    Sehr gerne erstellen wir Ihnen ein individuelles Angebot, ganz nach Ihren Wünschen. Wir freuen uns, von Ihnen zu hören oder zu lesen!
-                </div>
-            </div>
+
+  <!-- Sidebar-->
+  <div class="side-bar row animate-in js-animate">
+    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+    <div class="side-bar__separator"></div>
+    <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
+  </div>
+  <!-- Text Box-->
+  <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
+    <div class="container">
+      <div class="page-content__container">
+        <h1>Gleich unverbindlich anfragen</h1>
+        <h2 class="h2">Wir sind für Sie da</h2>
+      </div>
+      <div class="page-content__content">
+        <div class="page-content__main-content">
+          Sehr gerne erstellen wir Ihnen ein individuelles Angebot, ganz nach Ihren Wünschen. Wir freuen uns, von Ihnen
+          zu hören oder zu lesen!
         </div>
+      </div>
+      <!--Formular-->
+      <div class="container_anfrage">
+        <form action="/action_page.php">
+          <label for="fname">Vorname</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <h2 class="form__title"> Wann möchten Sie Urlaub machen? </h2>
+
+
+          <label for="lname">Nachname</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+          <label for="country">Land</label>
+          <select id="country" name="country">
+            <option value="australia">Deutschland</option>
+            <option value="canada">Italia</option>
+            <option value="usa">Österreich</option>
+          </select>
+
+          <label for="subject">Nachricht</label>
+          <textarea id="subject" name="subject" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
-<h2 class="container_anfrage" class="h2">Kontakt Formular</h2>
+  </div>
 
-<div class="container_anfrage">
-  <form action="/action_page.php">
-    <label for="fname">Vorname</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    <h2 class="form__title"> When would you like to go on holiday?  </h2>
-    
-
-    <label for="lname">Nachname</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Land</label>
-    <select id="country" name="country">
-      <option value="australia">Deutschland</option>
-      <option value="canada">Italia</option>
-      <option value="usa">Österreich</option>
-    </select>
-
-    <label for="subject">Nachricht</label>
-    <textarea id="subject" name="subject" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-  </form>
-</div>
 
 </body>
+
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SandBoxStylesdropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="myScripts.js"></script>
+
+    <title>SandBox</title>
+</head>
+
+<body>
+
+    <dl role="presentation">
+        <dt class="page-content__container" role="heading" aria-level="3">
+            <button type="button" aria-expanded="true" class="faq__trigger base-accordion__trigger"
+                aria-controls="FaqSectionPrices" id="FaqPrices" onclick="DropdownFct()" class="dropbtn"><span
+                    class="faq__title">Informationen</span>
+                <i class="fa-solid fa-temperature-high"></i></button>
+        </dt>
+        <div class="container">
+            <div class="separator"></div>
+        </div>
+        <dd id="FaqSectionPrices" role="region" aria-labelledby="FaqPrices"
+            class="page-content__container container faq__panel base-accordion__panel" style="height: 691px;">
+            <div id="myDropdown" class="dropdown-content">
+                <div class="rooms-detail__prices--info">Im La Paula erwarten Sie ein abwechslungsreiches
+                    Frühstücksbuffet
+                    und zahlreiche Inklusivleistungen.<br><br> <strong>Einzelnutzung<br></strong>Unsere Apartments und
+                    Suiten können auch zur Einzelnutzung gebucht werden, hierfür berechnen wir ein Zuschlag von
+                    50%.<br><br>
+                    <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns kostenlos. Von 3
+                    bis
+                    6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12 Jahre und jeder
+                    weitere
+                    Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2 Vollzahlern.<br><br>
+                    <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,50 € pro Person und Tag (Kinder unter 14 Jahren
+                    ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und kann nur vor Ort
+                    bezahlt werden.<br><br> <strong>Abschlag Frühstück<br></strong>Bei Buchung ohne Frühstück im
+                    Apartment
+                    bringen wir 20€ pro Tag und Person in Abzug.
+                </div>
+            </div>
+            <div class="spacer"></div>
+        </dd>
+        <dt class="page-content__container" role="heading" aria-level="3"><button type="button" aria-expanded="false"
+                class="dropbtn" aria-controls="FaqSectionEquipment" id="FaqEquipment"><span
+                    class="faq__title">Ausstattung</span> </button>
+        </dt>
+        <div class="container">
+            <div class="separator"></div>
+        </div>
+        <dd id="FaqSectionEquipment" role="region" aria-labelledby="FaqEquipment"
+            class="page-content__container container faq__panel base-accordion__panel" style="height: 0px;"
+            hidden="hidden">
+            <div>Suite mit Wohnbereich und Couch, Garderobe, Bad mit Dusche/WC und Bidet, Kosmetikspiegel, Fön, LCD TV
+                mit
+                SAT-Empfang, Safe, kontrollierte Wohnraumlüftung und Balkon oder Terrasse.</div>
+            <div class="spacer"></div>
+        </dd>
+    </dl>
+</body>
+
+</html>

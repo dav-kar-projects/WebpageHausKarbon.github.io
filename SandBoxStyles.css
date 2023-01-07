@@ -1,0 +1,122 @@
+body {
+    text-align: center;
+    font-family: 'roboto', sans-serif;
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+.linkstyle {
+    text-decoration: none;
+    color: #484036;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    padding: 10px;
+}
+
+
+
+
+
+/* BUTTON VIER */
+
+a.linkstyle.underline_animation:before,
+a.linkstyle.underline_animation:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid #484036;
+    transition: width 0.3s ease;
+}
+
+a.linkstyle.underline_animation:before {
+    bottom: 0;
+    right: 50%;
+}
+
+a.linkstyle.underline_animation:after {
+    bottom: 0;
+    left: 50%;
+}
+
+a.linkstyle.underline_animation:hover:after,
+a.linkstyle.underline_animation:hover:before {
+    width: 40%;
+    transition: width .2s ease;
+}
+
+/*----------------------------La Paula Styles------------------------------------*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu p {
+    margin: 0;
+    padding: 8px 16px;
+}
+
+.dropdown:focus .dropdown-menu {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 0.5em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #CE982C1A;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #cea82c9d;
+    color: white;
+
+}
+
+.PriceColon {
+    text-align: center;
+
+}
