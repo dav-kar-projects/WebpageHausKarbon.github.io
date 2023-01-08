@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
+    <!--Put the includes just beform the closing body tag for performance-->
+    <title>Kalender</title>
+</head>
+<style>
+    .flatpickr-calendar.animate.open {
+        -webkit-animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
+        animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .flatpickr-calendar.open {
+        display: inline-block;
+        z-index: 99999;
+    }
+
+    .flatpickr-calendar.open,
+    .flatpickr-calendar.inline {
+        opacity: 1;
+        max-height: 640px;
+        visibility: visible;
+    }
+
+    .flatpickr-calendar {
+        background: transparent;
+        opacity: 0;
+        display: none;
+        text-align: center;
+        visibility: hidden;
+        padding: 0;
+        -webkit-animation: none;
+        animation: none;
+        direction: ltr;
+        border: 0;
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 5px;
+        position: absolute;
+        width: 307.875px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        -webkit-box-shadow: 0 3px 13px rgb(0 0 0 / 8%);
+        box-shadow: 0 3px 13px rgb(0 0 0 / 8%);
+    }
+
+    .flatpickr-months,
+    .flatpickr-weekdays {
+        background-color: #cea82c;
+
+    }
+
+    .cur-month {
+        color: white !important;
+    }
+
+    .numInputWrapper {
+        color: white;
+    }
+</style>
+
+<body>
+    <h1>Kalender checkbox</h1>
+    <form>
+        <input type="datetime-local" placeholder="Selecte DateTime">
+    </form>
+
+
+    <script>
+
+        config = {
+            altInput: true,
+            altFormat: "D j. F Y",
+            dateFormat: "Y-m-d",
+            showMonths: 2,
+            locale: "de",
+            inline: true,
+            customRender: function (days) {
+                days.forEach(function (day) {
+                    if (day.classList.contains("flatpickr-weekday")) {
+                        day.style.backgroundColor = "#cea82c";
+                    }
+                });
+            }
+        }
+        flatpickr("input[type=datetime-local]", config);
+
+    </script>
+</body>
+
+</html>

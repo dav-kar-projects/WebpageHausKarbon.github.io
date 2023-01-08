@@ -493,7 +493,9 @@ input {
 
 
 .form-number__minus,
-.form-number__plus {
+.form-number__plus,
+.form-number__minusC,
+.form-number__plusC {
     border: none;
     padding: 0;
     margin: 0;
@@ -1615,6 +1617,74 @@ h1,
 a {
     color: inherit
 }
+
+/************* Calender Flatpickr *******************/
+.flatpickr-calendar.animate.open {
+    -webkit-animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
+    animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
+}
+
+.flatpickr-calendar.open {
+    display: inline-block;
+    z-index: 99999;
+}
+
+.flatpickr-calendar.open,
+.flatpickr-calendar.inline {
+    opacity: 1;
+    max-height: 640px;
+    visibility: visible;
+}
+
+.flatpickr-calendar {
+    background: transparent;
+    opacity: 0;
+    display: none;
+    text-align: center;
+    visibility: hidden;
+    padding: 0;
+    -webkit-animation: none;
+    animation: none;
+    direction: ltr;
+    border: 0;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 5px;
+    position: absolute;
+    width: 307.875px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-box-shadow: 0 3px 13px rgb(0 0 0 / 8%);
+    box-shadow: 0 3px 13px rgb(0 0 0 / 8%);
+}
+
+.flatpickr-months,
+.flatpickr-weekdays {
+    background-color: #cea82c;
+
+}
+
+.cur-month {
+    color: white !important;
+}
+
+.numInputWrapper {
+    color: white;
+}
+
+.form_arrival {
+    display: flex;
+    align-items: center;
+}
+
+.Ankunft {
+    max-width: 450px;
+
+}
+
+/************* End Calender Flatpickr *******************/
 
 .w3-table,
 .w3-table-all {

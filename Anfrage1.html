@@ -2,11 +2,15 @@
 <html>
 
 <head>
-  <title>Anfrage_new</title>
+  <title>Anfrage_news</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <script src="myScripts.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
 </head>
 
 <body>
@@ -50,54 +54,39 @@
     </div>
     <!--Formular-->
     <div id="contact" class="contact page-slide container base-slide animate-in js-animate" data-slide="contact">
-      <form method="post" class="form page-content__container" data-scrolltoerror-offset="50"
-        data-scrolltoerror-active="" data-clear-hidden-fields="false">
-        
-        
-        <input type="hidden" data-val=""
-          data-val-required="The Room field is required." id="Form_Room" name="Form.Room"
-          value="00000000-0000-0000-0000-000000000000"><input type="hidden" data-val=""
-          data-val-required="The Offer field is required." id="Form_Offer" name="Form.Offer"
-          value="00000000-0000-0000-0000-000000000000">
+      <form method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active=""
+        data-clear-hidden-fields="false">
         <div class="form__block">
           <h3 class="form__title">1. Wann möchten Sie Urlaub machen? *</h3>
-          <input type="text" id="Form.Arrival"
-            class="calendar-arrival form__date-control flatpickr-input hf-validated hf-invalid hf-user-invalid active"
-            required="required" placeholder="Anreise" data-val="" data-val-required="The Arrival field is required."
-            name="Form.Arrival" value="01.01.0001 00:00:00" aria-invalid="true">-<input type="text"
-            class="calendar-departure form__date-control" required="required" placeholder="Abreise" data-val=""
-            data-val-required="The Departure field is required." id="Form_Departure" name="Form.Departure"
-            value="01.01.0001 00:00:00" data-fp-omit=""> <label for="Form.Arrival"></label>
+          <div class="form_arrival">
+            <input class="Ankunft" type="datetime-local" placeholder="Reisedaten">
+          </div>
+
+
+
         </div>
         <div class="form__block">
-          <div class="form__row">
-            <h3 class="form__title">2. Was möchten Sie?</h3>
-            <ul class="form-radiobutton-list required">
-              <li><input id="Form.MealPlan4" type="radio" value="bb" checked="checked" name="Form.MealPlan"
-                  required="required"><label for="Form.MealPlan4">mit Frühstück</label></li>
-              <li><input id="Form.MealPlan8" type="radio" value="onlyaccomodation" name="Form.MealPlan"
-                  required="required"><label for="Form.MealPlan8">ohne Verpflegung</label></li>
-            </ul>
-          </div>
-          <h3 class="form__title">3. Wer reist mit Ihnen?</h3>
+
+          <h3 class="form__title">2. Wer reist mit Ihnen?</h3>
           <div class="form__row"><label class="form__req" for="Form_Adults">Erwachsene</label>
-            <div class="form-number__container"><button type="button" class="form-number__minus">-</button><input
-                type="number" class="form__control form-number" min="1" max="10" required="required" data-val=""
-                data-val-required="The Adults field is required." id="Form_Adults" name="Form.Adults" value="2"><input
-                name="__Invariant" type="hidden" value="Form.Adults"><button type="button"
-                class="form-number__plus">+</button></div>
+            <div class="form-number__container"><button type="button" class="form-number__minus"
+                onclick="Decrease()">-</button><input type="number" class="form__control form-number" min="1" max="10"
+                required="required" data-val="" data-val-required="The Adults field is required." id="Form_Adults"
+                name="Form.Adults" value="2"><input name="__Invariant" type="hidden" value="Form.Adults"><button
+                type="button" class="form-number__plus" onclick="Increase()">+</button></div>
           </div>
           <div class="form__row"><label for="Form_Children">Kinder</label>
-            <div class="form-number__container"><button type="button" class="form-number__minus">-</button><input
-                type="number" class="form__control contact__children form-number" min="0" max="6" data-val=""
+            <div class="form-number__container"><button type="button" class="form-number__minusC"
+                onclick="DecreaseC() , showChildAges()">-</button><input type="number"
+                class="form__control contact__children form-number" min="0" max="6" data-val=""
                 data-val-required="The Children field is required." id="Form_Children" name="Form.Children"
                 value="0"><input name="__Invariant" type="hidden" value="Form.Children"><button type="button"
-                class="form-number__plus">+</button></div>
+                class="form-number__plusC" onclick="IncreaseC() ,showChildAges()">+</button></div>
           </div>
           <div class="contact__children-ages" style="display: none;"><label class="form__req" for="Form_ChildAge1">Alter
               Kinder</label>
             <div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+              <div class="form-number__container contact__child-age" style="display: inline;"><button type="button"
                   class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
                   max="17" required="required" data-val="" data-val-required="The ChildAge1 field is required."
                   id="Form_ChildAge1" name="Form.ChildAge1" value="0"><input name="__Invariant" type="hidden"
@@ -179,7 +168,26 @@
   </div>
   </div>
   </div>
+  <script>
 
+
+    const config = {
+      altInput: true,
+      altFormat: "D j. F Y",
+      dateFormat: "Y-m-d",
+      showMonths: 2,
+      locale: "de",
+      inline: false,
+      mode: "range",
+      onClose: function (selectedDates) {
+        const endInput = document.querySelector(".Ankunft");
+        console.log(endInput)
+      },
+    };
+
+    flatpickr(".Ankunft", config);
+
+  </script>
 
 </body>
 
