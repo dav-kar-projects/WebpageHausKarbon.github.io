@@ -2,192 +2,146 @@
 <html>
 
 <head>
-  <title>Anfrage_news</title>
+    <title>Anfrage_news</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <script src="myScripts.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="myScripts.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
 </head>
 
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div id="header" class="nav_bar " style="letter-spacing:4px;">
-      <a href="/index.html" class="w3-bar-item w3-button">Kastelart</a>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="Wohnen.html" class="w3-bar-item w3-button">Wohnen</a>
-        <a href="Frühstück.html" class="w3-bar-item w3-button">Erleben</a>
-        <a href="/Wellness.html" class="w3-bar-item w3-button">Entspannen</a>
-        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-        <a href="gallery.html" class="w3-bar-item w3-button">Fotogalerie</a>
-        <a href="#Kontact" class="w3-bar-item w3-button">Kontakt</a>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Sidebar-->
-  <div class="side-bar row animate-in js-animate">
-    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
-    <div class="side-bar__separator"></div>
-    <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
-  </div>
-  <!-- Text Box-->
-  <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
-    <div class="container">
-      <div class="page-content__container">
-        <h1>Gleich unverbindlich anfragen</h1>
-        <h2 class="h2">Wir sind für Sie da</h2>
-      </div>
-      <div class="page-content__content">
-        <div class="page-content__main-content">
-          Sehr gerne erstellen wir Ihnen ein individuelles Angebot, ganz nach Ihren Wünschen. Wir freuen uns, von Ihnen
-          zu hören oder zu lesen!
-        </div>
-      </div>
-    </div>
-    <!--Formular-->
-    <div id="contact" class="contact page-slide container base-slide animate-in js-animate" data-slide="contact">
-      <form method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active=""
-        data-clear-hidden-fields="false">
-        <div class="form__block">
-          <h3 class="form__title">1. Wann möchten Sie Urlaub machen? *</h3>
-          <div class="form_arrival">
-            <input class="Ankunft" type="datetime-local" placeholder="Reisedaten">
-          </div>
-
-
-
-        </div>
-        <div class="form__block">
-
-          <h3 class="form__title">2. Wer reist mit Ihnen?</h3>
-          <div class="form__row"><label class="form__req" for="Form_Adults">Erwachsene</label>
-            <div class="form-number__container"><button type="button" class="form-number__minus"
-                onclick="Decrease()">-</button><input type="number" class="form__control form-number" min="1" max="10"
-                required="required" data-val="" data-val-required="The Adults field is required." id="Form_Adults"
-                name="Form.Adults" value="2"><input name="__Invariant" type="hidden" value="Form.Adults"><button
-                type="button" class="form-number__plus" onclick="Increase()">+</button></div>
-          </div>
-          <div class="form__row"><label for="Form_Children">Kinder</label>
-            <div class="form-number__container"><button type="button" class="form-number__minusC"
-                onclick="DecreaseC() , showChildAges()">-</button><input type="number"
-                class="form__control contact__children form-number" min="0" max="6" data-val=""
-                data-val-required="The Children field is required." id="Form_Children" name="Form.Children"
-                value="0"><input name="__Invariant" type="hidden" value="Form.Children"><button type="button"
-                class="form-number__plusC" onclick="IncreaseC() ,showChildAges()">+</button></div>
-          </div>
-          <div class="contact__children-ages" style="display: none;"><label class="form__req" for="Form_ChildAge1">Alter
-              Kinder</label>
-            <div>
-              <div class="form-number__container contact__child-age" style="display: inline;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge1 field is required."
-                  id="Form_ChildAge1" name="Form.ChildAge1" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge1"><button type="button" class="form-number__plus">+</button></div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge2 field is required."
-                  id="Form_ChildAge2" name="Form.ChildAge2" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge2"><button type="button" class="form-number__plus">+</button></div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge3 field is required."
-                  id="Form_ChildAge3" name="Form.ChildAge3" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge3"><button type="button" class="form-number__plus">+</button></div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge4 field is required."
-                  id="Form_ChildAge4" name="Form.ChildAge4" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge4"><button type="button" class="form-number__plus">+</button></div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge5 field is required."
-                  id="Form_ChildAge5" name="Form.ChildAge5" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge5"><button type="button" class="form-number__plus">+</button></div>
-              <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
-                  class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0"
-                  max="17" required="required" data-val="" data-val-required="The ChildAge6 field is required."
-                  id="Form_ChildAge6" name="Form.ChildAge6" value="0"><input name="__Invariant" type="hidden"
-                  value="Form.ChildAge6"><button type="button" class="form-number__plus">+</button></div>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar " style="letter-spacing:4px;">
+            <a href="/index.html" class="w3-bar-item w3-button">Kastelart</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="Wohnen.html" class="w3-bar-item w3-button">Wohnen</a>
+                <a href="Frühstück.html" class="w3-bar-item w3-button">Erleben</a>
+                <a href="/Wellness.html" class="w3-bar-item w3-button">Entspannen</a>
+                <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
+                <a href="gallery.html" class="w3-bar-item w3-button">Fotogalerie</a>
+                <a href="#Kontact" class="w3-bar-item w3-button">Kontakt</a>
             </div>
-          </div>
         </div>
-        <div class="form__block">
-          <h3 class="form__title">Erzählen Sie uns von sich:</h3>
-          <div class="form__row">
-            <div class="form__req">Anrede</div>
-            <ul class="form-radiobutton-list required">
-              <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau {0}" name="Form.Salutation"
-                  required="required"><label for="Form.Salutation1">Frau</label></li>
-              <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr {0}" name="Form.Salutation"
-                  required="required"><label for="Form.Salutation3">Herr</label></li>
-              <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie {0}" name="Form.Salutation"
-                  required="required"><label for="Form.Salutation2">Familie</label></li>
-            </ul>
-          </div>
-          <div class="form__row form_row_fields"><label class="pers_info_label"
-              for="Form_FirstName">Vorname</label><input class="form__control" type="text" id="Form_FirstName"
-              name="Form.FirstName"></div>
-          <div class="form__row"><label class="form__req" for="Form_LastName">Nachname</label><input
-              class="form__control" required="required" type="text" data-val=""
-              data-val-required="The LastName field is required." id="Form_LastName" name="Form.LastName"></div>
-          <div class="form__row"><label class="form__req" for="Form_Email">E-Mail</label><input class="form__control"
-              type="email" required="required" data-val="" data-val-required="The Email field is required."
-              id="Form_Email" name="Form.Email"></div>
-          <div class="form__row"><label for="Form_Phone">Telefon</label><input class="form__control" type="text"
-              id="Form_Phone" name="Form.Phone"></div>
-          <div class="form__row"><label for="Form_Note">Mitteilung</label><textarea class="form__control" id="Form_Note"
-              name="Form.Note"></textarea></div>
+    </div>
+
+
+    <!-- Sidebar-->
+    <div class="side-bar row animate-in js-animate">
+        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+        <div class="side-bar__separator"></div>
+        <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
+    </div>
+    <!-- Text Box-->
+    <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
+        <div class="container">
+            <div class="page-content__container">
+                <h1>Gleich unverbindlich anfragen</h1>
+                <h2 class="h2">Wir sind für Sie da</h2>
+            </div>
+            <div class="page-content__content">
+                <div class="page-content__main-content">
+                    Sehr gerne erstellen wir Ihnen ein individuelles Angebot, ganz nach Ihren Wünschen. Wir freuen uns, von Ihnen zu hören oder zu lesen!
+                </div>
+            </div>
         </div>
-        <div class="form-block">
-          <div class="privacy-row form-checkbox"><input type="checkbox" required="required" data-val=""
-              data-val-required="The Privacy field is required." id="Form_Privacy" name="Form.Privacy"
-              value="true"><label class="small" for="Form_Privacy">Ich habe die <a title="Privacy"
+        <!--Formular-->
+        <div id="contact" class="contact page-slide container base-slide animate-in js-animate" data-slide="contact">
+            <form method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active="" data-clear-hidden-fields="false">
+                <div class="form__block">
+                    <h3 class="form__title">1. Wann möchten Sie Urlaub machen? *</h3>
+                    <div class="form_arrival">
+                        <input class="Ankunft" type="datetime-local" placeholder="Reisedaten">
+                    </div>
+
+
+
+                </div>
+                <div class="form__block">
+
+                    <h3 class="form__title">2. Wer reist mit Ihnen?</h3>
+                    <div class="form__row"><label class="form__req" for="Form_Adults">Erwachsene</label>
+                        <div class="form-number__container"><button type="button" class="form-number__minus">-</button><input type="number" class="form__control form-number" min="1" max="10" required="required" data-val="" data-val-required="The Adults field is required." id="Form_Adults"
+                                name="Form.Adults" value="2"><input name="__Invariant" type="hidden" value="Form.Adults"><button type="button" class="form-number__plus">+</button></div>
+                    </div>
+                    <div class="form__row"><label for="Form_Children">Kinder</label>
+                        <div class="form-number__container"><button type="button" class="form-number__minusC" onclick="DecreaseC() , showChildAges()">-</button><input type="number" class="form__control contact__children form-number" min="0" max="6" data-val="" data-val-required="The Children field is required."
+                                id="Form_Children" name="Form.Children" value="0"><input name="__Invariant" type="hidden" value="Form.Children"><button type="button" class="form-number__plusC" onclick="IncreaseC() ,showChildAges()">+</button></div>
+                    </div>
+                    <div class="contact__children-ages" style="display: none;"><label class="form__req" for="Form_ChildAge1">Alter
+              Kinder</label>
+                        <div>
+                            <div class="form-number__container contact__child-age" style="display: inline;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge1 field is required." id="Form_ChildAge1"
+                                    name="Form.ChildAge1" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge1"><button type="button" class="form-number__plus">+</button></div>
+                            <div class="form-number__container contact__child-age" style="display: none;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge2 field is required." id="Form_ChildAge2"
+                                    name="Form.ChildAge2" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge2"><button type="button" class="form-number__plus">+</button></div>
+                            <div class="form-number__container contact__child-age" style="display: none;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge3 field is required." id="Form_ChildAge3"
+                                    name="Form.ChildAge3" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge3"><button type="button" class="form-number__plus">+</button></div>
+                            <div class="form-number__container contact__child-age" style="display: none;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge4 field is required." id="Form_ChildAge4"
+                                    name="Form.ChildAge4" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge4"><button type="button" class="form-number__plus">+</button></div>
+                            <div class="form-number__container contact__child-age" style="display: none;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge5 field is required." id="Form_ChildAge5"
+                                    name="Form.ChildAge5" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge5"><button type="button" class="form-number__plus">+</button></div>
+                            <div class="form-number__container contact__child-age" style="display: none;"><button type="button" class="form-number__minus">-</button><input type="number" class="form-number form__control" min="0" max="17" required="required" data-val="" data-val-required="The ChildAge6 field is required." id="Form_ChildAge6"
+                                    name="Form.ChildAge6" value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge6"><button type="button" class="form-number__plus">+</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__block">
+                    <h3 class="form__title">Erzählen Sie uns von sich:</h3>
+                    <div class="form__row">
+                        <div class="form__req">Anrede</div>
+                        <ul class="form-radiobutton-list required">
+                            <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau {0}" name="Form.Salutation" required="required"><label for="Form.Salutation1">Frau</label></li>
+                            <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr {0}" name="Form.Salutation" required="required"><label for="Form.Salutation3">Herr</label></li>
+                            <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie {0}" name="Form.Salutation" required="required"><label for="Form.Salutation2">Familie</label></li>
+                        </ul>
+                    </div>
+                    <div class="form__row form_row_fields"><label class="pers_info_label" for="Form_FirstName">Vorname</label><input class="form__control" type="text" id="Form_FirstName" name="Form.FirstName"></div>
+                    <div class="form__row"><label class="form__req" for="Form_LastName">Nachname</label><input class="form__control" required="required" type="text" data-val="" data-val-required="The LastName field is required." id="Form_LastName" name="Form.LastName"></div>
+                    <div class="form__row"><label class="form__req" for="Form_Email">E-Mail</label><input class="form__control" type="email" required="required" data-val="" data-val-required="The Email field is required." id="Form_Email" name="Form.Email"></div>
+                    <div class="form__row"><label for="Form_Phone">Telefon</label><input class="form__control" type="text" id="Form_Phone" name="Form.Phone"></div>
+                    <div class="form__row"><label for="Form_Note">Mitteilung</label><textarea class="form__control" id="Form_Note" name="Form.Note"></textarea></div>
+                </div>
+                <div class="form-block">
+                    <div class="privacy-row form-checkbox"><input type="checkbox" required="required" data-val="" data-val-required="The Privacy field is required." id="Form_Privacy" name="Form.Privacy" value="true"><label class="small" for="Form_Privacy">Ich habe die <a title="Privacy"
                 href="/RenderComponent?lang=de&amp;component=Privacy&amp;view=slide" class="open-modal"
                 target="_top">Privacy-Bestimmungen</a> gelesen und bin damit einverstanden.</label></div>
-          <div class="newsletter-row form-checkbox"><input type="checkbox" data-val=""
-              data-val-required="The NLActive field is required." id="Form_NLActive" name="Form.NLActive"
-              value="true"><label class="small" for="Form_NLActive">Abonnieren Sie unseren kostenlosen Newsletter, um
+                    <div class="newsletter-row form-checkbox"><input type="checkbox" data-val="" data-val-required="The NLActive field is required." id="Form_NLActive" name="Form.NLActive" value="true"><label class="small" for="Form_NLActive">Abonnieren Sie unseren kostenlosen Newsletter, um
               laufend über unsere speziellen Angebote informiert zu werden!</label></div>
+                </div>
+                <div class="button-row "><input id="absenden_btn" type="submit" value="Anfrage absenden" class="form-send button button--primary">
+                    <span class="sending disabled button button--primary">Anfrage
+					wird versendet...</span>
+                </div><br>
+                <div>*= Pflichtfelder</div>
         </div>
-        <div class="button-row"><input id="absenden_btn" type="submit" value="Anfrage absenden"
-            class="form-send button button--primary">
-          <span class="sending disabled button button--primary">Anfrage
-            wird versendet...</span>
-        </div><br>
-        <div>*= Pflichtfelder</div>
+        </form>
     </div>
-    </form>
-  </div>
-  </div>
-  </div>
-  <script>
+    </div>
+    </div>
+    <script>
+        const config = {
+            altInput: true,
+            altFormat: "D j. F Y",
+            dateFormat: "Y-m-d",
+            showMonths: 2,
+            locale: "de",
+            inline: false,
+            mode: "range",
+            onClose: function(selectedDates) {
+                const endInput = document.querySelector(".Ankunft");
+                console.log(endInput)
+            },
+        };
 
-
-    const config = {
-      altInput: true,
-      altFormat: "D j. F Y",
-      dateFormat: "Y-m-d",
-      showMonths: 2,
-      locale: "de",
-      inline: false,
-      mode: "range",
-      onClose: function (selectedDates) {
-        const endInput = document.querySelector(".Ankunft");
-        console.log(endInput)
-      },
-    };
-
-    flatpickr(".Ankunft", config);
-
-  </script>
+        flatpickr(".Ankunft", config);
+    </script>
 
 </body>
 
