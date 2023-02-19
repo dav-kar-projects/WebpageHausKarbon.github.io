@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $to = "youremail@example.com";
+  $to = "david.karbon@gmail.com";
   $from = $_POST["email"];
   $subject = $_POST["subject"];
   $message = $_POST["message"];

@@ -13,6 +13,7 @@ var plusButtons;
 var minusButtons;
 
 function ready() {
+<<<<<<< Updated upstream
     let element = document.getElementById('header');
     let headerImage = document.querySelector('.js_hero_idclass');
     if (element && headerImage) {
@@ -71,6 +72,84 @@ function showChildAges() {
             childAgeElements[i].style.display = 'none';
         }
     }
+=======
+   let element = document.getElementById('header');
+   let headerImage = document.querySelector('.js_hero_idclass');
+   if (element && headerImage) {
+      var header = document.getElementById("header");
+      // Get the height of the image element
+      heroImageHeight = headerImage.offsetHeight;
+      headerHeight = header.offsetHeight;
+   }
+   else if (!headerImage) {
+      var header = document.getElementById("header");
+      header.classList.add("active");
+
+   }
+
+   //ABSENDEN BUTTON
+   let button = document.getElementById("absenden_btn");
+   submitButton = document.getElementById('absenden_btn');
+   sendingButton = document.querySelector('.sending');
+   console.log(submitButton);
+   /// Eltern 
+   minusButton = document.querySelector('.form-number__minus');
+   plusButton = document.querySelector('.form-number__plus');
+   numberField = document.querySelector('.form-number');
+   minusButtonC = document.querySelector('.form-number__minusC');
+   plusButtonC = document.querySelector('.form-number__plusC');
+   numberFieldC = document.querySelector('.contact__children');
+   childrenInput = document.querySelector('.contact__children');
+   plusButtons = document.querySelectorAll('.form-number__plus');
+   minusButtons = document.querySelectorAll('.form-number__minus');
+   console.log(plusButtons);
+   console.log(minusButtonC);
+
+   if (plusButton) {
+
+      plusButtons.forEach(button => button.addEventListener('click', increaseValue));
+      minusButtons.forEach(button => button.addEventListener('click', decreaseValue));
+      console.log(plusButtons);
+
+   }
+   if (minusButtonC) {
+      plusButtonC.addEventListener('click', function (event) {
+         const numChildren = document.querySelector('.contact__children').value;
+         console.log(numChildren);
+         if (0 <= numChildren && numChildren < 5) {
+            increaseValue(event);
+            showChildAges();
+         }
+      });
+      minusButtonC.addEventListener('click', function (event) {
+         decreaseValue(event);
+         showChildAges();
+      });
+   }
+}
+
+function showChildAges() {
+   // Get the value of the contact__children input
+   const numChildren = document.querySelector('.contact__children').value;
+
+   // Get all of the contact__child-age elements
+   const childAgeElements = document.querySelectorAll('.contact__child-age');
+   const mainPart = document.querySelectorAll('.contact__children-ages');
+   if (numChildren > 0) {
+      mainPart[0].style.display = 'inline';
+   }
+   else {
+      mainPart[0].style.display = 'none';
+   }
+   // Set the visibility of each child age element based on the value of the contact__children input
+   for (let i = 0; i < childAgeElements.length; i++) {
+      if (i < numChildren) {
+         childAgeElements[i].style.display = 'inline';
+      } else {
+         childAgeElements[i].style.display = 'none';
+      }
+   }
+>>>>>>> Stashed changes
 }
 
 function increaseValue(event) {
@@ -83,8 +162,15 @@ function increaseValue(event) {
     // Increase the value by 1
     currentValue += 1;
 
+<<<<<<< Updated upstream
     // Update the value of the input element
     inputElement.value = currentValue;
+=======
+   // Update the value of the input element
+   inputElement.value = currentValue;
+
+
+>>>>>>> Stashed changes
 }
 
 function decreaseValue(event) {
@@ -100,7 +186,20 @@ function decreaseValue(event) {
     // Update the value of the input element
     inputElement.value = currentValue;
 }
+////////////////////////// Form Check Functions //////////////////////	
 
+function validateTextInput(inputName) {
+   var input = document.getElementsByName(inputName)[0];
+   console.log(input.value)
+   if (input.value === "") {
+      input.classList.add("error");
+      input.classList.remove("success");
+   } else {
+      input.classList.add("success");
+      input.classList.remove("error");
+      $('.hf-warning_name').remove();
+
+<<<<<<< Updated upstream
 function Decrease() {
     numberField.value = parseInt(numberField.value, 10) - 1;
 }
@@ -115,10 +214,69 @@ function DecreaseC() {
 
 function IncreaseC() {
     numberFieldC.value = parseInt(numberFieldC.value, 10) + 1;
+=======
+   }
+}
+function validateDateInput(inputName) {
+   var input = document.getElementsByName(inputName)[0];
+   var class_ = document.getElementsByClassName("Ankunft")[1];
+   console.log(class_)
+   if (input.value === "") {
+      class_.classList.add("error");
+      class_.classList.remove("success");
+   } else {
+      var dates = input.value.split(" ");
+      if (dates.length !== 3) {
+         class_.classList.add("error");
+         class_.classList.remove("success");
+      } else {
+         class_.classList.add("success");
+         class_.classList.remove("error");
+         $('.hf-warning_dates').remove();
+      }
+   }
+>>>>>>> Stashed changes
 }
 
+function validateEmail(inputName) {
+   var email = document.getElementsByName(inputName)[0];
+   console.log(email.value);
+   var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+   if (!emailRegex.test(email.value)) {
+      email.classList.add("error");
+      email.classList.remove("success");
+      console.log("bad");
+   } else {
+      console.log("good");
+      email.classList.add("success");
+      email.classList.remove("error");
+      $('.hf-warning_mail').remove();
 
-document.addEventListener("DOMContentLoaded", ready);
+   }
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+   ready();
+   if (document.querySelector(".container_anfrage")) {
+      console.log("Element with class 'container_anfrage' found!");
+
+      document.getElementsByName("firstname")[0].addEventListener("input", function () {
+         validateTextInput("firstname");
+      });
+      document.getElementsByName("lastname")[0].addEventListener("input", function () {
+         validateTextInput("lastname");
+      });
+      document.getElementsByName("dates")[0].addEventListener("input", function () {
+         validateDateInput("dates");
+      });
+      document.getElementsByName("email")[0].addEventListener("input", function () {
+         validateEmail("email");
+      });
+   } else {
+      console.log("Element with class 'container_anfrage' not found!");
+   }
+});
 
 function myFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > heroImageHeight - headerHeight) {
