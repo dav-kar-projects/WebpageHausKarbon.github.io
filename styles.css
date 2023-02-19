@@ -22,6 +22,10 @@ body {
     font-family: "Times New Roman", Georgia, Serif;
 }
 
+.invalid-input {
+    background-color: #ffcccc;
+}
+
 h1,
 h2,
 h3,
@@ -53,6 +57,22 @@ section {
 summary {
     display: list-item
 }
+
+/* ========================== PopUp =======================================*/
+#successPopup {
+    background-color: green;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-20%);
+    padding: 1em;
+    border-radius: 0.5em;
+    display: none;
+    transition: top 0.5s ease-in-out;
+}
+
+
 
 audio,
 canvas,
@@ -160,6 +180,10 @@ optgroup {
 }
 
 button,
+input {
+    overflow: visible
+}
+
 button,
 select {
     text-transform: none
@@ -308,7 +332,6 @@ hr {
     height: auto
 }
 
-
 /* MyStyles */
 
 .item-list {
@@ -353,7 +376,6 @@ img {
     width: 100%;
     overflow: hidden;
 }
-
 
 /************ ANFRAGE STG********************/
 
@@ -451,14 +473,16 @@ img {
     display: block;
 }
 
+.form__row {
+    display: block;
+}
+
 label {
     display: inline;
     width: 100%;
     /* or any other value */
 }
 
-<<<<<<< Updated upstream
-=======
 input {
     display: inline;
     width: 10%;
@@ -469,11 +493,15 @@ input.form-number {
     font-size: smaller;
 }
 
->>>>>>> Stashed changes
 .form-radiobutton-list {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.form-radiobutton-list input[type=radio] {
+
+    left: 0;
 }
 
 .form-radiobutton-list label {
@@ -484,6 +512,7 @@ input.form-number {
 .form__label {
     cursor: pointer;
 }
+
 
 .form-number__minus,
 .form-number__plus,
@@ -520,8 +549,6 @@ input.form-number {
     font-weight: 700;
 }
 
-<<<<<<< Updated upstream
-=======
 input[type="e-mail"] {
     font-family: inherit;
     /* font-size: 100%; */
@@ -530,7 +557,6 @@ input[type="e-mail"] {
 }
 
 
->>>>>>> Stashed changes
 .form__control {
     display: inline-block;
     width: 100%;
@@ -544,10 +570,6 @@ input[type="e-mail"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 400px;
-}
-
-.form__row label {
-    padding-bottom: 10px;
 }
 
 button,
@@ -588,7 +610,7 @@ textarea {
 
 .button--primary {
     color: #fff;
-    background-color: #cea82c !important;
+    background-color: #cea82c;
     border-color: #cea82c;
 }
 
@@ -609,27 +631,11 @@ textarea {
     cursor: not-allowed;
     filter: alpha(opacity=65);
     opacity: .65;
-    display: none !important;
-}
-
-.form-radiobutton-list input {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    line-height: 1.5;
-    vertical-align: middle !important;
-    /* adjust as needed */
-}
-
-.form-radiobutton-list label {
-    display: inline-block !important;
-    vertical-align: middle !important;
-    line-height: 1.5;
-    /* adjust as needed */
-    margin-left: 0.5em;
 }
 
 
 /************ End ANFRAGE STG********************/
+
 
 .anfrage {
     padding-top: 60px;
@@ -665,6 +671,8 @@ textarea {
     white-space: normal;
 }
 
+
+
 .s {
     height: 594px;
     display: flex;
@@ -684,9 +692,7 @@ textarea {
     width: 100%;
 }
 
-
 /* Price Tag*/
-
 .item-list__price {
     position: absolute;
     z-index: 0;
@@ -799,6 +805,7 @@ textarea {
     font-style: "Josefin Sans";
 }
 
+
 .item-list__content-inner--right {
     width: 100%;
     position: relative;
@@ -846,10 +853,6 @@ textarea {
     display: flex;
     justify-content: left;
     align-items: center;
-}
-
-.button-row {
-    margin-top: 20px;
 }
 
 .item-list__content-inner {
@@ -1004,9 +1007,7 @@ textarea {
     color: #484036;
 }
 
-
 /* Linkstyles */
-
 .linkstyle {
     text-decoration: none;
     font-size: 22px;
@@ -1014,6 +1015,7 @@ textarea {
     padding: 10px;
     color: #484036;
 }
+
 
 .dropbtn {
     background-color: transparent;
@@ -1023,6 +1025,7 @@ textarea {
     text-decoration: none;
     position: relative;
     padding: 10px;
+
 }
 
 button.dropbtn.underline_animation:before,
@@ -1050,7 +1053,6 @@ button.dropbtn.underline_animation:hover:before {
     width: 40%;
     transition: width .2s ease;
 }
-
 
 /* underline animation */
 
@@ -1080,6 +1082,8 @@ a.linkstyle.underline_animation:hover:before {
     transition: width .2s ease;
 }
 
+
+
 a.underline_animation:before,
 a.underline_animation:after {
     content: '';
@@ -1105,6 +1109,8 @@ a.underline_animation:hover:before {
     width: 40%;
     transition: width .2s ease;
 }
+
+
 
 
 /* Ankommen */
@@ -1168,6 +1174,8 @@ a.underline_animation:hover:before {
     font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 26px;
     color: #484036;
+
+
 }
 
 .base {
@@ -1329,12 +1337,61 @@ i {
     padding-bottom: 5px;
 }
 
+.hf-warning_name {
+    display: block;
+    color: #da4453;
+    z-index: 1;
+    position: relative;
+    font-size: .7894736842em;
+    line-height: 2;
+}
+
+.hf-warning_mail {
+    display: block;
+    color: #da4453;
+    z-index: 1;
+    position: relative;
+    font-size: .7894736842em;
+    line-height: 2;
+}
+
+.hf-warning_anrede {
+    display: block;
+    color: #da4453;
+    z-index: 1;
+    position: relative;
+    font-size: .7894736842em;
+    line-height: 2;
+}
+
+.hf-warning_dates {
+    display: block;
+    color: #da4453;
+    z-index: 1;
+    position: relative;
+    font-size: .7894736842em;
+    line-height: 2;
+}
+
+.hf-warning_mail {
+    display: block;
+    color: #da4453;
+    z-index: 1;
+    position: relative;
+    font-size: .7894736842em;
+    line-height: 2;
+}
+
 .error {
     border: 2px solid #f4d5d9;
 }
 
+.error_full {
+    background-color: #e2a9a9 !important;
+}
+
 .success {
-    border: 2px solid #d7e4c9;
+    border: 2px solid #d7e4c9 !important;
     background-color: #d7e4c9 !important;
 }
 
@@ -1432,6 +1489,8 @@ i {
     /* font-size: 15px; */
     line-height: 1.5;
 }
+
+
 
 .themecolor {
     color: #9b8e7d;
@@ -1655,9 +1714,7 @@ a {
     color: inherit
 }
 
-
 /************* Calender Flatpickr *******************/
-
 .flatpickr-calendar.animate.open {
     -webkit-animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
     animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
@@ -1702,6 +1759,7 @@ a {
 .flatpickr-months,
 .flatpickr-weekdays {
     background-color: #cea82c;
+
 }
 
 .cur-month {
@@ -1721,21 +1779,8 @@ a {
 }
 
 .Ankunft {
-<<<<<<< Updated upstream
-    max-width: 700px;
-}
-
-.form__req {}
-
-.form__title {
-    margin-bottom: 20px;
-    margin-top: 40px;
-    display: block;
-=======
     background-color: ;
->>>>>>> Stashed changes
 }
-
 
 /************* End Calender Flatpickr *******************/
 
@@ -2141,41 +2186,52 @@ a {
     .w3-col.m1 {
         width: 8.33333%
     }
+
     .w3-col.m2 {
         width: 16.66666%
     }
+
     .w3-col.m3,
     .w3-quarter {
         width: 24.99999%
     }
+
     .w3-col.m4,
     .w3-third {
         width: 33.33333%
     }
+
     .w3-col.m5 {
         width: 41.66666%
     }
+
     .w3-col.m6,
     .w3-half {
         width: 49.99999%
     }
+
     .w3-col.m7 {
         width: 58.33333%
     }
+
     .w3-col.m8,
     .w3-twothird {
         width: 66.66666%
     }
+
     .w3-col.m9,
     .w3-threequarter {
         width: 74.99999%
     }
+
     .w3-col.m10 {
         width: 83.33333%
     }
+
     .w3-col.m11 {
         width: 91.66666%
     }
+
     .w3-col.m12 {
         width: 99.99999%
     }
@@ -2185,36 +2241,47 @@ a {
     .w3-col.l1 {
         width: 8.33333%
     }
+
     .w3-col.l2 {
         width: 16.66666%
     }
+
     .w3-col.l3 {
         width: 24.99999%
     }
+
     .w3-col.l4 {
         width: 33.33333%
     }
+
     .w3-col.l5 {
         width: 41.66666%
     }
+
     .w3-col.l6 {
         width: 49.99999%
     }
+
     .w3-col.l7 {
         width: 58.33333%
     }
+
     .w3-col.l8 {
         width: 66.66666%
     }
+
     .w3-col.l9 {
         width: 74.99999%
     }
+
     .w3-col.l10 {
         width: 83.33333%
     }
+
     .w3-col.l11 {
         width: 91.66666%
     }
+
     .w3-col.l12 {
         width: 99.99999%
     }
@@ -2288,25 +2355,31 @@ a {
         margin: 0 10px;
         width: auto !important
     }
+
     .w3-modal {
         padding-top: 30px
     }
+
     .w3-dropdown-hover.w3-mobile .w3-dropdown-content,
     .w3-dropdown-click.w3-mobile .w3-dropdown-content {
         position: relative
     }
+
     .w3-hide-small {
         display: none !important
     }
+
     .w3-mobile {
         display: block;
         width: 100% !important
     }
+
     .w3-bar-item.w3-mobile,
     .w3-dropdown-hover.w3-mobile,
     .w3-dropdown-click.w3-mobile {
         text-align: center
     }
+
     .w3-dropdown-hover.w3-mobile,
     .w3-dropdown-hover.w3-mobile .w3-btn,
     .w3-dropdown-hover.w3-mobile .w3-button,
@@ -2321,6 +2394,7 @@ a {
     .w3-modal-content {
         width: 500px
     }
+
     .w3-modal {
         padding-top: 50px
     }
@@ -2330,9 +2404,11 @@ a {
     .w3-modal-content {
         width: 900px
     }
+
     .w3-hide-large {
         display: none !important
     }
+
     .w3-sidebar.w3-collapse {
         display: block !important;
     }
@@ -2348,10 +2424,12 @@ a {
     .w3-sidebar.w3-collapse {
         display: none
     }
+
     .w3-main {
         margin-left: 0 !important;
         margin-right: 0 !important
     }
+
     .w3-auto {
         max-width: 100%
     }
@@ -2374,6 +2452,7 @@ a {
 .hero_image_item {
     height: 100%;
     width: 100%;
+
 }
 
 .title_links {
@@ -2462,7 +2541,6 @@ a {
     font-size: 100px;
 }
 
-
 /**************DropDown******************/
 
 .show {
@@ -2478,8 +2556,11 @@ a {
     animation-fill-mode: both;
 }
 
+
+
 .dropdown-content {
     padding: 40px;
+
     display: none;
 }
 
@@ -2488,6 +2569,7 @@ a {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2498,14 +2580,13 @@ a {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
 }
 
-
 /**************EndDropDown******************/
-
 
 /**************Price Tabel******************/
 
@@ -2518,6 +2599,7 @@ td,
 th {
     border: 1px solid #ddd;
     padding: 8px;
+
 }
 
 tr:nth-child(even) {
@@ -2534,10 +2616,12 @@ th {
     text-align: center;
     background-color: #cea82c9d;
     color: white;
+
 }
 
 .PriceColon {
     text-align: center;
+
 }
 
 
@@ -2695,6 +2779,7 @@ th {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(359deg)
     }
@@ -2708,9 +2793,11 @@ th {
     0% {
         opacity: 0
     }
+
     50% {
         opacity: 1
     }
+
     100% {
         opacity: 0
     }
@@ -2724,6 +2811,7 @@ th {
     from {
         opacity: 0
     }
+
     to {
         opacity: 1
     }
@@ -2739,6 +2827,7 @@ th {
         top: -300px;
         opacity: 0
     }
+
     to {
         top: 0;
         opacity: 1
@@ -2755,6 +2844,7 @@ th {
         left: -300px;
         opacity: 0
     }
+
     to {
         left: 0;
         opacity: 1
@@ -2771,6 +2861,7 @@ th {
         right: -300px;
         opacity: 0
     }
+
     to {
         right: 0;
         opacity: 1
@@ -2787,6 +2878,7 @@ th {
         bottom: -300px;
         opacity: 0
     }
+
     to {
         bottom: 0;
         opacity: 1
@@ -2801,6 +2893,7 @@ th {
     from {
         transform: scale(0)
     }
+
     to {
         transform: scale(1)
     }
@@ -3556,26 +3649,20 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 4px; */
-    /* box-sizing: border-box; */
-    /* margin-top: 6px; */
-    /* margin-bottom: 16px; */
-    /* resize: vertical; */
+
 }
 
 input[type=submit] {
-    background-color: #9b8e7d;
+    background-color: #cea82c;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: m;
 }
 
 input[type=submit]:hover {
-    background-color: #6a5539;
+    background-color: #e7bb2b;
 }
 
 .container_anfrage {
@@ -3584,7 +3671,14 @@ input[type=submit]:hover {
     padding-right: 40px;
     margin-bottom: 50px;
     font-style: inherit;
+
+
 }
+
+
+
+
+
 
 .calendar-range input {
     z-index: 1;
