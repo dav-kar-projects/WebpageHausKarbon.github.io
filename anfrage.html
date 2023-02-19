@@ -46,7 +46,8 @@
         warning = true;
       }
       // Check if dates is not empty
-      if (!formData.dates) {
+      // Check if dates is not empty
+      if (!formData.dates || formData.dates == " ") {
         // console.log("Dates are required");
         $('.form-control.input').addClass('error_full')
         // console.log("Date Classes: ", $('input[name="dates"]').attr('class'));
@@ -54,7 +55,10 @@
         if (!$('.hf-warning_dates').length) {
           $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
         }
+        warning = true;
       }
+
+
 
 
       if (!$('input[name="Form.Salutation"]:checked').val()) {
