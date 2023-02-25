@@ -366,6 +366,10 @@ img {
     color: #484036;
 }
 
+
+
+/************ Header Classes********************/
+
 .nav_bar {
     font-size: 28;
     padding: 8px 16px !important;
@@ -375,6 +379,44 @@ img {
     transition: background-color 0.5s linear;
     width: 100%;
     overflow: hidden;
+}
+
+.left_links {
+    float: left;
+}
+
+.center_links {
+    text-align: center;
+}
+
+.right_links {
+    float: right;
+}
+
+
+
+.languages__link {
+    color: #fff;
+    background-color: transparent !important;
+    padding-top: 8px !important;
+    transition: background-color 0.5s linear;
+
+
+}
+
+.languages__separator {
+    margin-right: -5px;
+}
+
+.language-button {
+    padding-left: 0px !important;
+    font-size: 1 !important;
+
+}
+
+.language-button:hover {
+    color: #000 !important;
+    background-color: #ccc !important
 }
 
 /************ ANFRAGE STG********************/
@@ -882,6 +924,9 @@ textarea {
 }
 
 .footer-main {
+    position: absolute;
+    left: 0;
+    right: 0;
     background-color: rgba(206, 168, 44, .1);
     padding: 56px 0 52px 0;
 }
@@ -1118,7 +1163,6 @@ a.underline_animation:hover:before {
 .container {
     color: #000;
     width: 100%;
-    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -1136,15 +1180,7 @@ a.underline_animation:hover:before {
     margin-right: auto;
 }
 
-.container {
-    width: 100%;
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    padding-left: 86px;
-    padding-right: 86px;
-}
+
 
 .page-content .hgroup {
     padding-bottom: 30px;
@@ -1853,6 +1889,13 @@ a {
     text-align: center;
     cursor: pointer;
     white-space: nowrap
+}
+
+.language_button {
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+
 }
 
 .w3-btn:hover {
@@ -3677,8 +3720,14 @@ input[type=submit]:hover {
 
 
 
+.language {
+    margin-left: -10px;
+    margin-right: 5px;
+}
 
-
+.language+.w3-bar-item {
+    margin-left: -5px;
+}
 
 .calendar-range input {
     z-index: 1;
