@@ -421,6 +421,12 @@ img {
     background-color: #ccc !important
 }
 
+.divisor {
+    display: inline;
+    padding-top: 8px;
+    margin-top: 0;
+}
+
 /************ ANFRAGE STG********************/
 
 .page-content__container {
