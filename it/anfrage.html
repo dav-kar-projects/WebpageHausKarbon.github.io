@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Richiesta</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="myScripts.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.form-send').click(function (e) {
+      e.preventDefault();
+      $('.form-send').css('background-color', '#aa8817');
+
+      var formData = {
+        'dates': $('input[name="dates"]').val(),
+        'firstname': $('input[name="firstname"]').val(),
+        'lastname': $('input[name="lastname"]').val(),
+        'message': $('#subject').val(),
+        'country': $('#country').val(),
+        'adults': $('input[name="adults"]').val(),
+        'children': $('input[name="children"]').val(),
+        'childAge1': $('input[name="childAge1"]').val(),
+        'childAge2': $('input[name="childAge2"]').val(),
+        'childAge3': $('input[name="childAge3"]').val(),
+        'childAge4': $('input[name="childAge4"]').val(),
+        'childAge5': $('input[name="childAge5"]').val(),
+        'childAge6': $('input[name="childAge6"]').val(),
+        'email': $('input[name="email"]').val(),
+        'anrede': $('input[name="Form.Salutation"]:checked').val()
+      };
+      var warning = false;
+      var today = new Date();
+      // console.log(today)
+      var selectedDate = new Date(formData.dates);
+
+      if (selectedDate < today) {
+        // console.log("Selected date is in the past");
+        warning = true;
+      }
+      // Check if dates is not empty
+      // Check if dates is not empty
+      if (!formData.dates || formData.dates == " ") {
+        // console.log("Dates are required");
+        $('.form-control.input').addClass('error_full')
+        // console.log("Date Classes: ", $('input[name="dates"]').attr('class'));
+        // console.log(!$('.hf-warning_dates').length)
+        if (!$('.hf-warning_dates').length) {
+          $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> * Compilare questo campo.</div>');
+        }
+        warning = true;
+      }
+
+
+
+
+      if (!$('input[name="Form.Salutation"]:checked').val()) {
+        $('.anrede_dif_inner').addClass('error_full')
+        if (!$('.hf-warning_anrede').length) {
+          // console.log("Anrede is required");
+          $('.anrede_dif').append('<div class="hf-warning_anrede" id="hf_50353m2nvdtie" aria-live="polite"> * Compilare questo campo.</div>');
+        }
+        warning = true;
+      } else {
+        $('.anrede_dif').removeClass('error_full');
+        $('.hf-warning_anrede').remove();
+      }
+      $('input[name="Form.Salutation"]').on('click', function () {
+        if ($('.hf-warning_anrede').length) {
+          $('.anrede_dif_inner').removeClass('error_full');
+          $('.hf-warning_anrede').remove();
+        }
+      });
+
+
+
+      if (!formData.email) {
+        $('input[name="email"]').addClass('error_full')
+        if (!$('.hf-warning_mail').length) {
+          // console.log("E-Mail is required");
+          $('.form__group').append('<div class="hf-warning_mail" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
+        }
+        warning = true;
+      }
+      var emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+      if (!emailRegex.test(formData.email)) {
+        // console.log("Invalid email address");
+        if (!$('.hf-warning_bad_mail').length) {
+          $('input[name="email"]').append('<div class="hf-warning_bad_mail" id="hf_50353m2nvdtie" aria-live="polite"> * Mail ungültig.</div>');
+        }
+        warning = true;
+      }
+      if (!formData.lastname) {
+        $('input[name="lastname"]').addClass('error_full')
+        $('input[name="email"]').addClass('error_full')
+        if (!$('.hf-warning_name').length) {
+          // console.log("Last name is required");
+          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus name.</div>');
+        }
+
+        warning = true;
+      }
+      if (warning) {
+        return;
+        console.log("returned");
+      }
+      $('.form-send').val('RICHIESTA VIENE TRASSMESSA...');
+      $('.form-send').prop('disabled', true);
+
+      $.ajax({
+        url: '/script.php',
+        type: 'post',
+        data: formData,
+        success: function (response) {
+          console.log(response);
+          $('.form-send').val('RICHIESTA TRASSMESSA');
+          $('.form-send').prop('disabled', true);
+          $('.form-send').css('background-color', '#9b8e7d');
+          // console.log(response);
+
+        }
+      });
+    });
+  });
+</script>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div id="header" class="nav_bar" style="letter-spacing:4px;">
+      <div class="left_links">
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
+          class="w3-bar-item w3-button">Kastelart</a>
+      </div>
+      <!-- Right-sided navbar links. Hide them on small screens -->
+      <div class=" center_links w3-hide-small">
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wohnen.html"
+          class=" w3-button">Soggiorno</a>
+        <a href="Erleben.html" class="w3-bar-item w3-button">Esperienze</a>
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wellness.html"
+          class=" w3-button">Relax</a>
+        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
+          class=" w3-button">Galeria</a>
+        <a href="#Footer" class="w3-bar-item w3-button">Contatti</a>
+        <div class="right_links w3-hide-small">
+          <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
+          <span class="languages__separator "></span>
+          <a class="languages__link  language_button w3-button" href="../index.html">DE</a>
+          <span class="languages__separator"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Sidebar-->
+  <div class="side-bar row animate-in js-animate">
+    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
+    <div class="side-bar__separator"></div>
+    <a href="Preise.html" title="Preise" class=" button button--primary">Prezzi</a>
+  </div>
+  <!-- Text Box-->
+  <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
+    <div class="container">
+      <div class="page-content__container">
+        <h1>Richiedete ora senza impegno</h1>
+        <h2 class="h2">Siamo qui per voi</h2>
+
+        <div class="page-content__content">
+          <div class="page-content__main-content">
+            Sarà un piacere elaborare un’offerta su misura per voi, confezionata sulla base delle vostre necessità. Non
+            vediamo l’ora di sentirvi o di leggere di voi!
+          </div>
+        </div>
+        <!--Formular-->
+
+        <div class="container_anfrage">
+
+          <form action="script.php" method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active=""
+            data-clear-hidden-fields="false">
+
+            <div class="form__block">
+              <h3 class="form__title">1. In che periodo desideri trascorrere la vacanza?</h3>
+              <div class="form_arrival">
+                <input class="Ankunft" name="dates" type=" datetime-local" placeholder="Periodo" required>
+              </div>
+            </div>
+
+            <div class="form__block">
+              <h3 class="form__title">2. Chi viaggia con te?</h3>
+              <div class="form__row"><label class="form__req" for="Form_Adults">Adulti</label>
+                <div class="form-number__container"><button type="button" class="form-number__minus">-</button><input
+                    type="number" class="form__control form-number" min="1" max="10" required="required" data-val=""
+                    data-val-required="The Adults field is required." id="Form_Adults" name="adults" value="2"><input
+                    name="__Invariant" type="hidden" value="Form.Adults"><button type="button"
+                    class="form-number__plus">+</button>
+                </div>
+
+                <div class="form__row"><label for="Form_Children">Bambini</label>
+                  <div class="form-number__container"><button type="button" class="form-number__minusC">-</button><input
+                      type="number" class="form__control contact__children form-number" min="0" max="5" data-val=""
+                      data-val-required="The Children field is required." id="Form_Children" name="children"
+                      value="0"><input name="__Invariant" type="hidden" value="Form.Children"><button type="button"
+                      class="form-number__plusC">+</button></div>
+                </div>
+                <div class="contact__children-ages" style="display: none;"><label class="form__req"
+                    for="Form_ChildAge1">Età dei bambini</label>
+                  <div>
+                    <div class="form-number__container contact__child-age" style="display: inline;"><button
+                        type="button" class="form-number__minus">-</button><input type="number"
+                        class="form-number form__control" min="0" max="17" required data-val=""
+                        data-val-required="The ChildAge1 field is required." id="Form_ChildAge1" name="childAge1"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge1"><button type="button"
+                        class="form-number__plus">+</button></div>
+                    <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+                        class="form-number__minus">-</button><input type="number" class="form-number form__control"
+                        min="0" max="17" required="required" data-val=""
+                        data-val-required="The ChildAge2 field is required." id="Form_ChildAge2" name="childAge2"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge2"><button type="button"
+                        class="form-number__plus">+</button></div>
+                    <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+                        class="form-number__minus">-</button><input type="number" class="form-number form__control"
+                        min="0" max="17" required="required" data-val=""
+                        data-val-required="The ChildAge3 field is required." id="Form_ChildAge3" name="childAge3"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge3"><button type="button"
+                        class="form-number__plus">+</button></div>
+                    <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+                        class="form-number__minus">-</button><input type="number" class="form-number form__control"
+                        min="0" max="17" required="required" data-val=""
+                        data-val-required="The ChildAge4 field is required." id="Form_ChildAge4" name="childAge4"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge4"><button type="button"
+                        class="form-number__plus">+</button></div>
+                    <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+                        class="form-number__minus">-</button><input type="number" class="form-number form__control"
+                        min="0" max="17" required="required" data-val=""
+                        data-val-required="The ChildAge5 field is required." id="Form_ChildAge5" name="childAge5"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge5"><button type="button"
+                        class="form-number__plus">+</button></div>
+                    <div class="form-number__container contact__child-age" style="display: none;"><button type="button"
+                        class="form-number__minus">-</button><input type="number" class="form-number form__control"
+                        min="0" max="17" required="required" data-val=""
+                        data-val-required="The ChildAge6 field is required." id="Form_ChildAge6" name="childAge6"
+                        value="0"><input name="__Invariant" type="hidden" value="Form.ChildAge6"><button type="button"
+                        class="form-number__plus">+</button></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__block">
+                <h3 class="form__title">Parlaci di te:</h3>
+                <div class="form__row">
+                  <div class="form__req ">Titolo</div>
+                  <div class="anrede_dif">
+                    <ul class="form-radiobutton-list required anrede_dif_inner ">
+                      <li><input id="Form.Salutation1" type="radio" value="Gentile signora  " name="Form.Salutation"
+                          required="required"><label for="Form.Salutation1">Signora</label></li>
+                      <li><input id="Form.Salutation3" type="radio" value="Gentile signor " name="Form.Salutation"
+                          required="required"><label for="Form.Salutation3">Signor</label></li>
+                      <li><input id="Form.Salutation2" type="radio" value="Gentile famiglia " name="Form.Salutation"
+                          required="required"><label for="Form.Salutation2">Famiglia</label></li>
+                    </ul>
+                  </div>
+                </div>
+                <label for="fname">Nome</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <div class="form__group_name">
+                  <label class="form__req" for="lname">Cognome</label>
+                  <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                </div>
+
+                <div class="form__group">
+                  <label class="form__req" for="lname">E-Mail</label>
+                  <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
+                </div>
+              </div>
+
+              <label for="country">Paese</label>
+              <select id="country" name="country">
+                <option value="Italia">Italia</option>
+                <option value="Deutschland">Deutschland</option>
+                <option value="Österreich">Österreich</option>
+              </select>
+
+              <label for="subject">Messaggio</label>
+              <textarea id="subject" name="message" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
+
+              <div class="button-row">
+                <input type="submit" value="INVIA RICHIESTA" class="form-send button button--primary">
+
+                <form action="/script.php">
+              </div>
+              <div id="successPopup">Anfrage erfolgreich gesendet</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+
+      const config = {
+        altInput: true,
+        altFormat: "D j. F Y",
+        dateFormat: "Y-m-d",
+        showMonths: 2,
+        locale: "de",
+        inline: false,
+        mode: "range",
+        minDate: "today",
+        onClose: function (selectedDates) {
+          const endInput = document.querySelector(".Ankunft");
+          // console.log(endInput)
+        },
+      };
+
+      flatpickr(".Ankunft", config);
+
+    </script>
+    <style>
+      #successPopup {
+        background-color: green;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-20%);
+        padding: 1em;
+        border-radius: 0.5em;
+        display: none;
+        transition: top 0.5s ease-in-out;
+      }
+    </style>
+</body>
+<!-- Footer -->
+<footer id="Footer" class="footer-main">
+  <div class="container">
+    <div class="address">
+      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
+        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
+          height="110%" alt="Karbon Apartments &amp; Suites"></a>
+      <div class="address__contact">
+        <div class="address__actions">
+          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255" data-gtm-category="Phone"
+            data-gtm-action="phoneclick" data-gtm-label="Address">
+            <i></i> +39 0471 20501012</a>
+          <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it" data-gtm-category="E-Mail"
+            data-gtm-action="mailclick" data-gtm-label="Address">
+            <i></i> info@kastelart.it</a>
+        </div>
+
+        <div class="adress_text">
+          <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
+                      " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
+            data-gtm-label="Address">
+            <i></i> Ployerweg 7, 39040 Kastelruth<br> Südtirol, Italien</a>
+        </div>
+      </div>
+
+    </div>
+    <nav class="nav-footer">
+      <span class="nav-footer__level-0">
+        <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
+          Webcam</a>
+      </span>
+      <span class="nav-footer__level-0">
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/ankommen.html"
+          class="link-button nav-footer__menu-0" target="_self">Anreise</a>
+      </span>
+      </span> <span class="nav-footer__level-0">
+        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
+          class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
+      </span>
+    </nav>
+  </div>
+
+
+</footer>
+
+</html>
