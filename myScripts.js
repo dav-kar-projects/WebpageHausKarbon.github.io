@@ -91,6 +91,41 @@ function showChildAges() {
    }
 }
 
+
+
+function Dropdown() {
+   var x = document.getElementById("header");
+   var y = document.getElementById("Subheader");
+   var z = document.getElementById("homebtnId");
+   console.log("x.classname", x.className);
+   if (x.className == "nav_bar" || x.className == "nav_bar active") {
+      x.className += " responsive";
+      y.className -= " w3-hide-small";
+      z.className += " full_width";
+
+   } else if (x.className == "nav_bar responsive") {
+
+      x.className -= "responsive";
+      x.className = "nav_bar";
+      y.className += " w3-hide-small";
+      z.className -= " full_width";
+      z.className += " left_links";
+
+   } else if (x.className == "nav_bar active responsive") {
+      x.className -= "responsive";
+      x.className = "nav_bar active";
+      y.className += " w3-hide-small";
+      z.className -= " full_width";
+      z.className += " left_links";
+   }
+   console.log("x.className " + x.className);
+   console.log("y.className " + y.className);
+   console.log("z.className " + z.className);
+}
+
+
+
+
 function increaseValue(event) {
    // Get the input element that is associated with the button that was clicked
    var inputElement = event.target.previousSibling.previousSibling;

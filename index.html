@@ -18,46 +18,50 @@
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div id="header" class="nav_bar" style="letter-spacing:4px;">
-            <div class="left_links">
+            <div id="homebtnId" class="left_links ">
                 <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-                    class="w3-bar-item w3-button">Kastelart</a>
+                    class="w3-bar-item w3-button ">Kastelart</a>
             </div>
             <!-- Right-sided navbar links. Hide them on small screens -->
-            <div class=" center_links w3-hide-small">
+            <div id="Subheader" class=" center_links w3-hide-small">
                 <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wohnen.html"
                     class=" w3-button">Wohnen</a>
-                <a href="Erleben.html" class="w3-bar-item w3-button">Erleben</a>
+                <a href="Erleben.html" class=" w3-button">Erleben</a>
                 <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wellness.html"
                     class=" w3-button">Entspannen</a>
                 <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
                 <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
                     class=" w3-button">Fotogalerie</a>
                 <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-                <div class="right_links w3-hide-small">
+                <div id=languageSelectorId class="right_links_language">
                     <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
                     <span class="languages__separator "></span>
                     <a class="languages__link  language_button w3-button" href="/it/index.html">IT</a>
                     <span class="languages__separator"></span>
                 </div>
             </div>
+            <div class="small_menu">
+                <a href="javascript:void(0);" class="right_links" style=" font-size:25px;" class="icon"
+                    onclick="Dropdown()">&#9776;</a>
+            </div>
         </div>
+    </div>
     </div>
 
     <!-- Header -->
     <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
         <img class="w3-image header_image js_hero_idclass"
-            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/HomeImg.png" alt="HeroImage"
-            width="1600" height="800">
+            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/HomeImg.png" alt="HeroImage">
         <div class="logo_MainPage">
-            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" width="600px"
-                height="600px" class="logo">
+            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" height="auto"
+                class="logo">
             <!-- <h1 class="title">Kastelart</h1> -->
         </div>
 
 
     </header>
     <!-- Sidebar-->
-    <div class="side-bar row animate-in js-animate">
+    <div class="side-bar row">
         <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
         <div class="side-bar__separator"></div>
         <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
