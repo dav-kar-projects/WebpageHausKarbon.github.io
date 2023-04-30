@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
+
 <html>
 
 <head>
   <title>Anfrage</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <script src="myScripts.js"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../myScripts.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -25,6 +27,8 @@
         'lastname': $('input[name="lastname"]').val(),
         'message': $('#subject').val(),
         'country': $('#country').val(),
+        'Studios': $('input[name="Studio"]').val(),
+        'Appartments': $('input[name="App"]').val(),
         'adults': $('input[name="adults"]').val(),
         'children': $('input[name="children"]').val(),
         'childAge1': $('input[name="childAge1"]').val(),
@@ -34,7 +38,8 @@
         'childAge5': $('input[name="childAge5"]').val(),
         'childAge6': $('input[name="childAge6"]').val(),
         'email': $('input[name="email"]').val(),
-        'anrede': $('input[name="Form.Salutation"]:checked').val()
+        'anrede': $('input[name="Form.Salutation"]:checked').val(),
+        'lang': "de"
       };
       var warning = false;
       var today = new Date();
@@ -102,11 +107,27 @@
         $('input[name="email"]').addClass('error_full')
         if (!$('.hf-warning_name').length) {
           // console.log("Last name is required");
-          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus name.</div>');
+          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
         }
 
         warning = true;
       }
+      console.log("Warning :", formData.Studios, formData.Appartments)
+      if (formData.Studios == 0 && formData.Appartments == 0) {
+        $('input[name="Studio"]').addClass('error_full')
+        $('input[name="App"]').addClass('error_full')
+        $('.form_appartmetn').append('<div class="hf-warning_name" id="hf_50353m2nvdtie33" aria-live="polite"> * Bitte wälen Sie ein Appartement Typ aus.</div>');
+
+        console.log("no appartment selected");
+
+      }
+      else {
+        $('input[name="Studio"]').removeClass('error_full')
+        $('input[name="App"]').removeClass('error_full')
+        if ($('#hf_50353m2nvdtie33').length > 0)
+          $('#hf_50353m2nvdtie33').remove();
+      }
+
       if (warning) {
         return;
         console.log("returned");
@@ -115,7 +136,7 @@
       $('.form-send').prop('disabled', true);
 
       $.ajax({
-        url: '/script.php',
+        url: '../script.php',
         type: 'post',
         data: formData,
         success: function (response) {
@@ -131,28 +152,35 @@
   });
 </script>
 
-<body>
+<body class=my_body>
 
+  <!-- Navbar (sit on top) -->
   <div class="w3-top">
-    <div id="header" class="nav_bar active" style="letter-spacing:4px;">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-        class="w3-bar-item w3-button">Kastelart</a>
+    <div id="header" class="nav_bar" style="letter-spacing:4px;">
+      <div id="homebtnId" class="left_links ">
+        <a href="http://kastelart.it/de" class="w3-bar-item w3-button ">Kastelart</a>
+      </div>
       <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wohnen.html"
-          class="w3-bar-item w3-button">Wohnen</a>
-        <a href="Erleben.html" class="w3-bar-item w3-button">Erleben</a>
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wellness.html"
-          class="w3-bar-item w3-button">Entspannen</a>
+      <div id="Subheader" class=" center_links w3-hide-small">
+        <a href="http://kastelart.it/de/Wohnen.html" class=" w3-button">Wohnen</a>
+        <a href="Erleben.html" class=" w3-button">Erleben</a>
+        <a href="http://kastelart.it/de/Wellness.html" class=" w3-button">Entspannen</a>
         <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
-          class="w3-bar-item w3-button">Fotogalerie</a>
+        <a href="http://kastelart.it/de/gallery.html" class=" w3-button">Fotogalerie</a>
         <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-
+        <div id=languageSelectorId class="right_links_language">
+          <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
+          <span class="languages__separator "></span>
+          <a class="languages__link  language_button w3-button" href="/it/index.html">IT</a>
+          <span class="languages__separator"></span>
+        </div>
+      </div>
+      <div class="small_menu">
+        <a href="javascript:void(0);" class="right_links" style=" font-size:25px;" class="icon"
+          onclick="Dropdown()">&#9776;</a>
       </div>
     </div>
   </div>
-
 
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
@@ -178,8 +206,8 @@
 
         <div class="container_anfrage">
 
-          <form action="script.php" method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active=""
-            data-clear-hidden-fields="false">
+          <form action="../script.php" method="post" class="" data-scrolltoerror-offset="50"
+            data-scrolltoerror-active="" data-clear-hidden-fields="false">
 
             <div class="form__block">
               <h3 class="form__title">1. Wann möchten Sie Urlaub machen? *</h3>
@@ -197,7 +225,6 @@
                     name="__Invariant" type="hidden" value="Form.Adults"><button type="button"
                     class="form-number__plus">+</button>
                 </div>
-
                 <div class="form__row"><label for="Form_Children">Kinder</label>
                   <div class="form-number__container"><button type="button" class="form-number__minusC">-</button><input
                       type="number" class="form__control contact__children form-number" min="0" max="5" data-val=""
@@ -247,101 +274,131 @@
                   </div>
                 </div>
               </div>
+
+
               <div class="form__block">
-                <h3 class="form__title">Erzählen Sie uns von sich:</h3>
-                <div class="form__row">
-                  <div class="form__req ">Anrede</div>
-                  <div class="anrede_dif">
-                    <ul class="form-radiobutton-list required anrede_dif_inner ">
-                      <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation1">Frau</label></li>
-                      <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation3">Herr</label></li>
-                      <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation2">Familie</label></li>
-                    </ul>
+                <div class="form__block">
+
+                  <h3 class="form__title">3. Welche Wohnung wünschen Sie?</h3>
+                  <div class="form_appartmetn">
+                    <div class="form__row"><label class="form__req" for="Form_Studio">Studio </label><label>mit 33 m²
+                      </label>
+                      <div class="form-number__container"><button type="button"
+                          class="form-number__minus">-</button><input type="number" class="form__control form-number"
+                          min="0" max="2" required="required" data-val="" id="Form_Studio" name="Studio"
+                          value="0"><input name="__Invariant" type="hidden" value="Form.Studio"><button type="button"
+                          class="form-number__plus">+</button>
+
+                        <div class="form__row"><label class="form__req" for="Form_App">Appartement </label> <label> mit
+                            46 m²</label>
+                          <div class="form-number__container"><button type="button"
+                              class="form-number__minus">-</button><input type="number"
+                              class="form__control form-number" min="0" max="2" required="required" data-val=""
+                              id="Form_App" name="App" value="0"><input name="__Invariant" type="hidden"
+                              value="Form.App"><button type="button" class="form-number__plus">+</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 class="form__title">Erzählen Sie uns von sich:</h3>
+                  <div class="form__row">
+                    <div class="form__req ">Anrede</div>
+                    <div class="anrede_dif">
+                      <ul class="form-radiobutton-list required anrede_dif_inner ">
+                        <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau " name="Form.Salutation"
+                            required="required"><label for="Form.Salutation1">Frau</label>
+                        </li>
+                        <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr " name="Form.Salutation"
+                            required="required"><label for="Form.Salutation3">Herr</label>
+                        </li>
+                        <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie "
+                            name="Form.Salutation" required="required"><label for="Form.Salutation2">Familie</label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <label for="fname">Vorname</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                  <div class="form__group_name">
+                    <label class="form__req" for="lname">Nachname</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                  </div>
+
+                  <div class="form__group">
+                    <label class="form__req" for="lname">E-Mail</label>
+                    <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
                   </div>
                 </div>
-                <label for="fname">Vorname</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-                <div class="form__group_name">
-                  <label class="form__req" for="lname">Nachname</label>
-                  <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                <label for="country">Land</label>
+                <select id="country" name="country">
+                  <option value="Deutschland">Deutschland</option>
+                  <option value="Italia">Italia</option>
+                  <option value="Österreich">Österreich</option>
+                </select>
+
+                <label for="subject">Nachricht</label>
+                <textarea id="subject" name="message" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
+
+                <div class="button-row">
+                  <input type="submit" value="ANFRAGE ABSENDEN" class="form-send button button--primary">
+
+                  <form action="../script.php">
                 </div>
-
-                <div class="form__group">
-                  <label class="form__req" for="lname">E-Mail</label>
-                  <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
-                </div>
+                <div id="successPopup">Anfrage erfolgreich gesendet</div>
               </div>
-
-              <label for="country">Land</label>
-              <select id="country" name="country">
-                <option value="Deutschland">Deutschland</option>
-                <option value="Italia">Italia</option>
-                <option value="Österreich">Österreich</option>
-              </select>
-
-              <label for="subject">Nachricht</label>
-              <textarea id="subject" name="message" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
-
-              <div class="button-row">
-                <input type="submit" value="ANFRAGE ABSENDEN" class="form-send button button--primary">
-
-                <form action="/script.php">
-              </div>
-              <div id="successPopup">Anfrage erfolgreich gesendet</div>
             </div>
         </div>
       </div>
-    </div>
-    <script>
+      <script>
 
 
-      const config = {
-        altInput: true,
-        altFormat: "D j. F Y",
-        dateFormat: "Y-m-d",
-        showMonths: 2,
-        locale: "de",
-        inline: false,
-        mode: "range",
-        minDate: "today",
-        onClose: function (selectedDates) {
-          const endInput = document.querySelector(".Ankunft");
-          // console.log(endInput)
-        },
-      };
+        const config = {
+          altInput: true,
+          altFormat: "D j. F Y",
+          dateFormat: "Y-m-d",
+          showMonths: 2,
+          locale: "de",
+          inline: false,
+          mode: "range",
+          minDate: "today",
+          onClose: function (selectedDates) {
+            const endInput = document.querySelector(".Ankunft");
+            // console.log(endInput)
+          },
+        };
 
-      flatpickr(".Ankunft", config);
+        flatpickr(".Ankunft", config);
 
-    </script>
-    <style>
-      #successPopup {
-        background-color: green;
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-20%);
-        padding: 1em;
-        border-radius: 0.5em;
-        display: none;
-        transition: top 0.5s ease-in-out;
-      }
-    </style>
+      </script>
+      <style>
+        #successPopup {
+          background-color: green;
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-20%);
+          padding: 1em;
+          border-radius: 0.5em;
+          display: none;
+          transition: top 0.5s ease-in-out;
+        }
+      </style>
 </body>
 <!-- Footer -->
 <footer id="Footer" class="footer-main">
   <div class="container">
     <div class="address">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
+      <a href="/index.html" class="address__logo">
         <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
           height="110%" alt="Karbon Apartments &amp; Suites"></a>
       <div class="address__contact">
         <div class="address__actions">
-          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255" data-gtm-category="Phone"
+          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+390471727852" data-gtm-category="Phone"
             data-gtm-action="phoneclick" data-gtm-label="Address">
             <i></i> +39 0471 20501012</a>
           <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it" data-gtm-category="E-Mail"
@@ -364,12 +421,10 @@
           Webcam</a>
       </span>
       <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/ankommen.html"
-          class="link-button nav-footer__menu-0" target="_self">Anreise</a>
+        <a href="/ankommen.html" class="link-button nav-footer__menu-0" target="_self">Anreise</a>
       </span>
       </span> <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
-          class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
+        <a href="/gallery.html" class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
       </span>
     </nav>
   </div>

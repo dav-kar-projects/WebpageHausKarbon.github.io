@@ -1501,7 +1501,7 @@ i {
 
 .flaticon-phone::before {
     content: ' ';
-    background-image: url('icons/phone.png');
+    background-image: url('https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/phone.png');
     background-size: 28px 28px;
     height: 28px;
     width: 28px;
@@ -1527,7 +1527,7 @@ i {
 
 .flaticon-mail::before {
     content: ' ';
-    background-image: url('icons/mail.png');
+    background-image: url('https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/mail.png');
     background-size: 28px 28px;
     height: 28px;
     width: 28px;
@@ -1545,7 +1545,7 @@ i {
 
 .location_ref::before {
     content: ' ';
-    background-image: url('icons/location.png');
+    background-image: url('https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/location.png');
     background-size: 28px 28px;
     height: 28px;
     width: 28px;
@@ -1726,7 +1726,7 @@ i {
 
 .my_body {
     font-family: Verdana, sans-serif;
-    /* font-size: 15px; */
+    font-size: 19px !important;
     line-height: 1.5;
 }
 
@@ -3181,7 +3181,7 @@ th {
 }
 
 .w3-medium {
-    font-size: 15px !important
+    font-size: 15px
 }
 
 .w3-large {
