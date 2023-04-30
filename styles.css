@@ -423,6 +423,7 @@ img {
     transform: translate(-50%, -50%);
     z-index: 999;
     opacity: 10;
+    height: auto;
     width: 800px;
     height: auto;
 }
@@ -434,17 +435,47 @@ img {
     font-size: 100px;
 }
 
-@media screen and (max-width: 1070px) {
+
+
+@media screen and (max-width: 1600px) {
     .logo {
 
-        width: 600px;
+        width: 800px;
         height: auto;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .logo {
-        width: 400px;
+        width: 670px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        width: 570px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .logo {
+        width: 470px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo {
+        width: 370px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo {
+        width: 270px;
         height: auto;
     }
 }
@@ -1207,6 +1238,34 @@ textarea {
     flex-wrap: wrap;
 }
 
+@media (max-width: 400px) {
+    .address__logo {
+        display: none;
+
+    }
+
+    .address {
+        padding-left: 35px;
+
+    }
+
+
+
+    .nav-footer__level-0 {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 490px) {
+    .nav-footer__level-1 {
+        display: none;
+    }
+}
+
+.nav-footer__level-0 {}
+
+.nav-footer__level-1 {}
+
 .logo1_outer {
     height: 100%;
     cursor: pointer;
@@ -1243,9 +1302,7 @@ textarea {
 }
 
 .address__contact {
-    -webkit-flex-grow: 1;
     flex-grow: 1;
-    padding: 0 75px;
     font-size: 18px;
 }
 
@@ -1466,7 +1523,7 @@ a.underline_animation:hover:before {
     font-size: 22px;
     line-height: 23px;
     color: #484036;
-    /* text-decoration: none; */
+    text-decoration: none;
 }
 
 .address__actions a i {
@@ -1493,7 +1550,7 @@ i {
     display: inline-flex;
     -webkit-align-items: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 23px;
     color: #484036;
     text-decoration: none;
@@ -1510,18 +1567,47 @@ i {
 .flaticon-mail {
     -webkit-align-items: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 23px;
     color: #484036;
     text-decoration: none;
     padding-left: 40px;
 }
 
+@media screen and (max-width: 980px) {
+    .flaticon-mail {
+
+        padding-left: 0px;
+    }
+
+    .flaticon-phone {
+        padding-right: 40px;
+        padding-bottom: 30px;
+    }
+
+    #wetter_link {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .flaticon-phone {
+        padding-right: 0px;
+        padding-bottom: 30px;
+    }
+
+    .flaticon-mail {
+
+        padding-right: 50px;
+    }
+
+}
+
 .adress_text {
     display: inline-flex;
     color: #484036;
     font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     display: flex-inline;
 }
 
@@ -1536,19 +1622,21 @@ i {
 .location_ref {
     display: inline-flex;
     -webkit-align-items: center;
-    align-items: left;
-    font-size: 22px;
+    align-items: center;
+    font-size: 20px;
     line-height: 23px;
     color: #484036;
     text-decoration: none;
+    padding-left: 0px;
 }
 
 .location_ref::before {
-    content: ' ';
+    content: '   ';
     background-image: url('https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/location.png');
     background-size: 28px 28px;
     height: 28px;
     width: 28px;
+    z-index: 9999;
 }
 
 .column {
@@ -1952,6 +2040,12 @@ h1,
         background-color: #fff;
     }
 
+    .nav_bar.responsive {
+        color: #000 !important;
+        background-color: #fff !important;
+        transition: background-color 200ms linear;
+    }
+
     .row {
         display: flex;
         flex: 1 1 auto;
@@ -2346,7 +2440,7 @@ a {
 
 .w3-center .w3-bar {
     display: inline-block;
-    width: auto
+    width: auto;
 }
 
 .w3-bar .w3-bar-item {
@@ -2706,7 +2800,7 @@ a {
 
 .title_links {
     text-decoration: none;
-    ;
+
 }
 
 .infobox {
