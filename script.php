@@ -107,7 +107,7 @@ if ($language == "de")
     
   Die Details der Buchungsanfrage sind wie folgt:
   - Aufenthalt: " . $formatted_date_from . " bis " . $formatted_date_to . "
-  - Gewünschte Zimmer:\n\t". $rooms . "- Erwachsene: " . $parents . "
+  - Gewünschte Zimmer:\n\t". $rooms . "\n- Erwachsene: " . $parents . "
   - Kinder: " . $children . "\n\t" . $childAges . "
   ". $message ."
     
@@ -196,7 +196,7 @@ Thank you very much for your booking request. We have received your request and 
 
 The details of the booking request are as follows:
 - Stay: " . $formatted_date_from . " until " . $formatted_date_to . "
-- Desired rooms: \n" . $rooms . "
+- Desired rooms: \n-" . $rooms . "
 
 - Adults: " . $parents . "
 - Children: " . $children . "\n"
@@ -207,8 +207,24 @@ Kastelart";
 $subject2 = "Kastelart - Booking request received";
 }
 
-  $subject = $last_name . "  : " . $formatted_date_from . " bis " . $formatted_date_to;
+$subject = $last_name . "  : " . $formatted_date_from . " bis " . $formatted_date_to;
 
+$message1 = "
+  Wir haben eine neue Buchungsanfrage von " . $first_name . " " . $last_name . " erhalten.
+  
+  Die Details der Buchung sind wie folgt:
+  - Aufenthalt: " . $formatted_date_from . " bis " . $formatted_date_to ."
+  - Wohnung: " . $rooms . "
+  - Anrede: " . $anrede . " 
+  - Name: " . $first_name . " " . $last_name ."
+  - E-Mail: " . $email . "
+  - Land: " . $country . "
+  - Erwachsene: " . $parents . "
+  - Kinder: " . $children . "\n"
+  . $childAges. "
+  ". $message ."
+  ";
+  
 
   
 
@@ -220,7 +236,7 @@ $headers2 = "From:" . $to;
 
 mail($to,$subject,$message1,$headers);
 mail($from,$subject2,$message2,$headers2);
-echo "Hello, this is a test message."; // sends a copy of the message to the sender
+echo "Hello, this is a test message"  ; // sends a copy of the message to the sender
 // You can also use header('Location: thank_you.php'); to redirect to another page.
 
 ?>
