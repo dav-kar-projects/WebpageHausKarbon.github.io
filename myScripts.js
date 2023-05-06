@@ -237,6 +237,7 @@ function myFunction() {
    } else {
       // Remove the "active" class from the header element
       header.classList.remove("active");
+
    }
 }
 
