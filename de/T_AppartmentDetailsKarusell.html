@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="../myScripts.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../PreiseListe.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+
+
+    <title>Karusell app</title>
+</head>
+
+<body>
+    <!-- List of Appartments-->
+    <div class="item-list page-slide" data-slide="item-list">
+        <div class="item-list__background">
+            <!--Carusell-->
+            <div class="carousel_container ">
+
+                <div class="item-list__imageblock is-selected">
+                    <div class="item-list__image">
+                        <picture>
+                            <div class="main-carousel">
+                                <img src="../Database/Studio/Studio_Overview.jpg" class="carousel_img">
+                                <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt.jpg" class="carousel_img">
+                                <img src="../Database/Studio/Studio_Bett2.jpg" class="carousel_img">
+                                <img src="../Database/Studio/Studio_Küche2.JPG" class="carousel_img">
+                                <img src="../Database/Studio/Studio_Tisch.JPG" class="carousel_img">
+                                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_2.png"
+                                    class="carousel_img">
+                            </div>
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <!--End Carusell-->
+            <div class="container">
+                <div class="item-list__item">
+                    <div class="item-list__images  animate-in js-animate">
+
+
+                        <!--Price Banner-->
+                        <div class="item-list__price__carousel ">
+                            <div id="teaser_app" class="item-list__price--value"></div>
+                            <div class="item-list__price--info">für 2 Personen</div>
+                        </div>
+                        <!--End Price Banner-->
+                        <!--Description-->
+                        <div class="item-list__content">
+                            <div class="item-list__content-inner row">
+                                <div class="item-list__content-inner--left"><a href="Studio.html"
+                                        class="item-list__name">Apartment</a>
+                                    <div class="item-list__subtitle">46 m² - 2/4 Personen</div>
+                                </div>
+                                <div class="item-list__content-inner--right">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Description-->
+                        <!-- Description Box-->
+                        <div class="item-list__ausstattung">Ausstattung</div>
+                        <div class="w3-row w3-large">
+                            <div class="w3-col s6">
+                                <p><i class="fa fa-fw fa-shower"></i> Dusche</p>
+                                <p><i class="fa fa-fw fa-wifi"></i> WiFi mit 400 Mbit/s</p>
+                                <p><i class="fa  fa-tv"></i> TV</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/garage.png"
+                                            width="24" height="24"></i> Kostenloser Geragenplatz</p>
+                                <p class=""><i><img
+                                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
+                                            width="24" height="24">
+                                    </i>Wäsche
+                                    <br><span class="" style="font-size: smaller;">(Handtücher, Bettwäsche,
+                                        Seife)</span>
+                                </p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kitchen-utensils.png"
+                                            width="24" height="24"></i> Grundausstattung zum Kochen</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/hairdryer.png"
+                                            width="24" height="24"></i> Föhn</p>
+
+                                <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p>
+
+                            </div>
+                            <div class="w3-col s6">
+                                <p><i class="fa fa-fw fa-cutlery"></i> Küche</p>
+                                <p><i class="fa-solid fa-temperature-high"></i> Heitzung</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/elevator.png"
+                                            width="24" height="24"></i> Aufzug</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/fridge.png"
+                                            width="24" height="24"></i> Kühlschrank</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/dish-washer.png"
+                                            width="24" height="24"></i> Ge­schirr­spül­ma­schi­ne</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kettle.png"
+                                            width="24" height="24"></i>
+                                    Wasserkocher</p>
+                                <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/microwave-oven.png"
+                                        width="24" height="24"></i> Mikrowelle</p>
+                                <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/cafe.png"
+                                        width="24" height="24"></i> Balkon</p>
+                                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bidet.png"
+                                            width="24" height="24"></i> Bidet</p>
+                            </div>
+                        </div>
+                        <div class="item-list__content-inner item-list__button-row row">
+                            <div class="item-list__content-inner--left"><a href="Studio.html"
+                                    class="linkstyle underline_animation">Details</a>
+                            </div>
+                            <div class="item-list__content-inner--right">
+                                <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
+                                    class="linkstyle underline_animation">Anfragen</a>
+                                <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
+                                    onclick="DropdownFctStudio()">Preise
+                                </button>
+                            </div>
+                            <div id="myDropdownPriceStudio" class="dropdown-content">
+                                <div class="rooms-detail__prices--info">
+                                    <div class="PreisTabelleDiv"></div>
+
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Zeitraum</th>
+                                                <th class="Users"><img class="userIcon"
+                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                        width="24" height="24">
+                                                    <img class="userIcon"
+                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                        width="24" height="24">
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="_period_0"></td>
+                                                <td id="price_app_0" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_1"></td>
+
+                                                <td id="price_app_1" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_2"></td>
+                                                <td id="price_app_2" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_3"></td>
+                                                <td id="price_app_3" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_4">2</td>
+                                                <td id="price_app_4" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_5"></td>
+                                                <td id="price_app_5" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_6"></td>
+                                                <td id="price_app_6" class="PriceColon"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br><br> <strong>Einzelnutzung<br></strong>Unser
+                                Studio kann auch zur Einzelnutzung gebucht werden, hierfür gewären wir ein Rabatt
+                                von 20€ am Tag.
+                                <br><br>
+                                <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns
+                                kostenlos. Von 3
+                                bis
+                                6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12
+                                Jahre und jeder
+                                weitere
+                                Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2
+                                Vollzahlern.<br><br>
+                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 1,75 € pro Person und Tag (Kinder
+                                unter 14 Jahren
+                                ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
+                                kann nur vor Ort
+                                bezahlt werden.<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end descriptionbox-->
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+
+
+<script>
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity(elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+    });
+    function DropdownFctStudio() {
+        var droopdownelement = document.getElementById("myDropdownPriceStudio");
+        if (droopdownelement.className.indexOf("show") !== -1) {
+            droopdownelement.classList.remove("show");
+            droopdownelement.classList.add("animated");
+        } else {
+            droopdownelement.classList.add("show");
+            droopdownelement.classList.remove("animated");
+        }
+    }
+
+</script>
+
+</html>

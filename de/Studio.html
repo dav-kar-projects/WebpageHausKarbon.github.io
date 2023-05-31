@@ -6,10 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
   <script src="../myScripts.js"></script>
+  <script src="../PreiseListe.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
   <title>Studio</title>
 </head>
@@ -19,30 +24,12 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div id="header" class="nav_bar" style="letter-spacing:4px;">
-      <div id="homebtnId" class="left_links ">
-        <a href="http://kastelart.it/de" class="w3-bar-item w3-button ">Kastelart</a>
-      </div>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div id="Subheader" class=" center_links w3-hide-small">
-        <a href="http://kastelart.it/de/Wohnen.html" class=" w3-button">Wohnen</a>
-        <a href="Erleben.html" class=" w3-button">Erleben</a>
-        <a href="http://kastelart.it/de/Wellness.html" class=" w3-button">Entspannen</a>
-        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-        <a href="http://kastelart.it/de/gallery.html" class=" w3-button">Fotogalerie</a>
-        <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-        <div id=languageSelectorId class="right_links_language">
-          <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
-          <span class="languages__separator "></span>
-          <a class="languages__link  language_button w3-button" href="/it/index.html">IT</a>
-          <span class="languages__separator"></span>
-        </div>
-      </div>
-      <div class="small_menu">
-        <a href="javascript:void(0);" class="right_links" style=" font-size:25px;" class="icon"
-          onclick="Dropdown()">&#9776;</a>
-      </div>
     </div>
+    <script>
+      $("#header").load("navbar.html");
+    </script>
   </div>
+
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
     <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
@@ -70,61 +57,50 @@
   </div>
   <!-- List of Appartments-->
   <div class="item-list page-slide" data-slide="item-list">
-    <!-- First Item small -->
     <div class="item-list__background">
+      <!--Carusell-->
+      <div class="carousel_container ">
+
+        <div class="item-list__imageblock is-selected">
+          <div class="item-list__image">
+            <picture>
+              <div class="main-carousel">
+                <img src="../Database/Studio/Studio_Overview.jpg" class="carousel_img">
+                <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt.jpg" class="carousel_img">
+                <img src="../Database/Studio/Studio_Bett2.jpg" class="carousel_img">
+                <img src="../Database/Studio/Studio_Küche2.JPG" class="carousel_img">
+                <img src="../Database/Studio/Studio_Tisch.JPG" class="carousel_img">
+                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_2.png"
+                  class="carousel_img">
+              </div>
+            </picture>
+          </div>
+        </div>
+      </div>
+      <!--End Carusell-->
       <div class="container">
         <div class="item-list__item">
-          <div class="item-list__images row animate-in js-animate">
-            <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
-              tabindex="0">
-              <div class="flickity-viewport" style="height: 400px;">
-                <div class="flickity-slider" style="left: 0px;">
-                  <div class="item-list__imageblock is-selected" style="position: absolute; left: 0%; opacity: 1;">
-                    <div class="item-list__image">
-                      <picture>
-                        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_2.png"
-                          loading="lazy" style="width: 100%" alt="Wohnung_2">
-                      </picture>
-                    </div>
-                  </div>
+          <div class="item-list__images  animate-in js-animate">
+
+
+            <!--Price Banner-->
+            <div class="item-list__price__carousel ">
+              <div id="teaser_stud" class="item-list__price--value"></div>
+              <div class="item-list__price--info">für 2 Personen</div>
+            </div>
+            <!--End Price Banner-->
+            <!--Description-->
+            <div class="item-list__content">
+              <div class="item-list__content-inner row">
+                <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
+                  <div class="item-list__subtitle">33 m² - 2/4 Personen</div>
+                </div>
+                <div class="item-list__content-inner--right">
                 </div>
               </div>
             </div>
-            <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable"
-              tabindex="0">
-              <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
-                <div class="flickity-slider" style="left: 0px;">
-                  <div class="item-list__imageblock is-selected" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                  <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                  <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item-list__price">
-            <div class="item-list__price--value">ab € 95,-</div>
-            <div class="item-list__price--info">für 2 Personen</div>
-          </div>
-          <div class="item-list__content">
-            <div class="item-list__content-inner row">
-              <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
-                <div class="item-list__subtitle">33 m² - 2/4 Personen</div>
-              </div>
-              <div class="item-list__content-inner--right">
-              </div>
-            </div>
+            <!-- End Description-->
+            <!-- Description Box-->
             <div class="item-list__ausstattung">Ausstattung</div>
             <div class="w3-row w3-large">
               <div class="w3-col s6">
@@ -133,19 +109,21 @@
                 <p><i class="fa  fa-tv"></i> TV</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/garage.png"
                       width="24" height="24"></i> Kostenloser Geragenplatz</p>
-                <p class="line_description"><i><img
+                <p class=""><i><img
                       src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
                       width="24" height="24">
-                  </i>Grundausstattung
-                  <br><span class="descriptin_extra"> (Handtücher,Bettwäsche,Seife)</span>
+                  </i>Wäsche
+                  <br><span class="" style="font-size: smaller;">(Handtücher, Bettwäsche,
+                    Seife)</span>
                 </p>
                 <p><i><img
                       src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kitchen-utensils.png"
                       width="24" height="24"></i> Grundausstattung zum Kochen</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/hairdryer.png"
                       width="24" height="24"></i> Föhn</p>
-                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bidet.png"
-                      width="24" height="24"></i> Bidet</p>
+                <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p>
+
+
               </div>
               <div class="w3-col s6">
                 <p><i class="fa fa-fw fa-cutlery"></i> Küche</p>
@@ -163,12 +141,11 @@
                     width="24" height="24"></i> Mikrowelle</p>
                 <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/cafe.png" width="24"
                     height="24"></i> Balkon</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bidet.png"
+                      width="24" height="24"></i> Bidet</p>
               </div>
             </div>
             <div class="item-list__content-inner item-list__button-row row">
-              <div class="item-list__content-inner--left"><a href="Studio.html"
-                  class="linkstyle underline_animation">Details</a>
-              </div>
               <div class="item-list__content-inner--right">
                 <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
                   class="linkstyle underline_animation">Anfragen</a>
@@ -250,147 +227,49 @@
       </div>
     </div>
   </div>
+  <!-- end descriptionbox-->
   <h1 style="text-align: center; padding-bottom: 50px;"> Weiter Apartments</h1>
-  <!-- Second Item Big -->
-
-  <div class="item-list__background">
-    <div class="container">
-      <div class="item-list__item">
-        <div class="item-list__images row animate-in js-animate">
-          <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
-            tabindex="0">
-            <div class="flickity-viewport" style="height: 400px;">
-              <div class="flickity-slider" style="left: 0px;">
-                <div class="item-list__imageblock is-selected" style="position: absolute; left: 0%; opacity: 1;">
-                  <div class="item-list__image">
+  <!-- Showcase Section-->
+  <div class="item-showcase page-slide" data-slide="item-showcase">
+    <div class="item-showcase__background">
+      <div class="container">
+        <div class="item-showcase__slider" tabindex="0">
+          <div class="flickity-viewport" style="height: 953px; touch-action: pan-y;">
+            <div class="flickity-slider" style="left: 0px; transform: translateX(50%);">
+              <div id="studio_teaser" class="item-showcase__item is-selected"
+                style="position: absolute; left: -50%; opacity: 1;">
+                <a href="/de/Studio.html" class="item-showcase__images">
+                  <span class="item-showcase__image">
                     <picture>
-                      <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_1.png"
-                        loading="lazy" style="width: 100%" alt="Wohnung_1">
+
+                      <img src="../Database/Appartment/Appartment_Chouch.JPG" class="fit-image" loading=" lazy">
                     </picture>
+                  </span> <span class="item-showcase__image_left">
+                    <picture>
+                      <img src="../Database/Appartment/DSC_2512_hoch.jpg" s class="fit-image" width="450px"
+                        height="540px" loading="lazy">
+
+                    </picture>
+                  </span></a>
+
+
+                <div class="item-list__content">
+                  <div class="item-list__content-inner ">
+                    <div class="item-list__content-inner--left"><a href="Appartment.html"
+                        class="item-list__name">Apartment</a>
+                      <div class="item-list__subtitle">46 m² - 2/4 Personen</div>
+                    </div>
+                    <div class="item-list__content-inner--right">
+                      <div class="item-list__description">Dieses Apartment auf 44 m² bietet Komfort und Großzügigkeit
+                        in
+                        allen Belangen – auch was den Ausblick betrifft.</div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable" tabindex="0">
-            <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
-              <div class="flickity-slider" style="left: 0px;">
-                <div class="item-list__imageblock is-selected" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
-
+                  <div class="item-list__content-inner item-list__button-row row">
+                    <div class="item-list__content-inner--left"><a href="Appartment.html"
+                        class="linkstyle underline_animation">Details</a>
+                    </div>
                   </div>
-                </div>
-                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
-
-                  </div>
-                </div>
-                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-list__price">
-          <div class="item-list__price--value">ab € 110,-</div>
-          <div class="item-list__price--info">für 2 Personen</div>
-        </div>
-        <div class="item-list__content">
-          <div class="item-list__content-inner row">
-            <div class="item-list__content-inner--left "><a href="Appartment.html" class="item-list__name">Santer</a>
-              <div class="item-list__subtitle">46 m² - 2/4 Personen</div>
-            </div>
-            <div class="item-list__content-inner--right">
-              <div class="item-list__description"> 46 m² als ganz persönlicher Rückzugsort. Mit 20
-                m² großer Terasse, abgetrenntem Schlafzimmer und großzügigem Wohnbereich mit Küche.
-              </div>
-            </div>
-          </div>
-          <div class="item-list__content-inner item-list__button-row row">
-            <div class="item-list__content-inner--left">
-              <a href="Appartment.html" class="linkstyle underline_animation">Details</a>
-            </div>
-            <div class="item-list__content-inner--right"><a
-                href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                class="linkstyle underline_animation">Anfragen</a>
-              <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
-                onclick="DropdownFctApp()">Preise
-              </button>
-            </div>
-            <div id="myDropdownPriceAppartement" class="dropdown-content">
-              <div class="rooms-detail__prices--info">
-                <div class="PreisTabelleDiv"></div>
-
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Zeitraum</th>
-                      <th class="Users"><img class="userIcon"
-                          src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
-                          height="24">
-                        <img class="userIcon"
-                          src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
-                          height="24">
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1. Mai - 12. Mai, 2023</td>
-                      <td class="PriceColon">110.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>13. Mai - 30. Juni, 2023</td>
-                      <td class="PriceColon">120.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>1. Juli - 28. Juli, 2023</td>
-                      <td class="PriceColon">140.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>29. Juli - 25. August, 2023</td>
-                      <td class="PriceColon">190.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>26. August - 8. September, 2023</td>
-                      <td class="PriceColon">140.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>9. September - 11. Oktober, 2023</td>
-                      <td class="PriceColon">120.00 €</td>
-                    </tr>
-                    <tr>
-                      <td>12. Oktober - 30. November, 2023</td>
-                      <td class="PriceColon">110.00 €</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="rooms-detail__prices--info"><br><br>
-                  <strong>Einzelnutzung<br></strong>Unsere
-                  Apartments und
-                  Suiten können auch zur Einzelnutzung gebucht werden, hierfür berechnen wir ein
-                  Zuschlag von
-                  50%.<br><br>
-                  <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns
-                  kostenlos. Von 3
-                  bis
-                  6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12
-                  Jahre und jeder
-                  weitere
-                  Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2
-                  Vollzahlern.<br><br>
-                  <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,50 € pro Person und Tag (Kinder
-                  unter 14 Jahren
-                  ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
-                  kann nur vor Ort
-                  bezahlt werden.<br><br> <strong>Abschlag Frühstück<br></strong>Bei Buchung ohne
-                  Frühstück im
-                  Apartment
-                  bringen wir 20€ pro Tag und Person in Abzug.
                 </div>
               </div>
             </div>
@@ -398,50 +277,27 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- End of Second Item -->
+    <!-- Showcase Section End-->
+
+    <footer id="Footer" class="footer-main">
+      <script>
+        $("#Footer").load("footer.html");
+      </script>
+    </footer>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 </body>
-<!-- Footer -->
-<footer id="Footer" class="footer-main">
-  <div class="container">
-    <div class="address">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
-        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
-          height="110%" alt="Karbon Apartments &amp; Suites"></a>
-      <div class="address__contact">
-        <div class="address__actions">
-          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255" data-gtm-category="Phone"
-            data-gtm-action="phoneclick" data-gtm-label="Address">
-            <i></i> +39 0471 20501012</a>
-          <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it" data-gtm-category="E-Mail"
-            data-gtm-action="mailclick" data-gtm-label="Address">
-            <i></i> info@kastelart.it</a>
-        </div>
 
-        <div class="adress_text">
-          <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                      " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-            data-gtm-label="Address">
-            <i></i> Ployerweg 7, 39040 Kastelruth<br> Südtirol, Italien</a>
-        </div>
-      </div>
+<script>
+  src = "PreiseListe.js"
+  document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
 
-    </div>
-    <nav class="nav-footer">
-      <span class="nav-footer__level-0">
-        <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
-          Webcam</a>
-      </span>
-      <span class="nav-footer__level-0">
-        <a href="/ankommen.html" class="link-button nav-footer__menu-0" target="_self">Anreise</a>
-      </span>
-      </span> <span class="nav-footer__level-0">
-        <a href="/gallery.html" class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
-      </span>
-    </nav>
-  </div>
-
-
-</footer>
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity(elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+</script>
 
 </html>

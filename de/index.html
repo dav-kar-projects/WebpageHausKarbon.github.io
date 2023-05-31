@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="../styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../myScripts.js"></script>
+    <script src="../PreiseListe.js"></script>
+
+    <!-- Include Flatpickr library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 </head>
 
@@ -20,6 +29,12 @@
         </div>
         <script>
             $("#header").load("navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
         </script>
     </div>
 
@@ -119,6 +134,33 @@
         </div>
 
         <hr>
+        <!-- Teaser Section -->
+        <div id="teaser">
+
+            <script>
+                $("#teaser").load("Teaser.html");
+                window.onscroll = function () {
+                    src = "PreiseListe.js"
+                    document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
+                    document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
+                };
+                function selectElement(isRightArrow) {
+                    var appTeaser = document.getElementById("app_teaser");
+                    var studioTeaser = document.getElementById("studio_teaser");
+
+                    if (appTeaser.classList.contains("is-selected")) {
+                        appTeaser.classList.remove("is-selected");
+                        studioTeaser.classList.add("is-selected");
+                    } else if (studioTeaser.classList.contains("is-selected")) {
+                        studioTeaser.classList.remove("is-selected");
+                        appTeaser.classList.add("is-selected");
+                    }
+
+                    // Your additional logic here for handling right or left arrow clicks
+                }
+            </script>
+        </div>
+        <!-- End Teaser Section -->
 
         <!-- Entespannen Section -->
         <div class="w3-row w3-padding-64" id="Entspannen">
@@ -140,29 +182,37 @@
                 <p class="w3-large">
                     Spüren Sie Erholung und Regeneration für Körper und Seele in unserer Wellnesslounge. Mit
                     ausgewählten und natürlichen Materialien aus der Region, holen wir die Natur in unsere
-                    Wellnesslounge. Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für herrliche Entspannung.
-                    Dabei setzen wir ganz bewusst auf die Elemente unserer Berglandschaft: reines Gebirgswasser, klare
+                    Wellnesslounge. Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für herrliche
+                    Entspannung.
+                    Dabei setzen wir ganz bewusst auf die Elemente unserer Berglandschaft: reines Gebirgswasser,
+                    klare
                     Almluft, starke Erde und wärmendes Feuer ziehen sich durch den Spa.
 
 
                 </p>
-                <p class="w3-large w3-text-grey w3-hide-medium">Zwischen 15.00 und 21.00 Uhr stehen Ihnen die Türen zu
+                <p class="w3-large w3-text-grey w3-hide-medium">Zwischen 15.00 und 21.00 Uhr stehen Ihnen die
+                    Türen
+                    zu
                     unserem Verwöhnangebot offen.
-                    Mit finnischer Sauna, Dampfbad, Infrarotkabine, Salounge und zwei Ruheräumen, tanken Sie Kraft für
+                    Mit finnischer Sauna, Dampfbad, Infrarotkabine, Salounge und zwei Ruheräumen, tanken Sie
+                    Kraft
+                    für
                     neue Bergerlebnisse. Naturreine Produkte machen unsere Massagen und Anwendungen einmalig
                     wirkungsvoll und entspannend. All diese Momente der Entschleunigung erwarten Sie!</p>
             </div>
         </div>
 
     </div>
-    <footer>
-        <footer id="Footer" class="footer-main">
-            <script>
-                $("#Footer").load("footer.html");
-            </script>
-        </footer>
-</body>
 
+    <footer id="Footer" class="footer-main">
+        <script>
+            $("#Footer").load("footer.html");
+        </script>
+    </footer>
+    <script>
+
+    </script>
+</body>
 
 
 </html>

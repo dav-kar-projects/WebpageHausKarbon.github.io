@@ -13,6 +13,7 @@ var plusButtons;
 var minusButtons;
 
 function ready() {
+   console.log("ready");
    let element = document.getElementById('header');
    let headerImage = document.querySelector('.js_hero_idclass');
    if (element && headerImage) {
@@ -24,6 +25,7 @@ function ready() {
    else if (!headerImage) {
       var header = document.getElementById("header");
       header.classList.add("active");
+
 
    }
 
@@ -210,6 +212,7 @@ function validateEmail(inputName) {
 
 document.addEventListener("DOMContentLoaded", function () {
    ready();
+
    if (document.querySelector(".container_anfrage")) {
       console.log("Element with class 'container_anfrage' found!");
 
@@ -228,6 +231,8 @@ document.addEventListener("DOMContentLoaded", function () {
    } else {
       console.log("Element with class 'container_anfrage' not found!");
    }
+
+
 });
 
 function myFunction() {
@@ -241,11 +246,7 @@ function myFunction() {
    }
 }
 
-window.onscroll = function () {
-   if (document.getElementById("header") && heroImageHeight > 0) {
-      myFunction();
-   }
-};
+
 
 // Dropdown //////////////////
 function DropdownFctStudio() {

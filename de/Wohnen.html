@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="../PreiseListe.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <script src="../myScripts.js"></script>
 
@@ -14,33 +17,12 @@
 <body class=my_body>
 
     <!-- Navbar (sit on top) -->
-
-    <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div id="header" class="nav_bar" style="letter-spacing:4px;">
-            <div id="homebtnId" class="left_links ">
-                <a href="http://kastelart.it/de" class="w3-bar-item w3-button ">Kastelart</a>
-            </div>
-            <!-- Right-sided navbar links. Hide them on small screens -->
-            <div id="Subheader" class=" center_links w3-hide-small">
-                <a href="http://kastelart.it/de/Wohnen.html" class=" w3-button">Wohnen</a>
-                <a href="Erleben.html" class=" w3-button">Erleben</a>
-                <a href="http://kastelart.it/de/Wellness.html" class=" w3-button">Entspannen</a>
-                <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-                <a href="http://kastelart.it/de/gallery.html" class=" w3-button">Fotogalerie</a>
-                <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-                <div id=languageSelectorId class="right_links_language">
-                    <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
-                    <span class="languages__separator "></span>
-                    <a class="languages__link  language_button w3-button" href="/it/index.html">IT</a>
-                    <span class="languages__separator"></span>
-                </div>
-            </div>
-            <div class="small_menu">
-                <a href="javascript:void(0);" class="right_links" style=" font-size:25px;" class="icon"
-                    onclick="Dropdown()">&#9776;</a>
-            </div>
         </div>
+        <script>
+            $("#header").load("navbar.html");
+        </script>
     </div>
     <!-- Sidebar-->
     <div class="side-bar row animate-in js-animate">
@@ -116,7 +98,7 @@
                         </div>
                     </div>
                     <div class="item-list__price">
-                        <div class="item-list__price--value">ab € 95,-</div>
+                        <div id="teaser_stud" class="item-list__price--value"></div>
                         <div class="item-list__price--info">für 2 Personen</div>
                     </div>
                     <div class="item-list__content">
@@ -161,32 +143,33 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1. Mai - 12. Mai, 2023</td>
-                                                <td class="PriceColon">95.00 €</td>
+                                                <td id="period_0"></td>
+                                                <td id="price_stud_0" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>13. Mai - 30. Juni, 2023</td>
-                                                <td class="PriceColon">105.00 €</td>
+                                                <td id="period_1"></td>
+
+                                                <td id="price_stud_1" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>1. Juli - 28. Juli, 2023</td>
-                                                <td class="PriceColon">125.00 €</td>
+                                                <td id="period_2"></td>
+                                                <td id="price_stud_2" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>29. Juli - 25. August, 2023</td>
-                                                <td class="PriceColon">175.00 €</td>
+                                                <td id="period_3"></td>
+                                                <td id="price_stud_3" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>26. August - 8. September, 2023</td>
-                                                <td class="PriceColon">125.00 €</td>
+                                                <td id="period_4">2</td>
+                                                <td id="price_stud_4" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>9. September - 11. Oktober, 2023</td>
-                                                <td class="PriceColon">105.00 €</td>
+                                                <td id="period_5"></td>
+                                                <td id="price_stud_5" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>12. Oktober - 30. November, 2023</td>
-                                                <td class="PriceColon">95.00 €</td>
+                                                <td id="period_6"></td>
+                                                <td id="price_stud_6" class="PriceColon"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -266,7 +249,7 @@
                     </div>
                 </div>
                 <div class="item-list__price">
-                    <div class="item-list__price--value">ab € 110,-</div>
+                    <div id="teaser_app" class="item-list__price--value"></div>
                     <div class="item-list__price--info">für 2 Personen</div>
                 </div>
                 <div class="item-list__content">
@@ -311,32 +294,33 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1. Mai - 12. Mai, 2023</td>
-                                            <td class="PriceColon">110.00 €</td>
+                                            <td id="_period_0"></td>
+                                            <td id="price_app_0" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>13. Mai - 30. Juni, 2023</td>
-                                            <td class="PriceColon">120.00 €</td>
+                                            <td id="_period_1"></td>
+
+                                            <td id="price_app_1" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>1. Juli - 28. Juli, 2023</td>
-                                            <td class="PriceColon">140.00 €</td>
+                                            <td id="_period_2"></td>
+                                            <td id="price_app_2" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>29. Juli - 25. August, 2023</td>
-                                            <td class="PriceColon">190.00 €</td>
+                                            <td id="_period_3"></td>
+                                            <td id="price_app_3" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>26. August - 8. September, 2023</td>
-                                            <td class="PriceColon">140.00 €</td>
+                                            <td id="_period_4">2</td>
+                                            <td id="price_app_4" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>9. September - 11. Oktober, 2023</td>
-                                            <td class="PriceColon">120.00 €</td>
+                                            <td id="_period_5"></td>
+                                            <td id="price_app_5" class="PriceColon"></td>
                                         </tr>
                                         <tr>
-                                            <td>12. Oktober - 30. November, 2023</td>
-                                            <td class="PriceColon">110.00 €</td>
+                                            <td id="_period_6"></td>
+                                            <td id="price_app_6" class="PriceColon"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -372,51 +356,45 @@
             <!-- End of Second Item -->
 
         </div>
+        <script>
+            $("#Footer").load("footer.html");
+        </script>
+        </footer>
+
+        <script>
+            src = "PreiseListe.js"
+            document.getElementById('period_0').innerHTML = prices[0].period_de;
+            document.getElementById('period_1').innerHTML = prices[1].period_de;
+            document.getElementById('period_2').innerHTML = prices[2].period_de;
+            document.getElementById('period_3').innerHTML = prices[3].period_de;
+            document.getElementById('period_4').innerHTML = prices[4].period_de;
+            document.getElementById('period_5').innerHTML = prices[5].period_de;
+            document.getElementById('period_6').innerHTML = prices[6].period_de;
+            document.getElementById('_period_0').innerHTML = prices[0].period_de;
+            document.getElementById('_period_1').innerHTML = prices[1].period_de;
+            document.getElementById('_period_2').innerHTML = prices[2].period_de;
+            document.getElementById('_period_3').innerHTML = prices[3].period_de;
+            document.getElementById('_period_4').innerHTML = prices[4].period_de;
+            document.getElementById('_period_5').innerHTML = prices[5].period_de;
+            document.getElementById('_period_6').innerHTML = prices[6].period_de;
+            document.getElementById('price_stud_0').innerHTML = prices[0].studio + ",- €";
+            document.getElementById('price_stud_1').innerHTML = prices[1].studio + ",- €";
+            document.getElementById('price_stud_2').innerHTML = prices[2].studio + ",- €";
+            document.getElementById('price_stud_3').innerHTML = prices[3].studio + ",- €";
+            document.getElementById('price_stud_4').innerHTML = prices[4].studio + ",- €";
+            document.getElementById('price_stud_5').innerHTML = prices[5].studio + ",- €";
+            document.getElementById('price_stud_6').innerHTML = prices[6].studio + ",- €";
+            document.getElementById('price_app_0').innerHTML = prices[0].apartment + ",- €";
+            document.getElementById('price_app_1').innerHTML = prices[1].apartment + ",- €";
+            document.getElementById('price_app_2').innerHTML = prices[2].apartment + ",- €";
+            document.getElementById('price_app_3').innerHTML = prices[3].apartment + ",- €";
+            document.getElementById('price_app_4').innerHTML = prices[4].apartment + ",- €";
+            document.getElementById('price_app_5').innerHTML = prices[5].apartment + ",- €";
+            document.getElementById('price_app_6').innerHTML = prices[6].apartment + ",- €";
+            document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
+            document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
+
+        </script>
 </body>
-<!-- Footer -->
-<!-- Footer -->
-<footer id="Footer" class="footer-main">
-    <div class="container">
-        <div class="address">
-            <a href="http://kastelart.it/de/index.html" class="address__logo">
-                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
-                    height="110%" alt="Karbon Apartments &amp; Suites"></a>
-            <div class="address__contact">
-                <div class="address__actions">
-                    <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255"
-                        data-gtm-category="Phone" data-gtm-action="phoneclick" data-gtm-label="Address">
-                        <i></i> +39 0471 20501012</a>
-                    <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it"
-                        data-gtm-category="E-Mail" data-gtm-action="mailclick" data-gtm-label="Address">
-                        <i></i> info@kastelart.it</a>
-                </div>
-
-                <div class="adress_text">
-                    <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                        " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-                        data-gtm-label="Address">
-                        <i></i> Ployerweg 7, 39040 Kastelruth<br> Südtirol, Italien</a>
-                </div>
-            </div>
-
-        </div>
-        <nav class="nav-footer">
-            <span class="nav-footer__level-0">
-                <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
-                    Webcam</a>
-            </span>
-            <span class="nav-footer__level-0">
-                <a href="http://kastelart.it/de/ankommen.html" class="link-button nav-footer__menu-0"
-                    target="_self">Anreise</a>
-            </span>
-            </span> <span class="nav-footer__level-0">
-                <a href="http://kastelart.it/de/gallery.html" class="link-button nav-footer__menu-0"
-                    target="_self">Fotogalerie</a>
-            </span>
-        </nav>
-    </div>
-
-
-</footer>
 
 </html>

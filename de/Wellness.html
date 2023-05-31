@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <script src="../myScripts.js"></script>
 
@@ -18,29 +19,10 @@
         <!-- Navbar (sit on top) -->
         <div class="w3-top">
             <div id="header" class="nav_bar" style="letter-spacing:4px;">
-                <div id="homebtnId" class="left_links ">
-                    <a href="http://kastelart.it/de" class="w3-bar-item w3-button ">Kastelart</a>
-                </div>
-                <!-- Right-sided navbar links. Hide them on small screens -->
-                <div id="Subheader" class=" center_links w3-hide-small">
-                    <a href="http://kastelart.it/de/Wohnen.html" class=" w3-button">Wohnen</a>
-                    <a href="Erleben.html" class=" w3-button">Erleben</a>
-                    <a href="http://kastelart.it/de/Wellness.html" class=" w3-button">Entspannen</a>
-                    <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-                    <a href="http://kastelart.it/de/gallery.html" class=" w3-button">Fotogalerie</a>
-                    <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-                    <div id=languageSelectorId class="right_links_language">
-                        <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
-                        <span class="languages__separator "></span>
-                        <a class="languages__link  language_button w3-button" href="/it/index.html">IT</a>
-                        <span class="languages__separator"></span>
-                    </div>
-                </div>
-                <div class="small_menu">
-                    <a href="javascript:void(0);" class="right_links" style=" font-size:25px;" class="icon"
-                        onclick="Dropdown()">&#9776;</a>
-                </div>
             </div>
+            <script>
+                $("#header").load("navbar.html");
+            </script>
         </div>
 
 
@@ -153,48 +135,12 @@
                 </div>
             </div>
         </div>
+        <!-- Footer -->
+        <footer id="Footer" class="footer-main">
+            <script>
+                $("#Footer").load("footer.html");
+            </script>
+        </footer>
     </body>
-    <!-- Footer -->
-    <footer id="Footer" class="footer-main">
-        <div class="container">
-            <div class="address">
-                <a href="index.html" class="address__logo">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg"
-                        width="110%" height="110%" alt="Karbon Apartments &amp; Suites"></a>
-                <div class="address__contact">
-                    <div class="address__actions">
-                        <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255"
-                            data-gtm-category="Phone" data-gtm-action="phoneclick" data-gtm-label="Address">
-                            <i></i> +39 0471 20501012</a>
-                        <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it"
-                            data-gtm-category="E-Mail" data-gtm-action="mailclick" data-gtm-label="Address">
-                            <i></i> info@kastelart.it</a>
-                    </div>
-
-                    <div class="adress_text">
-                        <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                        " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-                            data-gtm-label="Address">
-                            <i></i> Ployerweg 7, 39040 Kastelruth<br> Südtirol, Italien</a>
-                    </div>
-                </div>
-
-            </div>
-            <nav class="nav-footer">
-                <span class="nav-footer__level-0">
-                    <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
-                        Webcam</a>
-                </span>
-                <span class="nav-footer__level-0">
-                    <a href="/ankommen.html" class="link-button nav-footer__menu-0" target="_self">Anreise</a>
-                </span>
-                </span> <span class="nav-footer__level-0">
-                    <a href="/gallery.html" class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
-                </span>
-            </nav>
-        </div>
-
-
-    </footer>
 
 </html>
