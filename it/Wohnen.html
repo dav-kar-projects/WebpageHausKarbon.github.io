@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../PreiseListe.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <script src="../myScripts.js"></script>
+    <link rel="icon" href="logo/logo.png">
 
-    <title>Wohnen</title>
+    <title>Abitare</title>
 </head>
 
 <body>
@@ -18,29 +21,10 @@
         <!-- Navbar (sit on top) -->
         <div class="w3-top">
             <div id="header" class="nav_bar" style="letter-spacing:4px;">
-                <div class="left_links">
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-                        class="w3-bar-item w3-button">Kastelart</a>
-                </div>
-                <!-- Right-sided navbar links. Hide them on small screens -->
-                <div class=" center_links w3-hide-small">
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wohnen.html"
-                        class=" w3-button">Soggiorno</a>
-                    <a href="Erleben.html" class="w3-bar-item w3-button">Esperienze</a>
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wellness.html"
-                        class=" w3-button">Relax</a>
-                    <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
-                        class=" w3-button">Galeria</a>
-                    <a href="#Footer" class="w3-bar-item w3-button">Contatti</a>
-                    <div class="right_links w3-hide-small">
-                        <a class="languages__link  language_button w3-button" href="/en/Wohnen.html">EN</a>
-                        <span class="languages__separator "></span>
-                        <a class="languages__link  language_button w3-button" href="../Wohnen.html">DE</a>
-                        <span class="languages__separator"></span>
-                    </div>
-                </div>
             </div>
+            <script>
+                $("#header").load("navbar.html");
+            </script>
         </div>
 
         <!-- Sidebar-->
@@ -63,22 +47,21 @@
                     </div>
                     <div class="page-content">
                         <div class=" hgroup page-content__main-content">Mettetevi comodi, lasciate volare lo sguardo
-                            verso l’esterno, dove il cielo bacia le vette delle Dolomiti. Realizzati con un tripudio di
+                            verso l’esterno. Realizzati con un tripudio di
                             materiali naturali, i nostri appartamenti non lontano dall’Alpe di Siusi sono un invito a
-                            sognare e a rilassarsi. Gli appartamenti e le suite sono stati dedicati alle tappe più
-                            rappresentative della vita di Paula Wiesinger. Un omaggio a una pioniera e un dolce ricordo
-                            della sua vita dedicata allo sci e all’alpinismo.</div>
+                            sognare e a rilassarsi.</div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- List of Appartments-->
         <div class="item-list page-slide" data-slide="item-list">
             <!-- First Item small -->
             <div class="item-list__background">
                 <div class="container">
                     <div class="item-list__item">
-                        <div class="item-list__images row animate-in js-animate">
+                        <div class="item-list__images  animate-in js-animate">
                             <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
                                 tabindex="0">
                                 <div class="flickity-viewport" style="height: 400px;">
@@ -87,8 +70,8 @@
                                             style="position: absolute; left: 0%; opacity: 1;">
                                             <div class="item-list__image">
                                                 <picture>
-                                                    <img src="../imgs/Wohnung_2.png" loading="lazy" style="width: 100%"
-                                                        alt="Wohnung_2">
+                                                    <img src="../Database/Studio/Wohnung_2_bg.png" loading="lazy"
+                                                        style="width: 100%" alt="Wohnung_2">
                                                 </picture>
                                             </div>
                                         </div>
@@ -121,17 +104,18 @@
                             </div>
                         </div>
                         <div class="item-list__price">
-                            <div class="item-list__price--value">da € 140,-</div>
+                            <div id="teaser_stud" class="item-list__price--value"></div>
                             <div class="item-list__price--info">per 2 Persone</div>
                         </div>
                         <div class="item-list__content">
-                            <div class="item-list__content-inner row">
+                            <div class="item-list__content-inner ">
                                 <div class="item-list__content-inner--left"><a href="Studio.html"
                                         class="item-list__name">Studio</a>
-                                    <div class="item-list__subtitle">33 m² - 2/4 Persone</div>
+                                    <div class="item-list__subtitle">33 m² - 2/3 Persone</div>
                                 </div>
                                 <div class="item-list__content-inner--right">
-                                    <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone di 20
+                                    <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone
+                                        di 20
                                         m² che
                                         regala una vista grandiosa. Il vostro regno di benessere privato.</div>
                                 </div>
@@ -153,59 +137,78 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th>Periodo</th>
-                                                    <th class="Users"><img class="userIcon" src="../icons/user.png"
+                                                    <th>Zeitraum</th>
+                                                    <th class="Users"><img class="userIcon"
+                                                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
                                                             width="24" height="24">
-                                                        <img class="userIcon" src="../icons/user.png" width="24"
-                                                            height="24">
+                                                        <img class="userIcon"
+                                                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                            width="24" height="24">
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>1. Maggio - 12. Maggio, 2023</td>
-                                                    <td class="PriceColon">95.00 €</td>
+                                                    <td id="period_0"></td>
+                                                    <td id="price_stud_0" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>13. Maggio - 30. Giunio, 2023</td>
-                                                    <td class="PriceColon">105.00 €</td>
+                                                    <td id="period_1"></td>
+
+                                                    <td id="price_stud_1" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>1. Luglio - 28. Luglio, 2023</td>
-                                                    <td class="PriceColon">125.00 €</td>
+                                                    <td id="period_2"></td>
+                                                    <td id="price_stud_2" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>29. Luglio - 25. Augosto, 2023</td>
-                                                    <td class="PriceColon">175.00 €</td>
+                                                    <td id="period_3"></td>
+                                                    <td id="price_stud_3" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>26. Augosto - 8. Setembre, 2023</td>
-                                                    <td class="PriceColon">125.00 €</td>
+                                                    <td id="period_4">2</td>
+                                                    <td id="price_stud_4" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>9. Setembre - 11. Ottobre, 2023</td>
-                                                    <td class="PriceColon">105.00 €</td>
+                                                    <td id="period_5"></td>
+                                                    <td id="price_stud_5" class="PriceColon"></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>12. Ottobre - 30. Novembre, 2023</td>
-                                                    <td class="PriceColon">95.00 €</td>
+                                                    <td id="period_6"></td>
+                                                    <td id="price_stud_6" class="PriceColon"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="period_7"></td>
+                                                    <td id="price_stud_7" class="PriceColon"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="period_8"></td>
+                                                    <td id="price_stud_8" class="PriceColon"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="period_9"></td>
+                                                    <td id="price_stud_9" class="PriceColon"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="period_10"></td>
+                                                    <td id="price_stud_10" class="PriceColon"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td id="period_11"></td>
+                                                    <td id="price_stud_11" class="PriceColon"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
 
                                     </div>
-                                    <br><br> <strong>Uso singolo<br></strong>Unser
-                                    I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
-                                    singolo. In questo caso, addebitiamo un supplemento pari al 50%.
+                                    <br><br> <strong>Uso singolo<br></strong>
+                                    Il nostro studio può essere prenotato anche per un uso individuale, per il quale
+                                    offriamo uno sconto del 20%.
                                     <br><br>
-                                    <strong>Riduzioni riservate ai bambini<br></strong>Da 0 a 2,99 anni, i bambini
-                                    soggiornano gratis. Da 3 a 6,99 anni, hanno diritto al 70% di sconto, mentre da 7 a
-                                    11,99 anni lo sconto è del 50%. I bambini dai 12 anni di età e ospiti adulti
-                                    supplementari hanno diritto al 30% di sconto. Le riduzioni riservate ai bambini sono
-                                    valide in presenza di due ospiti a tariffa piena.<br><br>
+
                                     <strong>Imposta di soggiorno<br></strong>L’imposta di soggiorno corrisponde a 2,50 €
                                     a persona e al giorno (esclusi i minori di 14 anni d’età). Essa non è inclusa
-                                    nell’importo totale del vostro soggiorno e sarà da voi saldata sul posto.<br>
+                                    nell’importo totale del vostro soggiorno.<br>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +225,7 @@
         <div class="item-list__background">
             <div class="container">
                 <div class="item-list__item">
-                    <div class="item-list__images row animate-in js-animate">
+                    <div class="item-list__images  animate-in js-animate">
                         <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
                             tabindex="0">
                             <div class="flickity-viewport" style="height: 400px;">
@@ -231,8 +234,8 @@
                                         style="position: absolute; left: 0%; opacity: 1;">
                                         <div class="item-list__image">
                                             <picture>
-                                                <img src="../imgs/Wohnung_1.png" loading="lazy" style="width: 100%"
-                                                    alt="Wohnung_1">
+                                                <img src="../Database/Appartment/Wohnung_1.png" loading="lazy"
+                                                    style="width: 100%" alt="Wohnung_1">
                                             </picture>
                                         </div>
                                     </div>
@@ -263,26 +266,26 @@
                         </div>
                     </div>
                     <div class="item-list__price">
-                        <div class="item-list__price--value">da € 170,-</div>
-                        <div class="item-list__price--info">per 2 Persone</div>
+                        <div id="teaser_app" class="item-list__price--value"></div>
+                        <div class="item-list__price--info">für 2 Persone</div>
                     </div>
                     <div class="item-list__content">
                         <div class="item-list__content-inner row">
-                            <div class="item-list__content-inner--left "><a href="Wohnung.html"
-                                    class="item-list__name">Santer</a>
+                            <div class="item-list__content-inner--left "><a href="Appartment.html"
+                                    class="item-list__name">Appartamento</a>
                                 <div class="item-list__subtitle">46 m² - 2/4 Persone</div>
                             </div>
                             <div class="item-list__content-inner--right">
                                 <div class="item-list__description"> 46 m² di rifugio personale completamente
-                                    privato. Con una grande terrazza di 20 m², una camera da letto separata e un'ampia
-                                    zona giorno con cucina.
-
+                                    privato. Con una grande terrazza di 20 m², una camera da letto separata e
+                                    un'ampia
+                                    zona soggiorno con cucina.
                                 </div>
                             </div>
                         </div>
                         <div class="item-list__content-inner item-list__button-row row">
                             <div class="item-list__content-inner--left">
-                                <a href="Appartment.html" class="linkstyle underline_animation">Detagli</a>
+                                <a href="Appartment.html" class="linkstyle underline_animation">Details</a>
                             </div>
                             <div class="item-list__content-inner--right"><a href="anfrage.html"
                                     class="linkstyle underline_animation">Richiesta</a>
@@ -297,113 +300,149 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>Periodo</th>
-                                                <th class="Users"><img class="userIcon" src="../icons/user.png"
+                                                <th>Zeitraum</th>
+                                                <th class="Users"><img class="userIcon"
+                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
                                                         width="24" height="24">
-                                                    <img class="userIcon" src="../icons/user.png" width="24"
-                                                        height="24">
+                                                    <img class="userIcon"
+                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                        width="24" height="24">
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1. Maggio - 12. Maggio, 2023</td>
-                                                <td class="PriceColon">110.00 €</td>
+                                                <td id="_period_0"></td>
+                                                <td id="price_app_0" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>13. Maggio - 30. Giunio, 2023</td>
-                                                <td class="PriceColon">1120.00 €</td>
+                                                <td id="_period_1"></td>
+
+                                                <td id="price_app_1" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>1. Luglio - 28. Luglio, 2023</td>
-                                                <td class="PriceColon">140.00 €</td>
+                                                <td id="_period_2"></td>
+                                                <td id="price_app_2" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>29. Luglio - 25. Augosto, 2023</td>
-                                                <td class="PriceColon">190.00 €</td>
+                                                <td id="_period_3"></td>
+                                                <td id="price_app_3" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>26. Augosto - 8. Setembre, 2023</td>
-                                                <td class="PriceColon">140.00 €</td>
+                                                <td id="_period_4">2</td>
+                                                <td id="price_app_4" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>9. Setembre - 11. Ottobre, 2023</td>
-                                                <td class="PriceColon">120.00 €</td>
+                                                <td id="_period_5"></td>
+                                                <td id="price_app_5" class="PriceColon"></td>
                                             </tr>
                                             <tr>
-                                                <td>12. Ottobre - 30. Novembre, 2023</td>
-                                                <td class="PriceColon">110.00 €</td>
+                                                <td id="_period_6"></td>
+                                                <td id="price_app_6" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_7"></td>
+                                                <td id="price_app_7" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_8"></td>
+                                                <td id="price_app_8" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_9"></td>
+                                                <td id="price_app_9" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_10"></td>
+                                                <td id="price_app_10" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="_period_11"></td>
+                                                <td id="price_app_11" class="PriceColon"></td>
                                             </tr>
                                         </tbody>
                                     </table>
 
+
+
+                                    <div class="rooms-detail__prices--info">
+                                        <br><br>
+
+                                        <strong>Tassa di soggiorno</strong>
+                                        La tassa di soggiorno è di 2,10 € a persona al giorno (esclusi i bambini sotto i
+                                        14 anni). Questa tassa non è inclusa nel prezzo totale del soggiorno..
+                                        <br><br>
+                                    </div>
                                 </div>
-                                <br><br> <strong>Uso singolo<br></strong>Unser
-                                I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
-                                singolo. In questo caso, addebitiamo un supplemento pari al 50%.
-                                <br><br>
-                                <strong>Riduzioni riservate ai bambini<br></strong>Da 0 a 2,99 anni, i bambini
-                                soggiornano gratis. Da 3 a 6,99 anni, hanno diritto al 70% di sconto, mentre da 7 a
-                                11,99 anni lo sconto è del 50%. I bambini dai 12 anni di età e ospiti adulti
-                                supplementari hanno diritto al 30% di sconto. Le riduzioni riservate ai bambini sono
-                                valide in presenza di due ospiti a tariffa piena.<br><br>
-                                <strong>Imposta di soggiorno<br></strong>L’imposta di soggiorno corrisponde a 2,50 €
-                                a persona e al giorno (esclusi i minori di 14 anni d’età). Essa non è inclusa
-                                nell’importo totale del vostro soggiorno e sarà da voi saldata sul posto.<br>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- End of Second Item -->
+
+
+
             </div>
         </div>
-        <!-- End of Second Item -->
+        <footer id="Footer" class="footer-main">
+            <script>
+                $("#Footer").load("footer.html");
+            </script>
+        </footer>
+        <script>
+            src = "PreiseListe.js"
+            document.getElementById('period_0').innerHTML = prices[0].period_it;
+            document.getElementById('period_1').innerHTML = prices[1].period_it;
+            document.getElementById('period_2').innerHTML = prices[2].period_it;
+            document.getElementById('period_3').innerHTML = prices[3].period_it;
+            document.getElementById('period_4').innerHTML = prices[4].period_it;
+            document.getElementById('period_5').innerHTML = prices[5].period_it;
+            document.getElementById('period_6').innerHTML = prices[6].period_it;
+            document.getElementById('period_7').innerHTML = prices[7].period_it;
+            document.getElementById('period_8').innerHTML = prices[8].period_it;
+            document.getElementById('period_9').innerHTML = prices[9].period_it;
+            document.getElementById('period_10').innerHTML = prices[10].period_it;
+            document.getElementById('period_11').innerHTML = prices[11].period_it;
+            document.getElementById('_period_0').innerHTML = prices[0].period_it;
+            document.getElementById('_period_1').innerHTML = prices[1].period_it;
+            document.getElementById('_period_2').innerHTML = prices[2].period_it;
+            document.getElementById('_period_3').innerHTML = prices[3].period_it;
+            document.getElementById('_period_4').innerHTML = prices[4].period_it;
+            document.getElementById('_period_5').innerHTML = prices[5].period_it;
+            document.getElementById('_period_6').innerHTML = prices[6].period_it;
+            document.getElementById('_period_7').innerHTML = prices[7].period_it;
+            document.getElementById('_period_8').innerHTML = prices[8].period_it;
+            document.getElementById('_period_9').innerHTML = prices[9].period_it;
+            document.getElementById('_period_10').innerHTML = prices[10].period_it;
+            document.getElementById('_period_11').innerHTML = prices[11].period_it;
+            document.getElementById('price_stud_0').innerHTML = prices[0].studio + ".- €";
+            document.getElementById('price_stud_1').innerHTML = prices[1].studio + ".- €";
+            document.getElementById('price_stud_2').innerHTML = prices[2].studio + ".- €";
+            document.getElementById('price_stud_3').innerHTML = prices[3].studio + ".- €";
+            document.getElementById('price_stud_4').innerHTML = prices[4].studio + ".- €";
+            document.getElementById('price_stud_5').innerHTML = prices[5].studio + ".- €";
+            document.getElementById('price_stud_6').innerHTML = prices[6].studio + ".- €";
+            document.getElementById('price_stud_7').innerHTML = prices[7].studio + ".- €";
+            document.getElementById('price_stud_8').innerHTML = prices[8].studio + ".- €";
+            document.getElementById('price_stud_9').innerHTML = prices[9].studio + ".- €";
+            document.getElementById('price_stud_10').innerHTML = prices[10].studio + ".- €";
+            document.getElementById('price_stud_11').innerHTML = prices[11].studio + ".- €";
+            document.getElementById('price_app_0').innerHTML = prices[0].apartment + ".- €";
+            document.getElementById('price_app_1').innerHTML = prices[1].apartment + ".- €";
+            document.getElementById('price_app_2').innerHTML = prices[2].apartment + ".- €";
+            document.getElementById('price_app_3').innerHTML = prices[3].apartment + ".- €";
+            document.getElementById('price_app_4').innerHTML = prices[4].apartment + ".- €";
+            document.getElementById('price_app_5').innerHTML = prices[5].apartment + ".- €";
+            document.getElementById('price_app_6').innerHTML = prices[6].apartment + ".- €";
+            document.getElementById('price_app_7').innerHTML = prices[7].apartment + ".- €";
+            document.getElementById('price_app_8').innerHTML = prices[8].apartment + ".- €";
+            document.getElementById('price_app_9').innerHTML = prices[9].apartment + ".- €";
+            document.getElementById('price_app_10').innerHTML = prices[10].apartment + ".- €";
+            document.getElementById('price_app_11').innerHTML = prices[11].apartment + ".- €";
+            document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
+            document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
 
-        </div>
+        </script>
     </body>
-    <!-- Footer -->
-
-    <footer id="Footer" class="footer-main">
-        <div class="container">
-            <div class="address">
-                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/index.html"
-                    class="address__logo">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg"
-                        width="110%" height="110%" alt="Karbon Apartments &amp; Suites"></a>
-                <div class="address__contact">
-                    <div class="address__actions">
-                        <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255"
-                            data-gtm-category="Phone" data-gtm-action="phoneclick" data-gtm-label="Address">
-                            <i></i> +39 0471 20501012</a>
-                        <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it"
-                            data-gtm-category="E-Mail" data-gtm-action="mailclick" data-gtm-label="Address">
-                            <i></i> info@kastelart.it</a>
-                    </div>
-
-                    <div class="adress_text">
-                        <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                            " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-                            data-gtm-label="Address">
-                            <i></i> Via Plojer 7, 39040 Castelrotto<br> Alto Adige</a>
-                    </div>
-                </div>
-
-            </div>
-            <nav class="nav-footer">
-                <span class="nav-footer__level-0">
-                    <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Meteo
-                        &amp;
-                        Webcam</a>
-                </span>
-                <span class="nav-footer__level-0">
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/ankommen.html"
-                        class="link-button nav-footer__menu-0" target="_self">Arrivo</a>
-                </span>
-                </span> <span class="nav-footer__level-0">
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
-                        class="link-button nav-footer__menu-0" target="_self">Galeria</a>
-                </span>
-            </nav>
-        </div>
-    </footer>
 
 </html>

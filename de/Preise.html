@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="logo/logo.png">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,71 +90,39 @@
                                         <td id="price_stud_6" class="PriceColon"></td>
                                         <td id="price_app_6" class="PriceColon"></td>
                                     </tr>
+                                    <tr>
+                                        <td id="period_7"></td>
+                                        <td id="price_stud_7" class="PriceColon"></td>
+                                        <td id="price_app_7" class="PriceColon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="period_8"></td>
+                                        <td id="price_stud_8" class="PriceColon"></td>
+                                        <td id="price_app_8" class="PriceColon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="period_9"></td>
+                                        <td id="price_stud_9" class="PriceColon"></td>
+                                        <td id="price_app_9" class="PriceColon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="period_10"></td>
+                                        <td id="price_stud_10" class="PriceColon"></td>
+                                        <td id="price_app_10" class="PriceColon"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="period_11"></td>
+                                        <td id="price_stud_11" class="PriceColon"></td>
+                                        <td id="price_app_11" class="PriceColon"></td>
+                                    </tr>
                                 </tbody>
                             </table>
+                            <div id="Conditions">
+                                <script>
+                                    $("#Conditions").load("reservierungsbedingungen.html");
+                                </script>
 
-                            <p class="Reservierungsbedingungen">
-                                <br><br><strong>Angeld</strong> <br>
-                                Bei Buchung ist ein Angeld in Höhe von 30% mittels Banküberweisung
-                                zu entrichten.
-                                Der
-                                Restbetrag wird direkt in der Unterkunft vor Ort entrichtet.<br><br><strong>Zusätliche
-                                    Personen<br></strong>Für jede zusätzliche Person werden 30€
-                                am
-                                Tag
-                                berrechnet.
-                                <br> <br>
-                                <strong>Einzelnutzung<br></strong>Unser
-                                Studio kann auch zur Einzelnutzung gebucht werden, hierfür gewären wir ein Rabatt
-                                von 20€ am Tag.
-                                <br><br>
-                                <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns
-                                kostenlos. Von 3
-                                bis
-                                6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12
-                                Jahre und jeder
-                                weitere
-                                Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2
-                                Vollzahlern.<br><br>
-                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 1,75 € pro Person und Tag (Kinder
-                                unter 14 Jahren
-                                ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
-                                kann nur vor Ort
-                                bezahlt werden.<br><br>
-
-                                <br><strong>Reservierungsbedingungen<br></strong>
-
-                                Bei Stornierung bis <strong>31
-                                    Tage</strong> vor Anreise
-                                fallen
-                                keine zusätzlichen Stornokosten an.<br>
-                                Bei Stornierung innerhalb <strong> 30 bis 15 Tagen</strong> vor Anreise fallen Gebühren
-                                in
-                                Höhe
-                                von
-                                40% des gebuchten
-                                Gesamtbetrags an.<br>
-                                Bei Stornierung innerhalb bis <strong> 8 Tagen</strong> vor Anreise fallen Gebühren in
-                                Höhe
-                                von
-                                60%
-                                des gebuchten
-                                Gesamtbetrags an.<br>
-                                Bei Stornierung innerhalb <strong>7 Tagen</strong> vor Anreise fallen Gebühren in Höhe
-                                von
-                                70%
-                                des
-                                gebuchten
-                                Gesamtbetrags an.<br>
-                                Bei <strong>frühzeitiger Abreise, verspäteter Ankunft oder Nichterscheinen</strong>
-                                fallen
-                                Stornogebühren in Höhe von
-                                70%
-                                auf die gebuchten, nicht in Anspruch genommenen, Tage an.
-                                <br>
-
-
-                            </p>
+                            </div>
 
                         </div>
                     </div>
@@ -178,6 +148,11 @@
     document.getElementById('period_4').innerHTML = prices[4].period_de;
     document.getElementById('period_5').innerHTML = prices[5].period_de;
     document.getElementById('period_6').innerHTML = prices[6].period_de;
+    document.getElementById('period_7').innerHTML = prices[7].period_de;
+    document.getElementById('period_8').innerHTML = prices[8].period_de;
+    document.getElementById('period_9').innerHTML = prices[9].period_de;
+    document.getElementById('period_10').innerHTML = prices[10].period_de;
+    document.getElementById('period_11').innerHTML = prices[11].period_de;
     document.getElementById('price_stud_0').innerHTML = prices[0].studio + ".- €";
     document.getElementById('price_stud_1').innerHTML = prices[1].studio + ".- €";
     document.getElementById('price_stud_2').innerHTML = prices[2].studio + ".- €";
@@ -185,6 +160,11 @@
     document.getElementById('price_stud_4').innerHTML = prices[4].studio + ".- €";
     document.getElementById('price_stud_5').innerHTML = prices[5].studio + ".- €";
     document.getElementById('price_stud_6').innerHTML = prices[6].studio + ".- €";
+    document.getElementById('price_stud_7').innerHTML = prices[7].studio + ".- €";
+    document.getElementById('price_stud_8').innerHTML = prices[8].studio + ".- €";
+    document.getElementById('price_stud_9').innerHTML = prices[9].studio + ".- €";
+    document.getElementById('price_stud_10').innerHTML = prices[10].studio + ".- €";
+    document.getElementById('price_stud_11').innerHTML = prices[11].studio + ".- €";
     document.getElementById('price_app_0').innerHTML = prices[0].apartment + ".- €";
     document.getElementById('price_app_1').innerHTML = prices[1].apartment + ".- €";
     document.getElementById('price_app_2').innerHTML = prices[2].apartment + ".- €";
@@ -192,6 +172,11 @@
     document.getElementById('price_app_4').innerHTML = prices[4].apartment + ".- €";
     document.getElementById('price_app_5').innerHTML = prices[5].apartment + ".- €";
     document.getElementById('price_app_6').innerHTML = prices[6].apartment + ".- €";
+    document.getElementById('price_app_7').innerHTML = prices[7].apartment + ".- €";
+    document.getElementById('price_app_8').innerHTML = prices[8].apartment + ".- €";
+    document.getElementById('price_app_9').innerHTML = prices[9].apartment + ".- €";
+    document.getElementById('price_app_10').innerHTML = prices[10].apartment + ".- €";
+    document.getElementById('price_app_11').innerHTML = prices[11].apartment + ".- €";
     console.log(prices[1]
     );
 </script>

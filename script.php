@@ -1,5 +1,5 @@
 <?php
-    $to = "david.karbon@gmail.com"; // the recipient of the email
+    $to = "info@kastelart.it"; // the recipient of the email
     
     $from = $_POST['email']; // the sender's email address
     $ankunft = $_POST['dates'];

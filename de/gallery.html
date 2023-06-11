@@ -2,115 +2,492 @@
 <html>
 
 <head>
-  <title>Galerie</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <style>
-    body,
-    h1 {
-      font-family: "Montserrat", sans-serif
-    }
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../myScripts.js"></script>
+        <script src="../PreiseListe.js"></script>
 
-    img {
-      margin-bottom: -7px
-    }
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+        <link rel="stylesheet" href="../dist/css/lightboxgallery-min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="logo/logo.png">
 
-    .w3-row-padding img {
-      margin-bottom: 12px
-    }
-  </style>
+        <title>Galerie</title>
+    </head>
+
+    <style>
+        body,
+        h1 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        img {
+            margin-bottom: -7px
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+    </style>
 </head>
 
 <body class=my_body>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div id="header" class="nav_bar" style="letter-spacing:4px;">
-    </div>
-    <script>
-      $("#header").load("navbar.html");
-    </script>
-  </div>
-
-  <!-- Sidebar-->
-  <div class="side-bar row animate-in js-animate">
-    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
-    <div class="side-bar__separator"></div>
-    <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
-  </div>
-
-  <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()"
-      class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
-      <i class="fa fa-remove"></i>
-    </a>
-    <div class="w3-bar-block w3-center">
-      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">About</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Photos</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Shop</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Contact</a>
-    </div>
-  </nav>
-
-  <!-- !PAGE CONTENT! -->
-  <div class="w3-content " style="max-width:90%; margin-top: 80px">
-
-    <!-- Header -->
-    <div class=" page-slide page-content page-content__nomarginbottom animate-in js-animate">
-
-      <h1>Unser Haus und Umgebung</h1>
-      <h2 class="h2">Stöbern Sie in unserer Bildergalerie nach einer großen Portion Vorfreude!</h2>
-
-      <p><b></b></p>
-      </header>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar" style="letter-spacing:4px;">
+        </div>
+        <script>
+            $("#header").load("navbar.html");
+        </script>
     </div>
 
-    <!-- Photo Grid -->
-    <div class="w3-row w3-padding-16" id="myGrid" style="margin-bottom:128px; opacity: 0.8;">
-      <div class="w3-third">
-        <img src="imgs/activity.png" style="width:100%">
-        <img src="imgs/balcony_view.png" style="width:100%">
-        <img src="imgs/bathroom_big.png" style="width:100%">
-        <img src="imgs/bedroom_big.png" style="width:29%">
-        <img src="imgs/dinningroom_big.png" style="width:100%">
-        <img src="imgs/wohnen.png" style="width:100%">
-      </div>
 
-      <div class="w3-third">
-        <img src="imgs/activity.png" style="width:100%">
-        <img src="imgs/balcony_view.png" style="width:100%">
-        <img src="imgs/bathroom_big.png" style="width:100%">
-        <img src="imgs/bedroom_big.png" style="width:29%">
-        <img src="imgs/dinningroom_big.png" style="width:100%">
-        <img src="imgs/wohnen.png" style="width:100%">
-      </div>
-
-      <div class="w3-third">
-        <img src="imgs/activity.png" style="width:100%">
-        <img src="imgs/balcony_view.png" style="width:100%">
-        <img src="imgs/bathroom_big.png" style="width:100%">
-        <img src="imgs/bedroom_big.png" style="width:29%">
-        <img src="imgs/dinningroom_big.png" style="width:100%">
-        <img src="imgs/wohnen.png" style="width:100%">
-      </div>
+    <!-- Sidebar-->
+    <div class="side-bar row ">
+        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+        <div class="side-bar__separator"></div>
+        <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
     </div>
+    <!--Text and Titel-->
+    <div class="container" style="padding-top: 30px;">
 
-    <!-- End Page Content -->
-  </div>
+        <div class="hgroup  ">
+            <h1>Impressionen</h1>
+            <h2 class="h2">Stöbern Sie in unserer Bildergalerie nach einer großen Portion Vorfreude!</h2>
+        </div>
+        <div class="page-content__content ">
+            <div class="page-content__main-content">Wir sind jedoch der Meinung, Sie sollten sich selbst ein
+                Bild machen und Ihren nächsten Urlaub bei uns verbringen. Sie werden unzählige
+                unvergessliche
+                Eindrücke mit nachhause nehmen.</div>
+        </div>
+    </div>
+    <!--End Text and Titel-->
 
-  <footer id="Footer" class="footer-main">
-    <script>
-      $("#Footer").load("footer.html");
-    </script>
-  </footer>
+    <div id="galleries " class="base-module galleries " data-slide="galleries">
+        <div class="container gallery-container">
+            <div class="">
+                <div class="">
+                    <div class="gallery-item__name h1">Haus &amp; Umgebung</div>
+                </div>
+                <div class="lightbox">
+                    <div class="lightboxgallery-gallery clearfix">
+                        <div class="gallery-images row">
+                            <a class=" gallery-images__item lightboxgallery-gallery-item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/1.jpg" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/1.jpg" class="fit-image" width="442" height="321"
+                                    loading="lazy"></a>
+
+                            <a class="lightboxgallery-gallery-item gallery-images__item gallery-images__item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/DSC_2536.jpg" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/DSC_2536.jpg" class="fit-image" width="442" height="321"
+                                    loading="lazy"></a>
+
+                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/DSC_2594.JPG" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/DSC_2594.JPG" class="fit-image" width="442" height="321"
+                                    loading="lazy"></a>
+
+                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/DSC_2557.JPG" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/DSC_2557.JPG" class="fit-image" width="442" height="321"
+                                    loading="lazy"></a>
+
+                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/R_NiceWeather4.jpg" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/R_NiceWeather4.jpg" class="fit-image" width="442"
+                                    height="321" loading="lazy"></a>
+
+                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                class="photoswipe-item"
+                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                href="../Database/Algemein/DSC_2718.JPG" data-size="1920 x 1280"><img
+                                    src="../Database/Algemein/DSC_2718.JPG" class="fit-image" width="442" height="321"
+                                    loading="lazy"></a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="gallery-item__name h1">Wellness &amp; Entspannen</div>
+                    </div>
+                    <div class="lightbox">
+                        <div class="lightboxgallery-gallery clearfix">
+                            <div class="gallery-images row">
+                                <a class=" gallery-images__item lightboxgallery-gallery-item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item"
+                                    data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                    href="../Database/Welness/DSC_2307.jpg" data-size="1920 x 1280"><img
+                                        src="../Database/Welness/DSC_2307.jpg" class="fit-image" width="442"
+                                        height="321" loading="lazy"></a>
+
+                                <a class="lightboxgallery-gallery-item gallery-images__item gallery-images__item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item"
+                                    data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                    href="../Database/Welness/DSC_2346.jpg" data-size="1920 x 1280"><img
+                                        src="../Database/Welness/DSC_2346.jpg" class="fit-image" width="442"
+                                        height="321" loading="lazy"></a>
+                                <a class="lightboxgallery-gallery-item gallery-images__item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item" data-thumbnail="sauna.jpg"
+                                    href="../Database/Welness/DSC_2323.jpg" data-size="1920 x 1280">
+                                    <picture>
+                                        <source srcset="../Database/Welness/DSC_2323_400px.jpg"
+                                            media="(max-width: 400px)">
+                                        <source srcset="../Database/Welness/DSC_2323_600px.jpg"
+                                            media="(max-width: 600px)">
+                                        <source srcset="../Database/Welness/DSC_2323_1200px.jpg"
+                                            media="(min-width: 601px)">
+                                        <img src="../Database/Welness/DSC_2323.jpg" class="fit-image" width="442"
+                                            height="321" loading="lazy">
+                                    </picture>
+                                </a>
+                                <a class="lightboxgallery-gallery-item gallery-images__item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item" data-thumbnail="sauna.jpg"
+                                    href="../Database/Welness/Sauna_Finish.jpg" data-size="1920 x 1280">
+                                    <picture>
+
+                                        <source srcset="../Database/Welness/Sauna_Finish_1200.jpg"
+                                            media="(min-width: 601px)">
+                                        <img src="../Database/Welness/Sauna_Finish.jpg" class="fit-image" width="442"
+                                            height="321" loading="lazy">
+                                    </picture>
+                                </a>
+                                <a class="lightboxgallery-gallery-item gallery-images__item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item" data-thumbnail="sauna.jpg"
+                                    href="../Database/Welness/Sauna_chairs.jpg" data-size="1920 x 1280">
+                                    <picture>
+
+                                        <source srcset="../Database/Welness/Sauna_chairs_1200px.jpg"
+                                            media="(min-width: 601px)">
+                                        <img src="../Database/Welness/Sauna_chairs.jpg" class="fit-image" width="442"
+                                            height="321" loading="lazy">
+                                    </picture>
+                                </a>
+                                <a class="lightboxgallery-gallery-item gallery-images__item"
+                                    data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                    class="photoswipe-item" data-thumbnail="sauna.jpg"
+                                    href="../Database/Welness/DSC_2253.jpg" data-size="1920 x 1280">
+                                    <picture>
+                                        <source srcset="../Database/Welness/DSC_2253_1200px.jpg"
+                                            media="(min-width: 601px)">
+                                        <img src="../Database/Welness/DSC_2253.jpg" class="fit-image" width="442"
+                                            height="321" loading="lazy">
+                                    </picture>
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="gallery-item__name h1">Erleben</div>
+                        </div>
+                        <div class="lightbox">
+                            <div class="lightboxgallery-gallery clearfix">
+                                <div class="gallery-images row">
+                                    <a class=" gallery-images__item lightboxgallery-gallery-item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/bike-seiseralmmarketing-wdejori-56.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/bike-seiseralmmarketing-wdejori-56.jpg"
+                                            class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                    <a class="lightboxgallery-gallery-item gallery-images__item gallery-images__item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/idm-suedtirolalex-moling-1.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/idm-suedtirolalex-moling-1.jpg" class="fit-image"
+                                            width="442" height="321" loading="lazy"></a>
+
+                                    <a class="lightboxgallery-gallery-item gallery-images__item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/seiser-alm-marketing-werner-dejori-14.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/seiser-alm-marketing-werner-dejori-14.jpg"
+                                            class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                    <a class="lightboxgallery-gallery-item gallery-images__item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/seiser-alm-marketing-helmuth-rier-12.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/seiser-alm-marketing-helmuth-rier-12.jpg"
+                                            class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                    <a class="lightboxgallery-gallery-item gallery-images__item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/seiser-alm-marketing-f-tech-13.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/seiser-alm-marketing-f-tech-13.jpg"
+                                            class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                    <a class="lightboxgallery-gallery-item gallery-images__item"
+                                        data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                        class="photoswipe-item"
+                                        data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                        href="../Database/Umgebung/seiser-alm-marketing-off-the-path-5.jpg"
+                                        data-size="1920 x 1280"><img
+                                            src="../Database/Umgebung/seiser-alm-marketing-off-the-path-5.jpg"
+                                            class="fit-image" width="442" height="321" loading="lazy"></a>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="gallery-item__name h1">Apartments</div>
+                            </div>
+                            <div class="lightbox">
+                                <div class="lightboxgallery-gallery clearfix">
+                                    <div class="gallery-images row">
+                                        <a class=" gallery-images__item lightboxgallery-gallery-item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/Appartment_Chouch.JPG"
+                                            data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/Appartment_Chouch.JPG" class="fit-image"
+                                                width="442" height="321" loading="lazy"></a>
+
+                                        <a class="lightboxgallery-gallery-item gallery-images__item gallery-images__item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/Appartmetn_Teaser_Stuhl.JPG"
+                                            data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/Appartmetn_Teaser_Stuhl.JPG"
+                                                class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                        <a class="lightboxgallery-gallery-item gallery-images__item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/DSC_2513" data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/DSC_2513.jpg" class="fit-image" width="442"
+                                                height="321" loading="lazy"></a>
+
+                                        <a class="lightboxgallery-gallery-item gallery-images__item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/DSC_2141.jpg" data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/DSC_2141.jpg" class="fit-image" width="442"
+                                                height="321" loading="lazy"></a>
+
+                                        <a class="lightboxgallery-gallery-item gallery-images__item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/Reschoot_Appartmetn_Dusche_besser_wasser an.jpg"
+                                            data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/Reschoot_Appartmetn_Dusche_besser_wasser an.jpg"
+                                                class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                        <a class="lightboxgallery-gallery-item gallery-images__item"
+                                            data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                            class="photoswipe-item"
+                                            data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                            href="../Database/Appartment/DSC_2512.jpg" data-size="1920 x 1280"><img
+                                                src="../Database/Appartment/DSC_2512.jpg" class="fit-image" width="442"
+                                                height="321" loading="lazy"></a>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="gallery-item__name h1">Studios</div>
+                                </div>
+                                <div class="lightbox">
+                                    <div class="lightboxgallery-gallery clearfix">
+                                        <div class="gallery-images row">
+                                            <a class=" gallery-images__item lightboxgallery-gallery-item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_teaser_couch.jpg"
+                                                data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_teaser_couch.jpg" class="fit-image"
+                                                    width="442" height="321" loading="lazy"></a>
+
+                                            <a class="lightboxgallery-gallery-item gallery-images__item gallery-images__item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_Tisch.JPG" data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_Tisch.JPG" class="fit-image"
+                                                    width="442" height="321" loading="lazy"></a>
+
+                                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg"
+                                                data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg"
+                                                    class="fit-image" width="442" height="321" loading="lazy"></a>
+
+                                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_Regen_kalt.jpg"
+                                                data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_Regen_kalt.jpg" class="fit-image"
+                                                    width="442" height="321" loading="lazy"></a>
+
+                                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_Küche_wide.JPG"
+                                                data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_Küche_wide.JPG" class="fit-image"
+                                                    width="442" height="321" loading="lazy"></a>
+
+                                            <a class="lightboxgallery-gallery-item gallery-images__item"
+                                                data-gtm-action="Gallery viewed" data-gtm-label="Frühstück &amp; Genuss"
+                                                class="photoswipe-item"
+                                                data-thumbnail="/media/9800e1c0-7e41-48f2-abe9-a34fa298758b/20220214122852/100_x_100/-c-hannes-niederkofler-web-6254.jpg"
+                                                href="../Database/Studio/Studio_Overview.jpg"
+                                                data-size="1920 x 1280"><img
+                                                    src="../Database/Studio/Studio_Overview.jpg" class="fit-image"
+                                                    width="442" height="321" loading="lazy"></a>
+                                        </div>
+                                    </div>
+                                    <div class="page-content__container">
+                                        <div class="ajax-loading">
+                                            <div class="loading"></div>
+                                        </div>
+                                        <div class="pager" data-scroll-offset="0"><span class="pager__info"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="Footer" class="footer-main">
+        <script>
+            $("#Footer").load("footer.html");
+        </script>
+    </footer>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <style>
+        .gallery-images__item:nth-child(1),
+        .gallery-images__item:nth-child(6n+6),
+        .gallery-images__item:nth-child(7n+7) {
+            width: 100%;
+            position: relative;
+            min-height: 1px;
+            float: left;
+            -webkit-flex: 0 0 auto;
+            -moz-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            max-width: 41.6666666667%;
+            -ms-flex-preferred-size: 41.6666666667%;
+            -webkit-flex-basis: 41.6666666667%;
+            -moz-flex-basis: 41.6666666667%;
+            flex-basis: 41.6666666667%;
+            -ms-flex-preferred-size: 41.6666666667%;
+        }
+
+        .gallery-images__item {
+            max-width: 25%;
+            -ms-flex-preferred-size: 25%;
+            -webkit-flex-basis: 25%;
+            -moz-flex-basis: 25%;
+            flex-basis: 25%;
+            -ms-flex-preferred-size: 25%;
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+
+        .gallery-images>* {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+        @media screen and (max-width: 450px) {
+            .container.gallery-container {
+                padding: 2px;
+            }
+
+            .gallery-images__item {
+                max-width: 100%;
+                -ms-flex-preferred-size: 100%;
+                -webkit-flex-basis: 100%;
+                -moz-flex-basis: 100%;
+                flex-basis: 100%;
+                -ms-flex-preferred-size: 100%;
+                margin-top: 7px;
+                margin-bottom: 7px;
+            }
+
+            .gallery-images__item:nth-child(1),
+            .gallery-images__item:nth-child(6n+6),
+            .gallery-images__item:nth-child(7n+7) {
+                width: 100%;
+                position: relative;
+                min-height: 1px;
+                float: left;
+                -webkit-flex: 0 0 auto;
+                -moz-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
+                flex: 0 0 auto;
+                max-width: 100%;
+                -ms-flex-preferred-size: 100%;
+                -webkit-flex-basis: 100%;
+                -moz-flex-basis: 100%;
+                flex-basis: 100%;
+                -ms-flex-preferred-size: 100%;
+            }
+        }
+    </style>
 
 </body>
-
-
-
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../dist/js/lightboxgallery-min.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $(document).on('click', '.lightboxgallery-gallery-item', function (event) {
+            event.preventDefault();
+            $(this).lightboxgallery({
+                showCounter: true,
+                showTitle: true,
+                showDescription: true
+            });
+        });
+    });
+</script>

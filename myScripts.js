@@ -16,8 +16,22 @@ function ready() {
    console.log("ready");
    let element = document.getElementById('header');
    let headerImage = document.querySelector('.js_hero_idclass');
+
    if (element && headerImage) {
       var header = document.getElementById("header");
+      let heroImageHeight = headerImage.offsetHeight;
+      let headerHeight = header.offsetHeight;
+
+      // Check the height until it is greater than zero
+      if (heroImageHeight <= 0) {
+         const checkHeightInterval = setInterval(() => {
+            heroImageHeight = headerImage.offsetHeight;
+            if (heroImageHeight > 0) {
+               clearInterval(checkHeightInterval);
+               console.log("heroImageHeight");
+            }
+         }, 1); // Adjust the interval as needed
+      }
       // Get the height of the image element
       heroImageHeight = headerImage.offsetHeight;
       headerHeight = header.offsetHeight;

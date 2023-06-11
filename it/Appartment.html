@@ -5,42 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="..\styles.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <script src="..\myScripts.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../myScripts.js"></script>
+  <script src="../PreiseListe.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <title>Appartment</title>
+  <title>Appartamento</title>
 </head>
 
-<body>
+<body class=my_body>
+
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div id="header" class="nav_bar" style="letter-spacing:4px;">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-        class="w3-bar-item w3-button">Kastelart</a>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wohnen.html"
-          class="w3-bar-item w3-button">Wohnen</a>
-        <a href="Erleben.html" class="w3-bar-item w3-button">Erleben</a>
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/Wellness.html"
-          class="w3-bar-item w3-button">Entspannen</a>
-        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
-          class="w3-bar-item w3-button">Fotogalerie</a>
-        <a href="#Footer" class="w3-bar-item w3-button">Kontakt</a>
-
-      </div>
     </div>
+    <script>
+      $("#header").load("navbar.html");
+    </script>
   </div>
-
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
-    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
     <div class="side-bar__separator"></div>
-    <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
+    <a href="Preise.html" title="Preise" class=" button button--primary">Prezzi</a>
   </div>
 
 
@@ -62,94 +54,173 @@
   </div>
   <!-- List of Appartments-->
   <div class="item-list page-slide" data-slide="item-list">
-    <!-- First Item small -->
     <div class="item-list__background">
+      <!--Carusell-->
+      <div class="carousel_container ">
+
+        <div class="item-list__imageblock is-selected">
+          <div class="item-list__image">
+            <picture>
+              <div class="main-carousel">
+                <img src="../Database/Appartment/Appartment_Chouch.JPG" class="carousel_img">
+                <img src="../Database/Appartment/DSC_2512.jpg" class="carousel_img">
+                <img src="../Database/Appartment/Reschoot_Appartmetn_Dusche_besser_wasser an.jpg" class="carousel_img">
+                <img src="../Database/Appartment/Appartmetn_Küche4.JPG" class="carousel_img">
+                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_1.png"
+                  class="carousel_img">
+              </div>
+            </picture>
+          </div>
+        </div>
+      </div>
+      <!--End Carusell-->
       <div class="container">
         <div class="item-list__item">
-          <div class="item-list__images row animate-in js-animate">
-            <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
-              tabindex="0">
-              <div class="flickity-viewport" style="height: 400px;">
-                <div class="flickity-slider" style="left: 0px;">
-                  <div class="item-list__imageblock is-selected" style="position: absolute; left: 0%; opacity: 1;">
-                    <div class="item-list__image">
-                      <picture>
-                        <img src="../imgs/Wohnung_1.png" loading="lazy" style="width: 100%" alt="Wohnung_2">
-                      </picture>
-                    </div>
-                  </div>
+          <div class="item-list__images  animate-in js-animate">
+
+
+            <!--Price Banner-->
+            <div class="item-list__price__carousel ">
+              <div id="teaser_app" class="item-list__price--value"></div>
+              <div class="item-list__price--info">per due persone</div>
+            </div>
+            <!--End Price Banner-->
+            <!--Description-->
+            <div class="item-list__content">
+              <div class="item-list__content-inner row">
+                <div class="item-list__content-inner--left"><a href="Appartment.html"
+                    class="item-list__name">Appartamento</a>
+                  <div class="item-list__subtitle">46 m² - 2/4 Persone</div>
+                </div>
+                <div class="item-list__content-inner--right">
                 </div>
               </div>
             </div>
-            <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable"
-              tabindex="0">
-              <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
-                <div class="flickity-slider" style="left: 0px;">
-                  <div class="item-list__imageblock is-selected" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                  <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                  <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                    <div class="item-list__image item-list__image--single">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item-list__price">
-            <div class="item-list__price--value">da € 170,-</div>
-            <div class="item-list__price--info">per due persone</div>
-          </div>
-          <div class="item-list__content">
-            <div class="item-list__content-inner row">
-              <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Santer</a>
-                <div class="item-list__subtitle">46 m² - 2/4 Persone</div>
-              </div>
-              <div class="item-list__content-inner--right">
-              </div>
-            </div>
+            <!-- End Description-->
+            <!-- Description Box-->
             <div class="item-list__ausstattung">Dotazioni</div>
             <div class="w3-row w3-large">
               <div class="w3-col s6">
                 <p><i class="fa fa-fw fa-shower"></i> Doccia</p>
-                <p><i class="fa fa-fw fa-wifi"></i> WiFi a 400 Mbit/s</p>
+                <p><i class="fa fa-fw fa-wifi"></i> WiFi con 100 Mbit/s</p>
                 <p><i class="fa  fa-tv"></i> TV</p>
-                <p><i><img src="..\icons\garage.png" width="24" height="24"></i> parcheggio gratuito in garage</p>
-                <p class="line_description"><i><img src="..\icons\bed-sheets.png" width="24" height="24">
-                  </i>Dotazione base
-                  <br><span class="descriptin_extra"> (asciugamani,lenzuola,sapone)</span>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/garage.png"
+                      width="24" height="24"></i> Parcheggio gratuito in garage</p>
+                <p class=""><i><img
+                      src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
+                      width="24" height="24">
+                  </i>Biancheria
+                  <br><span class="" style="font-size: smaller;">(Asciugamani,Lenzuola,Sapone)</span>
                 </p>
-                <p><i><img src="..\icons\kitchen-utensils.png" width="24" height="24"></i> attrezzatura base per
-                  cucinare
-                </p>
-                <p><i><img src="..\icons\hairdryer.png" width="24" height="24"></i> asciugacapelli</p>
-                <p><i><img src="..\icons\bidet.png" width="24" height="24"></i> bidet</p>
+                <p><i><img
+                      src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kitchen-utensils.png"
+                      width="24" height="24"></i> Attrezzatura base per
+                  cucinare</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/hairdryer.png"
+                      width="24" height="24"></i> Asciugacapelli</p>
+
+
               </div>
               <div class="w3-col s6">
-                <p><i class="fa fa-fw fa-cutlery"></i> cucina</p>
-                <p><i class="fa-solid fa-temperature-high"></i></i> riscaldamento</p>
-                <p><i><img src="..\icons\elevator.png" width="24" height="24"></i> ascensore</p>
-                <p><i><img src="..\icons\fridge.png" width="24" height="24"></i> frigorifero</p>
-                <p><i><img src="..\icons\dish-washer.png" width="24" height="24"></i> lavastoviglie</p>
-                <p><i><img src="..\icons\kettle.png" width="24" height="24"></i>
-                  bollitore</p>
-                <p><img src="..\icons\microwave-oven.png" width="24" height="24"></i> microonde</p>
-                <p><img src="..\icons\cafe.png" width="24" height="24"></i>balcone</p>
+                <p><i class="fa fa-fw fa-cutlery"></i> Cucina</p>
+                <p><i class="fa-solid fa-temperature-high"></i> Riscaldamento</p>
+                <p><i class="fa-solid fa-solid fa-snowflake"></i> Climatizzato</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/elevator.png"
+                      width="24" height="24"></i> Ascensore</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/fridge.png"
+                      width="24" height="24"></i> Frigorifero</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/dish-washer.png"
+                      width="24" height="24"></i> Lavastoviglie</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kettle.png"
+                      width="24" height="24"></i>
+                  Bollitore</p>
+                <!-- <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/microwave-oven.png"
+                    width="24" height="24"></i> Mikrowelle</p> -->
+                <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/cafe.png" width="24"
+                    height="24"></i> Balcone</p>
+                <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bidet.png"
+                      width="24" height="24"></i> Bidet</p>
+                <!-- <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p> -->
+
               </div>
             </div>
             <div class="item-list__content-inner item-list__button-row row">
-              <div class="item-list__content-inner--right"><a
-                  href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                  class="linkstyle underline_animation">Richiesta</a> <a href="/de/buchen.html?roomId=26053"
-                  class="linkstyle underline_animation">Prezzi</a>
+              <div class="item-list__content-inner--left"><a href="Studio.html"
+                  class="linkstyle underline_animation">Detagli</a>
+              </div>
+              <div class="item-list__content-inner--right">
+                <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
+                  class="linkstyle underline_animation">Richiesta</a>
+                <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
+                  onclick="DropdownFctStudio()">Prezzi
+                </button>
+              </div>
+              <div id="myDropdownPriceStudio" class="dropdown-content">
+                <div class="rooms-detail__prices--info">
+                  <div class="PreisTabelleDiv"></div>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Zeitraum</th>
+                        <th class="Users"><img class="userIcon"
+                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                            width="24" height="24">
+                          <img class="userIcon"
+                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                            width="24" height="24">
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="_period_0"></td>
+                        <td id="price_app_0" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_1"></td>
+
+                        <td id="price_app_1" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_2"></td>
+                        <td id="price_app_2" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_3"></td>
+                        <td id="price_app_3" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_4">2</td>
+                        <td id="price_app_4" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_5"></td>
+                        <td id="price_app_5" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="_period_6"></td>
+                        <td id="price_app_6" class="PriceColon"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="rooms-detail__prices--info"> <br><br> <strong>Uso singolo<br></strong>
+                  I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
+                  singolo. In questo caso, addebitiamo un supplemento pari al 50%.
+                  <br><br>
+                  <strong>Riduzioni riservate ai bambini<br></strong>Da 0 a 2,99 anni, i bambini
+                  soggiornano gratis. Da 3 a 6,99 anni, hanno diritto al 70% di sconto, mentre da
+                  7 a
+                  11,99 anni lo sconto è del 50%. I bambini dai 12 anni di età e ospiti adulti
+                  supplementari hanno diritto al 30% di sconto. Le riduzioni riservate ai bambini
+                  sono
+                  valide in presenza di due ospiti a tariffa piena.<br><br>
+                  <strong>Imposta di soggiorno<br></strong>L’imposta di soggiorno corrisponde a
+                  2,50 €
+                  a persona e al giorno (esclusi i minori di 14 anni d’età). Essa non è inclusa
+                  nell’importo totale del vostro soggiorno e sarà da voi saldata sul posto.<br>
+                </div>
               </div>
             </div>
           </div>
@@ -157,123 +228,120 @@
       </div>
     </div>
   </div>
-  <h1 style="text-align: center; padding-bottom: 50px;"> Altri appartamenti</h1>
-  <!-- Second Item Big -->
 
-  <div class="item-list__background">
-    <div class="container">
-      <div class="item-list__item">
-        <div class="item-list__images row animate-in js-animate">
-          <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
-            tabindex="0">
-            <div class="flickity-viewport" style="height: 400px;">
-              <div class="flickity-slider" style="left: 0px;">
-                <div class="item-list__imageblock is-selected" style="position: absolute; left: 0%; opacity: 1;">
-                  <div class="item-list__image">
+  <!-- end descriptionbox-->
+  <h1 style="text-align: center; padding-bottom: 50px;"> Ulteriori Appartamenti</h1>
+  <!-- Showcase Section-->
+  <div class="item-showcase page-slide" data-slide="item-showcase">
+    <div class="item-showcase__background">
+      <div class="container">
+        <div class="item-showcase__slider" tabindex="0">
+          <div class="flickity-viewport" style="height: 953px; touch-action: pan-y;">
+            <div class="flickity-slider" style="left: 0px; transform: translateX(50%);">
+              <div id="studio_teaser" class="item-showcase__item is-selected"
+                style="position: absolute; left: -50%; opacity: 1;">
+                <a href="/de/Studio.html" class="item-showcase__images">
+                  <span class="item-showcase__image">
                     <picture>
-                      <img src="../imgs/Wohnung_2.png" loading="lazy" style="width: 100%" alt="Wohnung_1">
+
+                      <img src="../Database/Studio/Studio_Overview.jpg" class="fit-image">
                     </picture>
+                  </span> <span class="item-showcase__image_left">
+                    <picture>
+                      <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg" s class="fit-image"
+                        width="450px" height="540px">
+
+                    </picture>
+                  </span></a>
+
+
+                <div class="item-list__content">
+                  <div class="item-list__content-inner row">
+                    <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
+                      <div class="item-list__subtitle">33 m² - 2/3 Persone</div>
+                    </div>
+                    <div class="item-list__content-inner--right">
+                      <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone
+                        di 20
+                        m² che
+                        regala una vista grandiosa. Il vostro regno di benessere privato.</div>
+                    </div>
+                  </div>
+                  <div class="item-list__content-inner item-list__button-row ">
+                    <div class="item-list__content-inner--left"><a href="Studio.html"
+                        class="linkstyle underline_animation">Detagli</a>
+                    </div>
+                    <div class="item-list__content-inner--right">
+                      <a href="anfrage.html" class="linkstyle underline_animation">Richiesta</a>
+
+
+
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable" tabindex="0">
-            <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
-              <div class="flickity-slider" style="left: 0px;">
-                <div class="item-list__imageblock is-selected" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
 
-                  </div>
-                </div>
-                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
 
-                  </div>
-                </div>
-                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                  <div class="item-list__image item-list__image--single">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item-list__price">
-          <div class="item-list__price--value">da € 140,-</div>
-          <div class="item-list__price--info">per due persone</div>
-        </div>
-        <div class="item-list__content">
-          <div class="item-list__content-inner row">
-            <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
-              <div class="item-list__subtitle">33 m² - 2/4 Persone</div>
-            </div>
-            <div class="item-list__content-inner--right">
-              <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone di 20
-                m² che
-                regala una vista grandiosa. Il vostro regno di benessere privato.</div>
-            </div>
-          </div>
-          <div class="item-list__content-inner item-list__button-row row">
-            <div class="item-list__content-inner--left">
-              <a href="Studio.html" class="linkstyle underline_animation">Detagli</a>
-            </div>
-            <div class="item-list__content-inner--right"><a
-                href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                class="linkstyle underline_animation">Richiesta</a> <a href="/de/buchen.html?roomId=26053"
-                class="linkstyle underline_animation">Prezzi</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End of Second Item -->
+    <!-- Showcase Section End-->
+    <footer id="Footer" class="footer-main">
+      <script>
+        $("#Footer").load("footer.html");
+      </script>
+    </footer>
+
+
+
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+      var elem = document.querySelector('.main-carousel');
+      console.log(elem)
+      var flkty = new Flickity(elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+      });
+      function DropdownFctStudio() {
+        var droopdownelement = document.getElementById("myDropdownPriceStudio");
+        if (droopdownelement.className.indexOf("show") !== -1) {
+          droopdownelement.classList.remove("show");
+          droopdownelement.classList.add("animated");
+        } else {
+          droopdownelement.classList.add("show");
+          droopdownelement.classList.remove("animated");
+        }
+      }
+
+    </script>
+
+    <script>
+      src = "PreiseListe.js"
+
+      document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
+      document.getElementById('_period_0').innerHTML = prices[0].period_it;
+      document.getElementById('_period_1').innerHTML = prices[1].period_it;
+      document.getElementById('_period_2').innerHTML = prices[2].period_it;
+      document.getElementById('_period_3').innerHTML = prices[3].period_it;
+      document.getElementById('_period_4').innerHTML = prices[4].period_it;
+      document.getElementById('_period_5').innerHTML = prices[5].period_it;
+      document.getElementById('_period_6').innerHTML = prices[6].period_it;
+      document.getElementById('price_app_0').innerHTML = prices[0].apartment + ",- €";
+      document.getElementById('price_app_1').innerHTML = prices[1].apartment + ",- €";
+      document.getElementById('price_app_2').innerHTML = prices[2].apartment + ",- €";
+      document.getElementById('price_app_3').innerHTML = prices[3].apartment + ",- €";
+      document.getElementById('price_app_4').innerHTML = prices[4].apartment + ",- €";
+      document.getElementById('price_app_5').innerHTML = prices[5].apartment + ",- €";
+      document.getElementById('price_app_6').innerHTML = prices[6].apartment + ",- €";
+      console.log(document.getElementById('period_0'));
+
+    </script>
 </body>
-<!-- Footer -->
-<footer id="Footer" class="footer-main">
-  <div class="container">
-    <div class="address">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
-        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
-          height="110%" alt="Karbon Apartments &amp; Suites"></a>
-      <div class="address__contact">
-        <div class="address__actions">
-          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255" data-gtm-category="Phone"
-            data-gtm-action="phoneclick" data-gtm-label="Address">
-            <i></i> +39 0471 20501012</a>
-          <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it" data-gtm-category="E-Mail"
-            data-gtm-action="mailclick" data-gtm-label="Address">
-            <i></i> info@kastelart.it</a>
-        </div>
-
-        <div class="adress_text">
-          <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                      " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-            data-gtm-label="Address">
-            <i></i> Via Ployer 7, 39040 Kastelruth<br> Altoadige (BZ)</a>
-        </div>
-      </div>
-
-    </div>
-    <nav class="nav-footer">
-      <span class="nav-footer__level-0">
-        <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
-          Webcam</a>
-      </span>
-      <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/ankommen.html"
-          class="link-button nav-footer__menu-0" target="_self">Anreise</a>
-      </span>
-      </span> <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
-          class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
-      </span>
-    </nav>
-  </div>
 
 
-</footer>
 
 </html>

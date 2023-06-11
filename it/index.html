@@ -4,56 +4,60 @@
 
 </style>
 
-<head>
-    <title>Kastelart Home</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="..\styles.css">
-    <script src="..\myScripts.js"></script>
+<title>Kastelart Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../myScripts.js"></script>
+<script src="../PreiseListe.js"></script>
 
-</head>
+<!-- Include Flatpickr library -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 
 <body class=my_body>
+
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div id="header" class="nav_bar" style="letter-spacing:4px;">
-            <div class="left_links">
-                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-                    class="w3-bar-item w3-button">Kastelart</a>
-            </div>
-            <!-- Right-sided navbar links. Hide them on small screens -->
-            <div class=" center_links w3-hide-small">
-                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wohnen.html"
-                    class=" w3-button">Soggiorno</a>
-                <a href="Erleben.html" class="w3-bar-item w3-button">Esperienze</a>
-                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wellness.html"
-                    class=" w3-button">Relax</a>
-                <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
-                    class=" w3-button">Galeria</a>
-                <a href="#Footer" class="w3-bar-item w3-button">Contatti</a>
-                <div class="right_links w3-hide-small">
-                    <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
-                    <span class="languages__separator "></span>
-                    <a class="languages__link  language_button w3-button" href="../index.html">DE</a>
-                    <span class="languages__separator"></span>
-                </div>
-            </div>
         </div>
-    </div>
+        <script>
+            $("#header").load("navbar.html");
 
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
+        </script>
+    </div>
     <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-        <img class="w3-image header_image js_hero_idclass"
-            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/HomeImg.png" alt="HeroImage"
-            width="1600" height="800">
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <source srcset="../Database/Algemein/DSC_2525_Hero.jpg" media="(max-width: 600px)">
+            <source srcset="../Database/Algemein/DSC_2525_Hero_hq.jpg" media="(min-width: 800px)">
+            <img class="w3-image header_image js_hero_idclass" src="../Database/Algemein/DSC_2525_Hero.jpg"
+                alt="HeroImage">
+        </picture>
         <div class="logo_MainPage">
-            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" width="600px"
-                height="600px" class="logo">
+            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" height="auto"
+                class="logo">
             <!-- <h1 class="title">Kastelart</h1> -->
         </div>
-
 
     </header>
     <!-- Sidebar-->
@@ -68,9 +72,9 @@
         <!-- About Section -->
         <div class="w3-row w3-padding-64" id="about">
             <div class="w3-col m6 w3-padding-large w3-hide-small">
-                <a href="/Apparment_classe1.html" title="Wohnungen">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wohnen.png"
-                        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+                <a href="Wohnen.html" title="Wohnungen">
+                    <img src="../Database/Studio/Studio_teaser_couch.jpg" class="w3-round w3-image w3-opacity-min"
+                        alt="Table Setting" width="600" height="750">
                 </a>
             </div>
 
@@ -81,14 +85,17 @@
 
                 <h5 class="w3-center">Tradizione dal 1965</h5>
                 <p class="w3-large">
-                    Per una vacanza nel segno della rigenerazione: incastonati in uno scenario meraviglioso, si rivelano
+                    Per una vacanza nel segno della rigenerazione: incastonati in uno scenario meraviglioso, si
+                    rivelano
                     perfetti per regalarsi momenti di benessere.
 
                 </p>
                 <p class="w3-large w3-text-grey w3-hide-medium">Senza imporre nulla ma proponendo un’infinità di
-                    opportunità, la vacanza nei nostri appartamenti a Siusi allo Sciliar vi consente di vivere come più
+                    opportunità, la vacanza nei nostri appartamenti a Siusi allo Sciliar vi consente di vivere come
+                    più
                     vi piace il comprensorio sciistico ed escursionistico dell’Alpe di Siusi. Pertanto, i Kastelart
-                    Apartments & Suites si rivelano tutto l’anno una destinazione perfetta per vacanze spensierate ma
+                    Apartments & Suites si rivelano tutto l’anno una destinazione perfetta per vacanze spensierate
+                    ma
                     anche un punto di partenza ideale. Gli ampi spazi e l’oasi wellness raffinata e moderna regalano
                     momenti di preziosa leggerezza e tanta libertà personale in un’atmosfera avvolgente.</p>
             </div>
@@ -104,28 +111,73 @@
                     <div class="h2 teaser__subtitle">Qualità, intimità, naturalità</div>
                     <div class="teaser__description">
                         <ul>
-                            <li><a title="bester Lage" href="ankommen.html">Posizione eccellente</a>per godervi appieno
+                            <li><a title="bester Lage" href="ankommen.html">Posizione eccellente</a> per godervi
+                                appieno
                                 l’Alpe di Siusi ed esplorare tutto l‘Alto Adige</li>
                             <!--<li>Hochwertiger <a title="Frühstücksgenuss"
                                     href="/de/fruehstueck-genuss/fruehstueck.html">Frühstücksgenuss </a>für den besten
                                 Start</li> -->
-                            <li><a title="Wellness" href="/de/entspannen/ferienwohnung-mit-sauna.html">Wellness</a>
+                            <li><a title="Wellness" href="Wellness.html">Wellness</a>
                                 e distensione per una rigenerazione pura</li>
-                            <li>Consulenza personalizzata<a title="individuelles Urlaubsdesign"
-                                    href="/de/ferienwohnungen-seis-am-schlern/neu-und-modern.html"> per disegnare la
-                                    vostra vacanza come più vi piace</a></li>
+                            <!-- <li>Consulenza personalizzata<a title="individuelles Urlaubsdesign"
+                                    href="/de/ferienwohnungen-seis-am-Bergmassiv " Schlern"/neu-und-modern.html"> per
+                                    disegnare la
+                                    vostra vacanza come più vi piace</a></li> -->
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Teaser Section -->
+        <div id="teaser">
+
+            <script>
+                $("#teaser").load("Teaser.html");
+
+                $(document).ready(function () {
+                    console.log("Loading the prices");
+                    src = "PreiseListe.js";
+                    waitForElementToLoad();
+                });
+
+                function waitForElementToLoad() {
+                    var teaserStudElement = document.getElementById('teaser_stud');
+                    var teaserAppElement = document.getElementById('teaser_app');
+
+                    if (teaserStudElement && teaserAppElement) {
+                        // Elements are loaded, add the prices
+                        teaserStudElement.innerHTML = "ab " + prices[0].studio + ",- €";
+                        teaserAppElement.innerHTML = "ab " + prices[0].apartment + ",- €";
+                    } else {
+                        // Elements not yet loaded, wait and try again
+                        setTimeout(waitForElementToLoad, 100); // Adjust the delay as needed
+                    }
+                }
+
+                function selectElement(isRightArrow) {
+                    var appTeaser = document.getElementById("app_teaser");
+                    var studioTeaser = document.getElementById("studio_teaser");
+
+                    if (appTeaser.classList.contains("is-selected")) {
+                        appTeaser.classList.remove("is-selected");
+                        studioTeaser.classList.add("is-selected");
+                    } else if (studioTeaser.classList.contains("is-selected")) {
+                        studioTeaser.classList.remove("is-selected");
+                        appTeaser.classList.add("is-selected");
+                    }
+
+                }
+            </script>
+        </div>
+        <!-- End Teaser Section -->
         <!-- Erleben Section -->
         <div class="w3-row w3-padding-64" id="Erleben">
             <div class="w3-col l6 w3-padding-large">
                 <h1 class="w3-center">Le vostre vacanze sull’Alpe di Siusi</h1><br>
                 <h5 class="w3-center">Tanto spazio nel cuore delle montagne</h5>
                 <p class="w3-large">
-                    Cogliete la preziosità della quiete e della rigenerazione e quanto esse rendano talmente speciale la
+                    Cogliete la preziosità della quiete e della rigenerazione e quanto esse rendano talmente
+                    speciale la
                     vostra vacanza. Vi attendono tanto spazio e un’infinità di opportunità.
                 </p>
             </div>
@@ -137,87 +189,59 @@
         </div>
 
         <hr>
-        <!-- Entespannen Section -->
-        <div class="w3-row w3-padding-64" id="Entspannen">
-            <div class="w3-col m6 w3-padding-large w3-hide-small">
-                <a href="Wellness.html">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/entspannen.png"
-                        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
-                </a>
-            </div>
-
-            <div class="w3-col m6 w3-padding-large">
-                <a href="Wellness.html" class="title_links">
-                    <h1 class="w3-center">Movimenti dolci per corpo e spirito, in armonia con la natura</h1>
-                </a><br>
-
-
-                <h5 class="w3-center">I nostri appartamenti con spa in Alto Adige promettono rigenerazione e relax per
-                    corpo e anima.</h5>
-                <p class="w3-large">
-                    Grazie a materiali naturali e locali selezionati con cura, portiamo la natura nel Vajolet Wellness
-                    Lounge.
-                    I nostri appartamenti con spa in Alto Adige regalano momenti di sublime distensione. Qui, abbiamo
-                    adottato un concetto consapevole che coinvolge gli elementi che caratterizzano le nostre montagne:
-                    acqua pura di montagna, aria limpida di malga, terra forte, fuoco che scalda.
-
-
-                </p>
-                <p class="w3-large w3-text-grey w3-hide-medium">La nostra offerta di benessere è a vostra disposizione
-                    tra le 15 e le 21.
-
-                    Grazie alla sauna finlandese, al bagno turco, alla isole
-                    del relax, vi arricchite di nuova energia da investire per vivere nuove esperienze in montagna. I
-                    prodotti naturali rendono particolarmente efficaci e rilassanti i massaggi e trattamenti proposti.
-                    Per rallentare, per godersi ogni istante!</p>
-            </div>
-        </div>
-
-
-
-        <footer id="Footer" class="footer-main">
-            <div class="container">
-                <div class="address">
-                    <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/index.html"
-                        class="address__logo">
-                        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg"
-                            width="110%" height="110%" alt="Karbon Apartments &amp; Suites"></a>
-                    <div class="address__contact">
-                        <div class="address__actions">
-                            <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255"
-                                data-gtm-category="Phone" data-gtm-action="phoneclick" data-gtm-label="Address">
-                                <i></i> +39 0471 20501012</a>
-                            <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it"
-                                data-gtm-category="E-Mail" data-gtm-action="mailclick" data-gtm-label="Address">
-                                <i></i> info@kastelart.it</a>
-                        </div>
-
-                        <div class="adress_text">
-                            <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                                " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-                                data-gtm-label="Address">
-                                <i></i> Via Plojer 7, 39040 Castelrotto<br> Alto Adige</a>
-                        </div>
-                    </div>
-
+        <!-- Entespannen Section
+            <div class="w3-row w3-padding-64" id="Entspannen">
+                <div class="w3-col m6 w3-padding-large w3-hide-small">
+                    <a href="Wellness.html">
+                        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/entspannen.png"
+                            class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+                    </a>
                 </div>
-                <nav class="nav-footer">
-                    <span class="nav-footer__level-0">
-                        <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Meteo
-                            &amp;
-                            Webcam</a>
-                    </span>
-                    <span class="nav-footer__level-0">
-                        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/ankommen.html"
-                            class="link-button nav-footer__menu-0" target="_self">Arrivo</a>
-                    </span>
-                    </span> <span class="nav-footer__level-0">
-                        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
-                            class="link-button nav-footer__menu-0" target="_self">Galeria</a>
-                    </span>
-                </nav>
+
+                <div class="w3-col m6 w3-padding-large">
+                    <a href="Wellness.html" class="title_links">
+                        <h1 class="w3-center">Movimenti dolci per corpo e spirito, in armonia con la natura</h1>
+                    </a><br>
+
+
+                    <h5 class="w3-center">I nostri appartamenti con spa in Alto Adige promettono rigenerazione e relax
+                        per
+                        corpo e anima.</h5>
+                    <p class="w3-large">
+                        Grazie a materiali naturali e locali selezionati con cura, portiamo la natura nel Vajolet
+                        Wellness
+                        Lounge.
+                        I nostri appartamenti con spa in Alto Adige regalano momenti di sublime distensione. Qui,
+                        abbiamo
+                        adottato un concetto consapevole che coinvolge gli elementi che caratterizzano le nostre
+                        montagne:
+                        acqua pura di montagna, aria limpida di malga, terra forte, fuoco che scalda.
+
+
+                    </p>
+                    <p class="w3-large w3-text-grey w3-hide-medium">La nostra offerta di benessere è a vostra
+                        disposizione
+                        tra le 15 e le 21.
+
+                        Grazie alla sauna finlandese, al bagno turco, alla isole
+                        del relax, vi arricchite di nuova energia da investire per vivere nuove esperienze in montagna.
+                        I
+                        prodotti naturali rendono particolarmente efficaci e rilassanti i massaggi e trattamenti
+                        proposti.
+                        Per rallentare, per godersi ogni istante!</p>
+                </div>
             </div>
-        </footer>
+
+ -->
+    </div>
+
+    <footer id="Footer" class="footer-main">
+        <script>
+            $("#Footer").load("footer.html");
+        </script>
+    </footer>
+    </div>
+    </footer>
 
 
 </body>

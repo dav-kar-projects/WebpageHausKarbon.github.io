@@ -25,6 +25,8 @@
         'lastname': $('input[name="lastname"]').val(),
         'message': $('#subject').val(),
         'country': $('#country').val(),
+        'Studios': $('input[name="Studio"]').val(),
+        'Appartments': $('input[name="App"]').val(),
         'adults': $('input[name="adults"]').val(),
         'children': $('input[name="children"]').val(),
         'childAge1': $('input[name="childAge1"]').val(),
@@ -34,8 +36,10 @@
         'childAge5': $('input[name="childAge5"]').val(),
         'childAge6': $('input[name="childAge6"]').val(),
         'email': $('input[name="email"]').val(),
-        'anrede': $('input[name="Form.Salutation"]:checked').val()
+        'anrede': $('input[name="Form.Salutation"]:checked').val(),
+        'lang': "de"
       };
+      var warning = false;
       var warning = false;
       var today = new Date();
       // console.log(today)
@@ -53,7 +57,7 @@
         // console.log("Date Classes: ", $('input[name="dates"]').attr('class'));
         // console.log(!$('.hf-warning_dates').length)
         if (!$('.hf-warning_dates').length) {
-          $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> * Compilare questo campo.</div>');
+          $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
         }
         warning = true;
       }
@@ -65,7 +69,7 @@
         $('.anrede_dif_inner').addClass('error_full')
         if (!$('.hf-warning_anrede').length) {
           // console.log("Anrede is required");
-          $('.anrede_dif').append('<div class="hf-warning_anrede" id="hf_50353m2nvdtie" aria-live="polite"> * Compilare questo campo.</div>');
+          $('.anrede_dif').append('<div class="hf-warning_anrede" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte wählen Sie eine Anrede aus.</div>');
         }
         warning = true;
       } else {
@@ -102,25 +106,41 @@
         $('input[name="email"]').addClass('error_full')
         if (!$('.hf-warning_name').length) {
           // console.log("Last name is required");
-          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus name.</div>');
+          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
         }
 
         warning = true;
       }
+      console.log("Warning :", formData.Studios, formData.Appartments)
+      if (formData.Studios == 0 && formData.Appartments == 0) {
+        $('input[name="Studio"]').addClass('error_full')
+        $('input[name="App"]').addClass('error_full')
+        $('.form_appartmetn').append('<div class="hf-warning_name" id="hf_50353m2nvdtie33" aria-live="polite"> * Bitte wälen Sie ein Appartement Typ aus.</div>');
+
+        console.log("no appartment selected");
+
+      }
+      else {
+        $('input[name="Studio"]').removeClass('error_full')
+        $('input[name="App"]').removeClass('error_full')
+        if ($('#hf_50353m2nvdtie33').length > 0)
+          $('#hf_50353m2nvdtie33').remove();
+      }
+
       if (warning) {
         return;
         console.log("returned");
       }
-      $('.form-send').val('RICHIESTA VIENE TRASSMESSA...');
+      $('.form-send').val('ANFRAGE WIRD VERSENDET...');
       $('.form-send').prop('disabled', true);
 
       $.ajax({
-        url: '/script.php',
+        url: '../script.php',
         type: 'post',
         data: formData,
         success: function (response) {
           console.log(response);
-          $('.form-send').val('RICHIESTA TRASSMESSA');
+          $('.form-send').val('ANFRAGE GESENDET');
           $('.form-send').prop('disabled', true);
           $('.form-send').css('background-color', '#9b8e7d');
           // console.log(response);
@@ -136,32 +156,23 @@
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div id="header" class="nav_bar" style="letter-spacing:4px;">
-      <div class="left_links">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
-          class="w3-bar-item w3-button">Kastelart</a>
-      </div>
-      <!-- Right-sided navbar links. Hide them on small screens -->
-      <div class=" center_links w3-hide-small">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wohnen.html"
-          class=" w3-button">Soggiorno</a>
-        <a href="Erleben.html" class="w3-bar-item w3-button">Esperienze</a>
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wellness.html"
-          class=" w3-button">Relax</a>
-        <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
-          class=" w3-button">Galeria</a>
-        <a href="#Footer" class="w3-bar-item w3-button">Contatti</a>
-        <div class="right_links w3-hide-small">
-          <a class="languages__link  language_button w3-button" href="/en/index.html">EN</a>
-          <span class="languages__separator "></span>
-          <a class="languages__link  language_button w3-button" href="../index.html">DE</a>
-          <span class="languages__separator"></span>
-        </div>
-      </div>
     </div>
+    <script>
+      $("#header").load("navbar.html");
+      window.onscroll = function () {
+        if (document.getElementById("header") && heroImageHeight == 0) {
+          heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+        }
+
+        if (document.getElementById("header") && heroImageHeight > 0) {
+          console.log("Doing the header check");
+          myFunction();
+        }
+
+      };
+      console.log("Header in file ");
+    </script>
   </div>
-
-
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
     <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
@@ -255,89 +266,115 @@
                 </div>
               </div>
               <div class="form__block">
-                <h3 class="form__title">Parlaci di te:</h3>
-                <div class="form__row">
-                  <div class="form__req ">Titolo</div>
-                  <div class="anrede_dif">
-                    <ul class="form-radiobutton-list required anrede_dif_inner ">
-                      <li><input id="Form.Salutation1" type="radio" value="Gentile signora  " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation1">Signora</label></li>
-                      <li><input id="Form.Salutation3" type="radio" value="Gentile signor " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation3">Signor</label></li>
-                      <li><input id="Form.Salutation2" type="radio" value="Gentile famiglia " name="Form.Salutation"
-                          required="required"><label for="Form.Salutation2">Famiglia</label></li>
-                    </ul>
+                <div class="form__block">
+
+                  <h3 class="form__title">3. Quale appartamento desidera?</h3>
+                  <div class="form_appartmetn">
+                    <div class="form__row"><label class="form__req" for="Form_Studio">Studio </label><label>con 33 m²
+                      </label>
+                      <div class="form-number__container"><button type="button"
+                          class="form-number__minus">-</button><input type="number" class="form__control form-number"
+                          min="0" max="2" required="required" data-val="" id="Form_Studio" name="Studio"
+                          value="0"><input name="__Invariant" type="hidden" value="Form.Studio"><button type="button"
+                          class="form-number__plus">+</button>
+
+                        <div class="form__row"><label class="form__req" for="Form_App">Appartamento </label> <label> con
+                            46 m²</label>
+                          <div class="form-number__container"><button type="button"
+                              class="form-number__minus">-</button><input type="number"
+                              class="form__control form-number" min="0" max="2" required="required" data-val=""
+                              id="Form_App" name="App" value="0"><input name="__Invariant" type="hidden"
+                              value="Form.App"><button type="button" class="form-number__plus">+</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <label for="fname">Nome</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  <div class="form__block">
+                    <h3 class="form__title">Parlaci di te:</h3>
+                    <div class="form__row">
+                      <div class="form__req ">Titolo</div>
+                      <div class="anrede_dif">
+                        <ul class="form-radiobutton-list required anrede_dif_inner ">
+                          <li><input id="Form.Salutation1" type="radio" value="Gentile signora  " name="Form.Salutation"
+                              required="required"><label for="Form.Salutation1">Signora</label></li>
+                          <li><input id="Form.Salutation3" type="radio" value="Gentile signor " name="Form.Salutation"
+                              required="required"><label for="Form.Salutation3">Signor</label></li>
+                          <li><input id="Form.Salutation2" type="radio" value="Gentile famiglia " name="Form.Salutation"
+                              required="required"><label for="Form.Salutation2">Famiglia</label></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <label for="fname">Nome</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-                <div class="form__group_name">
-                  <label class="form__req" for="lname">Cognome</label>
-                  <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-                </div>
+                    <div class="form__group_name">
+                      <label class="form__req" for="lname">Cognome</label>
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                    </div>
 
-                <div class="form__group">
-                  <label class="form__req" for="lname">E-Mail</label>
-                  <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
+                    <div class="form__group">
+                      <label class="form__req" for="lname">E-Mail</label>
+                      <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
+                    </div>
+                  </div>
+
+                  <label for="country">Paese</label>
+                  <select id="country" name="country">
+                    <option value="Italia">Italia</option>
+                    <option value="Deutschland">Deutschland</option>
+                    <option value="Österreich">Österreich</option>
+                  </select>
+
+                  <label for="subject">Messaggio</label>
+                  <textarea id="subject" name="message" placeholder="Nachricht an Uns.."
+                    style="height:200px"></textarea>
+
+                  <div class="button-row">
+                    <input type="submit" value="INVIA RICHIESTA" class="form-send button button--primary">
+
+                    <form action="/script.php">
+                  </div>
+                  <div id="successPopup">Anfrage erfolgreich gesendet</div>
                 </div>
               </div>
-
-              <label for="country">Paese</label>
-              <select id="country" name="country">
-                <option value="Italia">Italia</option>
-                <option value="Deutschland">Deutschland</option>
-                <option value="Österreich">Österreich</option>
-              </select>
-
-              <label for="subject">Messaggio</label>
-              <textarea id="subject" name="message" placeholder="Nachricht an Uns.." style="height:200px"></textarea>
-
-              <div class="button-row">
-                <input type="submit" value="INVIA RICHIESTA" class="form-send button button--primary">
-
-                <form action="/script.php">
-              </div>
-              <div id="successPopup">Anfrage erfolgreich gesendet</div>
             </div>
         </div>
-      </div>
-    </div>
-    <script>
+        <script>
 
 
-      const config = {
-        altInput: true,
-        altFormat: "D j. F Y",
-        dateFormat: "Y-m-d",
-        showMonths: 2,
-        locale: "de",
-        inline: false,
-        mode: "range",
-        minDate: "today",
-        onClose: function (selectedDates) {
-          const endInput = document.querySelector(".Ankunft");
-          // console.log(endInput)
-        },
-      };
+          const config = {
+            altInput: true,
+            altFormat: "D j. F Y",
+            dateFormat: "Y-m-d",
+            showMonths: 2,
+            locale: "de",
+            inline: false,
+            mode: "range",
+            minDate: "today",
+            onClose: function (selectedDates) {
+              const endInput = document.querySelector(".Ankunft");
+              // console.log(endInput)
+            },
+          };
 
-      flatpickr(".Ankunft", config);
+          flatpickr(".Ankunft", config);
 
-    </script>
-    <style>
-      #successPopup {
-        background-color: green;
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-20%);
-        padding: 1em;
-        border-radius: 0.5em;
-        display: none;
-        transition: top 0.5s ease-in-out;
-      }
-    </style>
+        </script>
+        <style>
+          #successPopup {
+            background-color: green;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-20%);
+            padding: 1em;
+            border-radius: 0.5em;
+            display: none;
+            transition: top 0.5s ease-in-out;
+          }
+        </style>
 </body>
 <!-- Footer -->
 <footer id="Footer" class="footer-main">
@@ -365,23 +402,11 @@
       </div>
 
     </div>
-    <nav class="nav-footer">
-      <span class="nav-footer__level-0">
-        <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
-          Webcam</a>
-      </span>
-      <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/ankommen.html"
-          class="link-button nav-footer__menu-0" target="_self">Anreise</a>
-      </span>
-      </span> <span class="nav-footer__level-0">
-        <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
-          class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
-      </span>
-    </nav>
   </div>
-
-
-</footer>
+  <footer id="Footer" class="footer-main">
+    <script>
+      $("#Footer").load("footer.html");
+    </script>
+  </footer>
 
 </html>

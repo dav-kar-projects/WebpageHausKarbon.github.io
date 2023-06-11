@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../myScripts.js"></script>
+    <link rel="icon" href="logo/logo.png">
+
+    <title>Arrivo</title>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar" style="letter-spacing:4px;">
+        </div>
+        <script>
+            $("#header").load("navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
+        </script>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <img class="w3-image header_image js_hero_idclass"
+                src="../Database/Umgebung/seiser-alm-marketing-helmuth-rier-12.jpg" alt="HeroImage">
+        </picture>
+
+    </header>
+
+    <!-- Sidebar -->
+    <div class="side-bar row animate-in js-animate">
+        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
+        <div class="side-bar__separator"></div>
+        <a href="buchen.html" title="Preise" class=" button button--primary">Prezzi</a>
+    </div>
+
+
+
+    <!-- Anreise Symbole-->
+    <div class="supersymbol">
+        <div class="row_symbols">
+            <div class="column">
+                <a href="#car">
+                    <img src="../Database/Icons/car.png" alt="Car" style="width:100%">
+                </a>
+            </div>
+            <div class="column">
+                <a href="#bus">
+                    <img src="../Database/Icons/bus.png" alt="Bus" style="width:100%">
+                </a>
+            </div>
+            <div class="column">
+                <a href="#flugzeug">
+                    <img src="../Database/Icons/flugzeug-fliegen.png" alt="Air" style="width:100%">
+                </a>
+
+            </div>
+            <div class="column">
+                <a href="#zug">
+                    <img src="../Database/Icons/zug.png" alt="Train" style="width:100%">
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="content_container">
+            <div class="hgroup">
+                <h1> Dove ci troviamo</h1>
+                <h2> Cosi ci raggiungete </h2>
+            </div>
+            <div class="base">
+
+                La nostra posizione: nel cuore di Castelrott e, pertanto, ideale per esplorare le Dolomiti e le bellezze
+                di
+                tutto l’Alto Adige. Già le vette dolomitiche a perdita d’occhio rendono il viaggio un’esperienza
+                travolgente. In auto, in bus, in treno, in aereo: i Appartamenti Kastelart sono facilmente
+                accessibili. Vi mostriamo come raggiungerci! <br> <br>
+            </div>
+            <div id="car">
+                <h3> In Auto</h3>
+                <p class="arrival_description">
+                    Se provenite da nord, viaggiate sull’Autostrada del Brennero A22 e uscite a Chiusa. Proseguite
+                    verso Bolzano e dopo 10 km all’altezza di Ponte Gardena svoltate a sinistra in direzione Altipiano
+                    dello Sciliar. Alla rotonda, prendete la prima uscita a destra e seguite la strada per circa 20
+                    minuti. Alla rotonda successiva, prendete la terza uscita a sinistra in direzione Castelrotto.
+                    Dopo poco, raggiungete l’ingresso di Castelrotto. Dopo di aver passato il benzinaio, prosseguite per
+                    alchuni metri fino al prossimo bivio a destra.
+                    Salite la Via Plojer fino al prossimo incocio. Prendete la strada salendo a sinistra e troverete gli
+                    Appartamenti Kastelart alla sinistra.
+                    <br> <br>
+
+                    Se provenite da sud, viaggiate sull’Autostrada del Brennero A22 e uscite a Bolzano Nord. Proseguite
+                    verso sinistra in direzione Brennero. Dopo circa 5 km all’altezza di Prato Isarco svoltate in
+                    direzione Altipiano dello Sciliar. Dopo circa 25 minuti avrete raggiunto l’ingresso per Castelrotto.
+                    Dopo di aver passato il benzinaio, prosseguite per
+                    alchuni metri fino al prossimo bivio a destra.
+                    Salite la Via Plojer fino al prossimo incocio. Prendete la strada salendo a sinistra e troverete gli
+                    Appartamenti Kastelart alla sinistra.
+                </p>
+
+            </div>
+            <div id="bus">
+                <h3>In Bus</h3>
+                <p class="arrival_description">
+                    Diverse compagnie di viaggio propongono trasferimento da aeroporti e stazioni di bus per raggiungere
+                    comodamente l’Altipiano dello Sciliar e l’Alpe di Siusi. Per maggiori informazioni, rivolgetevi alla
+                    nostra reception.
+                </p>
+            </div>
+            <div id="flugzeug">
+                <h3> In Aereo</h3>
+                <p class="arrival_description">
+                    Gli aeroporti più vicini si trovano a Bolzano (55 km), Innsbruck (110 km), Verona (175 km).
+                    Siamo a vostra disposizione per fornirvi maggiori informazioni!</p>
+            </div>
+            <div id="zug">
+                <h3> In Treno</h3>
+                <p class="arrival_description">
+                    Dalla Germania o dall'Austria si viaggia per Monaco, Kufstein, Innsbruck e il Brennero fino a
+                    Bolzano, Chiusa o Bressanone. Da queste stazioni ferroviarie è possibile prendere l'autobus 170 fino
+                    a casa nostra.<br><br>
+                    Venendo dal sud Italia, si viaggia via Firenze, Bologna, Verona
+                    e Trento a Bolzano. Da Bolzano è possibile prendere l'autobus 170 fino
+                    a casa nostra.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="Footer" class="footer-main">
+        <script>
+            $("#Footer").load("footer.html");
+        </script>
+    </footer>
+</body>
+
+</html>

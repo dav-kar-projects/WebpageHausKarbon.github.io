@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
     <script src="../myScripts.js"></script>
+    <link rel="icon" href="logo/logo.png">
 
     <title>Ankommen</title>
 </head>
@@ -19,8 +20,28 @@
         </div>
         <script>
             $("#header").load("navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
         </script>
     </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <img class="w3-image header_image js_hero_idclass"
+                src="../Database/Umgebung/seiser-alm-marketing-helmuth-rier-12.jpg" alt="HeroImage">
+        </picture>
+
+    </header>
 
     <!-- Sidebar -->
     <div class="side-bar row animate-in js-animate">
@@ -29,40 +50,30 @@
         <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
     </div>
 
-    <!-- Hero Image -->
-    <div class="hero_image js_hero_idclass">
-        <div class="hero_image_slider">
-            <div class="hero_image_item">
-                <picture>
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/ankommen_1600x600.png"
-                        class="" alt="Table Setting">
-                </picture>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Anreise Symbole-->
     <div class="supersymbol">
         <div class="row_symbols">
             <div class="column">
                 <a href="#car">
-                    <img src="icons/car.png" alt="Snow" style="width:100%">
+                    <img src="../Database/Icons/car.png" alt="Car" style="width:100%">
                 </a>
             </div>
             <div class="column">
                 <a href="#bus">
-                    <img src="icons/bus.png" alt="Forest" style="width:100%">
+                    <img src="../Database/Icons/bus.png" alt="Bus" style="width:100%">
                 </a>
             </div>
             <div class="column">
                 <a href="#flugzeug">
-                    <img src="icons/flugzeug-fliegen.png" alt="Mountains" style="width:100%">
+                    <img src="../Database/Icons/flugzeug-fliegen.png" alt="Air" style="width:100%">
                 </a>
 
             </div>
             <div class="column">
                 <a href="#zug">
-                    <img src="icons/zug.png" alt="Snow" style="width:100%">
+                    <img src="../Database/Icons/zug.png" alt="Train" style="width:100%">
                 </a>
 
             </div>
@@ -78,9 +89,9 @@
             </div>
             <div class="base">
 
-                Unsere Lage: Mitten in Seis am Schlern und damit ideal, um ganz Südtirol zu erkunden. Mit
+                Unsere Lage: Mitten in Kastelruth und damit ideal, um ganz Südtirol zu erkunden. Mit
                 <strong> Blick auf die Dolomitengipfel</strong>, beginnt der Urlaub schon bei der Ankunft. Egal, ob mit
-                Auto, mit Bus, Bahn oder Flugzeug – die La Paula Apartments &amp; Suites sind mühelos erreichbar. Wir
+                Auto, mit Bus, Bahn oder Flugzeug – die Kastart Apartmetns und Studios sind mühelos erreichbar. Wir
                 weisen Ihnen den Weg!<br><br><br>
 
             </div>
@@ -91,14 +102,13 @@
                     setzen Ihren Weg auf der Staatsstraße Richtung Bozen fort. Nach ca. 10 km biegen Sie in Waidbruck
                     links ins Schlerngebiet ab. Am Kreisverkehr nehmen Sie
                     die erste Ausfahrt und folgen der Straße ca. 20 Minuten lang bis zu einer Kreuzung, an der Sie
-                    rechts nach Seis am Schlern abbiegen. Bald erreichen Sie den Dorfeingang und erblicken nach wenigen
-                    hundert Metern zu Ihrer Linken unsere
-                    La Paula Apartments &amp; Suites.<br><br> Von Süden kommend fahren Sie auf der Brennerautobahn A22
+                    links nach Kastelruth abbiegen. Bald erreichen Sie den Dorfeingang und nach wenigen
+                    Metern nach der Tankstelle biegen sie rechts ab auf den Plojerweg.<br><br> Von Süden kommend fahren
+                    Sie auf der Brennerautobahn A22
                     bis zur Ausfahrt Bozen Nord und fahren auf der Staatsstraße weiter Richtung Brenner, bis Sie nach
                     etwa 5 km Blumau
-                    erreichen. Hier biegen Sie ins Schlerngebiet ab. Nach ca. 20 Minuten erreichen Sie Seis am Schlern.
-                    Sie fahren durch das Dorf und sehen kurz vor dem Dorfausgang auf der rechten Seite unsere La Paula
-                    Apartments &amp; Suites.
+                    erreichen. Hier biegen Sie ins Schlerngebiet ab. Nach ca. 25 Minuten den Dorfeingang von Kastelruth.
+                    Sie fahren bis zur Tankstell und biegen bald darrauf nach Rechts ab.
                 </p>
 
             </div>
@@ -113,17 +123,18 @@
                 <h3> Mit dem Flugzeug</h3>
                 <p class="arrival_description">
                     Die nächstgelegenen Flughäfen sind jene in Bozen (55 km), Innsbruck (110 km), Verona (175 km) und
-                    München (305 km). Von den Flughäfen Bozen, Verona und Innsbruck holen wir Sie gerne ab (gegen
-                    Gebühr); von München gelangen Sie bequem mit dem Bus nach Kastelruth
+                    München (305 km). Von den Flughäfen Innsbruck und Verona aus gelangen sie mit Zug und Bus bis zu
+                    uns.Von München gelangen Sie bequem mit dem Bus nach Kastelruth
                     – wir beraten Sie gerne! </p>
             </div>
             <div id="zug">
                 <h3> Mit der Bahn</h3>
                 <p class="arrival_description">
                     Aus Deutschland bzw. Österreich reisen Sie über München, Kufstein, Innsbruck und den Brennerpass bis
-                    nach Bozen, Klausen oder Brixen. Wir holen Sie dort gerne vom Bahnhof ab (gegen Gebühr). Aus
+                    nach Bozen, Klausen oder Brixen. Von diesen Bahnhöfen gelangen sie jeweils mit der Buslinie 170 bis
+                    zu uns. Aus
                     Süditalien kommend reisen Sie über Florenz, Bologna, Verona
-                    und Trient bis nach Bozen, wo wir Sie gerne am Bahnhof abholen (gegen Gebühr). </p>
+                    und Trient bis nach Bozen. </p>
             </div>
         </div>
     </div>

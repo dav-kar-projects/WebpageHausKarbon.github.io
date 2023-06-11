@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/global.js"></script>
     <script src="../PreiseListe.js"></script>
     <link rel="stylesheet" href="../styles.css">
     <script src="../myScripts.js"></script>
+    <link rel="icon" href="logo/logo.png">
+
 
     <title>Wohnen</title>
 </head>
@@ -40,12 +41,12 @@
                 <div class="hgroup">
                     <h1>Ferienwohnungen am Fuße der Seiser Alm</h1>
                     <h2 class="h2">Ausgestattet mit Bergsicht, viel Platz und Gemütlichkeit sorgen unsere Apartments und
-                        Suiten für hochwertiges Wohngefühl.</h2>
+                        Studios für hochwertiges Wohngefühl.</h2>
                 </div>
                 <div class="page-content">
                     <div class=" hgroup page-content__main-content">Machen Sie es sich bequem, während Ihr Blick nach
                         draußen
-                        schweift, wo der Himmel die Dolomitengipfel berührt. Umgeben von natürlichen Materialien sind
+                        schweift. Umgeben von natürlichen Materialien sind
                         unsere Ferienwohnungen unweit der Seiser Alm ein Ort zum Träumen und Entspannen.</div>
                 </div>
             </div>
@@ -57,7 +58,7 @@
         <div class="item-list__background">
             <div class="container">
                 <div class="item-list__item">
-                    <div class="item-list__images row animate-in js-animate">
+                    <div class="item-list__images  animate-in js-animate">
                         <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
                             tabindex="0">
                             <div class="flickity-viewport" style="height: 400px;">
@@ -66,8 +67,8 @@
                                         style="position: absolute; left: 0%; opacity: 1;">
                                         <div class="item-list__image">
                                             <picture>
-                                                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_2.png"
-                                                    loading="lazy" style="width: 100%" alt="Wohnung_2">
+                                                <img src="../Database/Studio/Wohnung_2_bg.png" loading="lazy"
+                                                    style="width: 100%" alt="Wohnung_2">
                                             </picture>
                                         </div>
                                     </div>
@@ -102,15 +103,15 @@
                         <div class="item-list__price--info">für 2 Personen</div>
                     </div>
                     <div class="item-list__content">
-                        <div class="item-list__content-inner row">
+                        <div class="item-list__content-inner ">
                             <div class="item-list__content-inner--left"><a href="Studio.html"
                                     class="item-list__name">Studio</a>
-                                <div class="item-list__subtitle">33 m² - 2/4 Personen</div>
+                                <div class="item-list__subtitle">33 m² - 2 Personen</div>
                             </div>
                             <div class="item-list__content-inner--right">
-                                <div class="item-list__description">33 m² Suite-Feeling mit einem 20 m² Balkon für
+                                <div class="item-list__description">33 m² Suite-Feeling mit einem 20 m² Terrasse für
                                     grandiose
-                                    Aussichten Richtung Schlern.</div>
+                                    Aussichten Richtung Bergmassiv "Schlern".</div>
                             </div>
                         </div>
                         <div class="item-list__content-inner item-list__button-row row">
@@ -118,8 +119,7 @@
                                     class="linkstyle underline_animation">Details</a>
                             </div>
                             <div class="item-list__content-inner--right">
-                                <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                                    class="linkstyle underline_animation">Anfragen</a>
+                                <a href="anfrage.html" class="linkstyle underline_animation">Anfragen</a>
                                 <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
                                     onclick="DropdownFctStudio()">Preise
                                 </button>
@@ -171,27 +171,40 @@
                                                 <td id="period_6"></td>
                                                 <td id="price_stud_6" class="PriceColon"></td>
                                             </tr>
+                                            <tr>
+                                                <td id="period_7"></td>
+                                                <td id="price_stud_7" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="period_8"></td>
+                                                <td id="price_stud_8" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="period_9"></td>
+                                                <td id="price_stud_9" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="period_10"></td>
+                                                <td id="price_stud_10" class="PriceColon"></td>
+                                            </tr>
+                                            <tr>
+                                                <td id="period_11"></td>
+                                                <td id="price_stud_11" class="PriceColon"></td>
+                                            </tr>
                                         </tbody>
                                     </table>
 
                                 </div>
-                                <br><br> <strong>Einzelnutzung<br></strong>Unser
-                                Studio kann auch zur Einzelnutzung gebucht werden, hierfür gewären wir ein Rabatt
-                                von 20€ am Tag.
+                                <br> <br>
+                                <strong>Einzelnutzung<br></strong>Unser
+                                Studio kann auch zur Einzelnutzung gebucht werden, hierfür gewähren wir ein Rabatt
+                                von 20%.
                                 <br><br>
-                                <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns
-                                kostenlos. Von 3
-                                bis
-                                6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12
-                                Jahre und jeder
-                                weitere
-                                Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2
-                                Vollzahlern.<br><br>
-                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 1,75 € pro Person und Tag (Kinder
+                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,10 € pro Person und Tag (Kinder
                                 unter 14 Jahren
                                 ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
                                 kann nur vor Ort
-                                bezahlt werden.<br>
+                                bezahlt werden.<br><br>
                             </div>
                         </div>
                     </div>
@@ -208,7 +221,7 @@
     <div class="item-list__background">
         <div class="container">
             <div class="item-list__item">
-                <div class="item-list__images row animate-in js-animate">
+                <div class="item-list__images  animate-in js-animate">
                     <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
                         tabindex="0">
                         <div class="flickity-viewport" style="height: 400px;">
@@ -217,8 +230,8 @@
                                     style="position: absolute; left: 0%; opacity: 1;">
                                     <div class="item-list__image">
                                         <picture>
-                                            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_1.png"
-                                                loading="lazy" style="width: 100%" alt="Wohnung_1">
+                                            <img src="../Database/Appartment/Wohnung_1.png" loading="lazy"
+                                                style="width: 100%" alt="Wohnung_1">
                                         </picture>
                                     </div>
                                 </div>
@@ -255,8 +268,8 @@
                 <div class="item-list__content">
                     <div class="item-list__content-inner row">
                         <div class="item-list__content-inner--left "><a href="Appartment.html"
-                                class="item-list__name">Santer</a>
-                            <div class="item-list__subtitle">46 m² - 2/4 Personen</div>
+                                class="item-list__name">Apartment</a>
+                            <div class="item-list__subtitle">46 m² - 2 Personen</div>
                         </div>
                         <div class="item-list__content-inner--right">
                             <div class="item-list__description"> 46 m² als ganz persönlicher Rückzugsort. Mit 20
@@ -268,8 +281,7 @@
                         <div class="item-list__content-inner--left">
                             <a href="Appartment.html" class="linkstyle underline_animation">Details</a>
                         </div>
-                        <div class="item-list__content-inner--right"><a
-                                href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
+                        <div class="item-list__content-inner--right"><a href="anfrage.html"
                                 class="linkstyle underline_animation">Anfragen</a>
                             <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
                                 onclick="DropdownFctApp()">Preise
@@ -322,79 +334,110 @@
                                             <td id="_period_6"></td>
                                             <td id="price_app_6" class="PriceColon"></td>
                                         </tr>
+                                        <tr>
+                                            <td id="_period_7"></td>
+                                            <td id="price_app_7" class="PriceColon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="_period_8"></td>
+                                            <td id="price_app_8" class="PriceColon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="_period_9"></td>
+                                            <td id="price_app_9" class="PriceColon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="_period_10"></td>
+                                            <td id="price_app_10" class="PriceColon"></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="_period_11"></td>
+                                            <td id="price_app_11" class="PriceColon"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
 
-                                <div class="rooms-detail__prices--info"><br><br>
-                                    <strong>Einzelnutzung<br></strong>Unsere
-                                    Apartments und
-                                    Suiten können auch zur Einzelnutzung gebucht werden, hierfür berechnen wir ein
-                                    Zuschlag von
-                                    50%.<br><br>
-                                    <strong>Kinderermäßigung<br></strong>Von 0 bis 2,99 Jahren nächtigen Kinder bei uns
-                                    kostenlos. Von 3
-                                    bis
-                                    6,99 Jahren gewähren wir 70% und von 7 bis 11,99 Jahren 50% Rabatt. Kinder ab 12
-                                    Jahre und jeder
-                                    weitere
-                                    Erwachsene erhält -30% Ermäßigung. Die Kinderermäßigungen gelten bei 2
-                                    Vollzahlern.<br><br>
-                                    <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,50 € pro Person und Tag (Kinder
-                                    unter 14 Jahren
-                                    ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
-                                    kann nur vor Ort
-                                    bezahlt werden.<br><br> <strong>Abschlag Frühstück<br></strong>Bei Buchung ohne
-                                    Frühstück im
-                                    Apartment
-                                    bringen wir 20€ pro Tag und Person in Abzug.
-                                </div>
+
+
+                                <br> <br>
+
+                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,10 € pro Person und Tag (Kinder
+                                unter 14 Jahren
+                                ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten und
+                                kann nur vor Ort
+                                bezahlt werden.<br><br>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End of Second Item -->
-
         </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <footer id="Footer" class="footer-main">
         <script>
             $("#Footer").load("footer.html");
         </script>
-        </footer>
+    </footer>
 
-        <script>
-            src = "PreiseListe.js"
-            document.getElementById('period_0').innerHTML = prices[0].period_de;
-            document.getElementById('period_1').innerHTML = prices[1].period_de;
-            document.getElementById('period_2').innerHTML = prices[2].period_de;
-            document.getElementById('period_3').innerHTML = prices[3].period_de;
-            document.getElementById('period_4').innerHTML = prices[4].period_de;
-            document.getElementById('period_5').innerHTML = prices[5].period_de;
-            document.getElementById('period_6').innerHTML = prices[6].period_de;
-            document.getElementById('_period_0').innerHTML = prices[0].period_de;
-            document.getElementById('_period_1').innerHTML = prices[1].period_de;
-            document.getElementById('_period_2').innerHTML = prices[2].period_de;
-            document.getElementById('_period_3').innerHTML = prices[3].period_de;
-            document.getElementById('_period_4').innerHTML = prices[4].period_de;
-            document.getElementById('_period_5').innerHTML = prices[5].period_de;
-            document.getElementById('_period_6').innerHTML = prices[6].period_de;
-            document.getElementById('price_stud_0').innerHTML = prices[0].studio + ",- €";
-            document.getElementById('price_stud_1').innerHTML = prices[1].studio + ",- €";
-            document.getElementById('price_stud_2').innerHTML = prices[2].studio + ",- €";
-            document.getElementById('price_stud_3').innerHTML = prices[3].studio + ",- €";
-            document.getElementById('price_stud_4').innerHTML = prices[4].studio + ",- €";
-            document.getElementById('price_stud_5').innerHTML = prices[5].studio + ",- €";
-            document.getElementById('price_stud_6').innerHTML = prices[6].studio + ",- €";
-            document.getElementById('price_app_0').innerHTML = prices[0].apartment + ",- €";
-            document.getElementById('price_app_1').innerHTML = prices[1].apartment + ",- €";
-            document.getElementById('price_app_2').innerHTML = prices[2].apartment + ",- €";
-            document.getElementById('price_app_3').innerHTML = prices[3].apartment + ",- €";
-            document.getElementById('price_app_4').innerHTML = prices[4].apartment + ",- €";
-            document.getElementById('price_app_5').innerHTML = prices[5].apartment + ",- €";
-            document.getElementById('price_app_6').innerHTML = prices[6].apartment + ",- €";
-            document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
-            document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
+    <script>
+        src = "PreiseListe.js"
+        document.getElementById('period_0').innerHTML = prices[0].period_de;
+        document.getElementById('period_1').innerHTML = prices[1].period_de;
+        document.getElementById('period_2').innerHTML = prices[2].period_de;
+        document.getElementById('period_3').innerHTML = prices[3].period_de;
+        document.getElementById('period_4').innerHTML = prices[4].period_de;
+        document.getElementById('period_5').innerHTML = prices[5].period_de;
+        document.getElementById('period_6').innerHTML = prices[6].period_de;
+        document.getElementById('period_7').innerHTML = prices[7].period_de;
+        document.getElementById('period_8').innerHTML = prices[8].period_de;
+        document.getElementById('period_9').innerHTML = prices[9].period_de;
+        document.getElementById('period_10').innerHTML = prices[10].period_de;
+        document.getElementById('period_11').innerHTML = prices[11].period_de;
+        document.getElementById('_period_0').innerHTML = prices[0].period_de;
+        document.getElementById('_period_1').innerHTML = prices[1].period_de;
+        document.getElementById('_period_2').innerHTML = prices[2].period_de;
+        document.getElementById('_period_3').innerHTML = prices[3].period_de;
+        document.getElementById('_period_4').innerHTML = prices[4].period_de;
+        document.getElementById('_period_5').innerHTML = prices[5].period_de;
+        document.getElementById('_period_6').innerHTML = prices[6].period_de;
+        document.getElementById('_period_7').innerHTML = prices[7].period_de;
+        document.getElementById('_period_8').innerHTML = prices[8].period_de;
+        document.getElementById('_period_9').innerHTML = prices[9].period_de;
+        document.getElementById('_period_10').innerHTML = prices[10].period_de;
+        document.getElementById('_period_11').innerHTML = prices[11].period_de;
+        document.getElementById('price_stud_0').innerHTML = prices[0].studio + ".- €";
+        document.getElementById('price_stud_1').innerHTML = prices[1].studio + ".- €";
+        document.getElementById('price_stud_2').innerHTML = prices[2].studio + ".- €";
+        document.getElementById('price_stud_3').innerHTML = prices[3].studio + ".- €";
+        document.getElementById('price_stud_4').innerHTML = prices[4].studio + ".- €";
+        document.getElementById('price_stud_5').innerHTML = prices[5].studio + ".- €";
+        document.getElementById('price_stud_6').innerHTML = prices[6].studio + ".- €";
+        document.getElementById('price_stud_7').innerHTML = prices[7].studio + ".- €";
+        document.getElementById('price_stud_8').innerHTML = prices[8].studio + ".- €";
+        document.getElementById('price_stud_9').innerHTML = prices[9].studio + ".- €";
+        document.getElementById('price_stud_10').innerHTML = prices[10].studio + ".- €";
+        document.getElementById('price_stud_11').innerHTML = prices[11].studio + ".- €";
+        document.getElementById('price_app_0').innerHTML = prices[0].apartment + ".- €";
+        document.getElementById('price_app_1').innerHTML = prices[1].apartment + ".- €";
+        document.getElementById('price_app_2').innerHTML = prices[2].apartment + ".- €";
+        document.getElementById('price_app_3').innerHTML = prices[3].apartment + ".- €";
+        document.getElementById('price_app_4').innerHTML = prices[4].apartment + ".- €";
+        document.getElementById('price_app_5').innerHTML = prices[5].apartment + ".- €";
+        document.getElementById('price_app_6').innerHTML = prices[6].apartment + ".- €";
+        document.getElementById('price_app_7').innerHTML = prices[7].apartment + ".- €";
+        document.getElementById('price_app_8').innerHTML = prices[8].apartment + ".- €";
+        document.getElementById('price_app_9').innerHTML = prices[9].apartment + ".- €";
+        document.getElementById('price_app_10').innerHTML = prices[10].apartment + ".- €";
+        document.getElementById('price_app_11').innerHTML = prices[11].apartment + ".- €";
+        document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
+        document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
 
-        </script>
+    </script>
 </body>
 
 </html>

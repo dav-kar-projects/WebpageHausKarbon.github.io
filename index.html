@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Kastelart Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../myScripts.js"></script>
+    <script src="../PreiseListe.js"></script>
+    <link rel="icon" href="logo/logo.png">
+    <!-- Include Flatpickr library -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+
+<body class=my_body>
+
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar" style="letter-spacing:4px;">
+        </div>
+        <script>
+            $("#header").load("de/navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
+        </script>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <source srcset="../Database/Algemein/DSC_2525_Hero.jpg" media="(max-width: 600px)">
+            <source srcset="../Database/Algemein/DSC_2525_Hero_hq.jpg" media="(min-width: 800px)">
+            <img class="w3-image header_image js_hero_idclass" src="../Database/Algemein/DSC_2525_Hero.jpg"
+                alt="HeroImage">
+        </picture>
+        <div class="logo_MainPage">
+            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" height="auto"
+                class="logo">
+            <!-- <h1 class="title">Kastelart</h1> -->
+        </div>
+
+    </header>
+    <!-- Sidebar-->
+    <div class="side-bar row">
+        <a href="de/anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+        <div class="side-bar__separator"></div>
+        <a href="de/Preise.html" title="Preise" class=" button button--primary">Preise</a>
+    </div>
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+        <!-- About Section -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <a href="de/Wohnen.html" title="Wohnungen">
+                    <img src="../Database/Studio/Studio_teaser_couch.jpg" class="w3-round w3-image w3-opacity-min"
+                        alt="Table Setting" width="600" height="750">
+                </a>
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+
+                <h1 class="w3-center"><a href="de/Wohnen.html" title="Wohnungen" class="title_links">Ferienwohnungen in
+                        Kastelruth</a></h1><br>
+                <h5 class="w3-center">Tradition since 1965</h5>
+                <p class="w3-large">
+                    Tauchen Sie ein in eine atemberaubende Bergwelt und lassen Sie sich von einer einzigartigen
+                    Wohlfühllandschaft verwöhnen. In unseren Ferienwohnungen in Kastelruth spüren Sie die unmittelbare
+                    Verbundenheit mit der Natur. Ganz gleich, ob Sommer oder Winter, erleben Sie einen Urlaub, der Ihre
+                    Aktivwünsche grenzenlos erfüllt. Naturfreunde, Genusswanderer und begeisterte Bergsportler finden
+                    hier alles, wonach sie suchen.
+
+                </p>
+                <p class="w3-large w3-text-grey w3-hide-medium">Inmitten des Ski- und Wandergebiets der Seiser Alm
+                    gelegen, bieten die Kastelart Apartments and Studios das ganze Jahr über die Möglichkeit, sich nach
+                    dem Motto "Alles können, nichts müssen" zu entspannen. Mit modernen Räumlichkeiten und einem
+                    stilvollen Wellnessbereich schaffen Komfort und viel persönlicher Freiraum, eine wunderbare
+                    Atmosphäre, die dazu einlädt, auszufliegen und heimzukommen.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Teaser section -->
+        <div class="teaser page-slide teaser--show-logo" data-slide="teaser">
+            <div class="container">
+                <div class="teaser__item">
+                    <div class="h1 teaser__name">Ihre Urlaubs-Highlights</div>
+                    <div class="h2 teaser__subtitle">Hochwertig, persönlich, natürlich</div>
+                    <div class="teaser__description">
+                        <ul>
+                            <li>In <a title="bester Lage" href="de/ankommen.html">bester Lage</a>, um die Seiser Alm
+                                voll
+                                auszukosten und ganz Südtirol zu erkunden</li>
+                            <!--<li>Hochwertiger <a title="Frühstücksgenuss"
+                                    href="/de/fruehstueck-genuss/fruehstueck.html">Frühstücksgenuss </a>für den besten
+                                Start</li> -->
+                            <li><a title="Wellness" href="/de/Wellness.html">Wellness</a>
+                                und
+                                Regeneration für echte Erholung</li>
+                            <li>In nur 6 Minuten zur Seiser Alm Bahn </li>
+                            <!-- <li>Persönliche Beratung für <a title="individuelles Urlaubsdesign"
+                                    href="/de/ferienwohnungen-seis-am-Bergmassiv "Schlern"/neu-und-modern.html">individuelles
+                                    Urlaubsdesign</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Erleben Section -->
+        <div class="w3-row w3-padding-64" id="Erleben">
+            <div class="w3-col l6 w3-padding-large">
+                <h1 class="w3-center">Ihr Urlaub um und auf der Seiser Alm</h1><br>
+                <h5 class="w3-center">Unbegrenzter Freiraum inmitten der Berge</h5>
+                <p class="w3-large">
+                    Tauchen Sie ein in die ruhige und erholsame Atmosphäre, die Ihren Urlaub zu etwas ganz Besonderem
+                    macht. Hier erwartet Sie viel Platz und zahlreiche Möglichkeiten. Von endlosen Wanderwegen bis hin
+                    zu anspruchsvollen Berg- und Mountainbiketouren bietet der Sommerurlaub um und auf der Seiser Alm
+                    eine Fülle an Abwechslung.
+                </p>
+            </div>
+
+            <div class="w3-col l6 w3-padding-large">
+                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/activity.png"
+                    class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+            </div>
+        </div>
+
+        <hr>
+        <!-- Teaser Section -->
+        <div id="teaser">
+
+            <script>
+                $("#teaser").load("de/Teaser.html");
+
+                $(document).ready(function () {
+                    console.log("Loading the prices");
+                    src = "PreiseListe.js";
+                    waitForElementToLoad();
+                });
+
+                function waitForElementToLoad() {
+                    var teaserStudElement = document.getElementById('teaser_stud');
+                    var teaserAppElement = document.getElementById('teaser_app');
+
+                    if (teaserStudElement && teaserAppElement) {
+                        // Elements are loaded, add the prices
+                        teaserStudElement.innerHTML = "ab " + prices[0].studio + ",- €";
+                        teaserAppElement.innerHTML = "ab " + prices[0].apartment + ",- €";
+                    } else {
+                        // Elements not yet loaded, wait and try again
+                        setTimeout(waitForElementToLoad, 100); // Adjust the delay as needed
+                    }
+                }
+
+                function selectElement(isRightArrow) {
+                    var appTeaser = document.getElementById("app_teaser");
+                    var studioTeaser = document.getElementById("studio_teaser");
+
+                    if (appTeaser.classList.contains("is-selected")) {
+                        appTeaser.classList.remove("is-selected");
+                        studioTeaser.classList.add("is-selected");
+                    } else if (studioTeaser.classList.contains("is-selected")) {
+                        studioTeaser.classList.remove("is-selected");
+                        appTeaser.classList.add("is-selected");
+                    }
+
+                }
+            </script>
+        </div>
+        <!-- End Teaser Section -->
+
+        <!-- Entespannen Section
+        <div class="w3-row w3-padding-64" id="Entspannen">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <a href="Wellness.html">
+                    <img src="../Database/Welness/Sauna_Finish.jpg" class="w3-round w3-image w3-opacity-min"
+                        alt="Table Setting" width="600" height="750">
+                </a>
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <a href="Wellness.html" class="title_links">
+                    <h1 class="w3-center">Entspannen in unserer Wellnesslounge</h1>
+                </a><br>
+
+
+                <h5 class="w3-center">Unsere Ferienwohnungen mit Wellness sorgen für Erholung und
+                    Regeneration für Körper und Seele</h5>
+                <p class="w3-large">
+                    Spüren Sie Erholung und Regeneration für Körper und Seele in unserer Wellnesslounge. Mit
+                    ausgewählten und natürlichen Materialien aus der Region, holen wir die Natur in unsere
+                    Wellnesslounge.
+
+
+                </p>
+                <p class="w3-large w3-text-grey w3-hide-medium">Zwischen 15.00 und 21.00 Uhr stehen Ihnen die
+                    Türen
+                    zu
+                    unserem Verwöhnangebot offen.
+                    Mit finnischer Sauna, Dampfbad und Ruheraum, tanken Sie
+                    Kraft
+                    für
+                    neue Bergerlebnisse. Momente der Entschleunigung erwarten Sie!</p>
+            </div>
+        </div> -->
+
+    </div>
+
+    <footer id="Footer" class="footer-main">
+        <script>
+            $("#Footer").load("de/footer.html");
+        </script>
+    </footer>
+    <script>
+
+    </script>
+</body>
+
+
+</html>

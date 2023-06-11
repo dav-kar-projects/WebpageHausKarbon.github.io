@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../myScripts.js"></script>
     <script src="../PreiseListe.js"></script>
+    <link rel="icon" href="logo/logo.png">
 
     <!-- Include Flatpickr library -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -30,18 +31,27 @@
         <script>
             $("#header").load("navbar.html");
             window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
                 if (document.getElementById("header") && heroImageHeight > 0) {
                     console.log("Doing the header check");
                     myFunction();
                 }
             };
+            console.log("Header in file ");
         </script>
     </div>
 
     <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:50px" id="home">
-        <img class="w3-image header_image js_hero_idclass"
-            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/HomeImg.png" alt="HeroImage">
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <source srcset="../Database/Algemein/DSC_2525_Hero.jpg" media="(max-width: 600px)">
+            <source srcset="../Database/Algemein/DSC_2525_Hero_hq.jpg" media="(min-width: 800px)">
+            <img class="w3-image header_image js_hero_idclass" src="../Database/Algemein/DSC_2525_Hero.jpg"
+                alt="HeroImage">
+        </picture>
         <div class="logo_MainPage">
             <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logoMain.svg" height="auto"
                 class="logo">
@@ -61,30 +71,30 @@
         <!-- About Section -->
         <div class="w3-row w3-padding-64" id="about">
             <div class="w3-col m6 w3-padding-large w3-hide-small">
-                <a href="/Apparment_classe1.html" title="Wohnungen">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wohnen.png"
-                        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+                <a href="Wohnen.html" title="Wohnungen">
+                    <img src="../Database/Studio/Studio_teaser_couch.jpg" class="w3-round w3-image w3-opacity-min"
+                        alt="Table Setting" width="600" height="750">
                 </a>
             </div>
 
             <div class="w3-col m6 w3-padding-large">
 
-                <h1 class="w3-center"><a href="/Wohnen.html" title="Wohnungen" class="title_links">Ferienwohnungen in
+                <h1 class="w3-center"><a href="Wohnen.html" title="Wohnungen" class="title_links">Ferienwohnungen in
                         Kastelruth</a></h1><br>
                 <h5 class="w3-center">Tradition since 1965</h5>
                 <p class="w3-large">
-                    Für eine Auszeit mit Entspannungsfaktor: Eingebettet in eine wunderbare Bergwelt, wartet eine
-                    einzigartige Wohlfühllandschaft.
-                    Zu Gast in unseren Ferienwohnungen in Kastelruth spüren Sie die Nähe zur Natur. Sommer wie Winter
-                    erleben Sie einen Urlaub, der Aktivwünschen keine Grenzen setzt. Naturliebhaber, Genusswanderer und
-                    ambitionierte Bergsportler finden hier alles, was sie suchen.
+                    Tauchen Sie ein in eine atemberaubende Bergwelt und lassen Sie sich von einer einzigartigen
+                    Wohlfühllandschaft verwöhnen. In unseren Ferienwohnungen in Kastelruth spüren Sie die unmittelbare
+                    Verbundenheit mit der Natur. Ganz gleich, ob Sommer oder Winter, erleben Sie einen Urlaub, der Ihre
+                    Aktivwünsche grenzenlos erfüllt. Naturfreunde, Genusswanderer und begeisterte Bergsportler finden
+                    hier alles, wonach sie suchen.
 
                 </p>
-                <p class="w3-large w3-text-grey w3-hide-medium">Ganz nach dem Motto „Alles können, nichts müssen“,
-                    befinden Sie sich mitten im Ski- und Wandergebiet der Seiser Alm. So sind die La Paula Apartments &
-                    Suites das ganze Jahr über ein Ort um auszufliegen und heimzukommen – mit großzügigen Räumlichkeiten
-                    und einem stilvollen Wellnessbereich, schaffen moderner Komfort und viel persönlicher Freiraum eine
-                    wunderbare Atmosphäre.</p>
+                <p class="w3-large w3-text-grey w3-hide-medium">Inmitten des Ski- und Wandergebiets der Seiser Alm
+                    gelegen, bieten die Kastelart Apartments and Studios das ganze Jahr über die Möglichkeit, sich nach
+                    dem Motto "Alles können, nichts müssen" zu entspannen. Mit modernen Räumlichkeiten und einem
+                    stilvollen Wellnessbereich schaffen Komfort und viel persönlicher Freiraum, eine wunderbare
+                    Atmosphäre, die dazu einlädt, auszufliegen und heimzukommen.</p>
             </div>
         </div>
 
@@ -98,17 +108,19 @@
                     <div class="h2 teaser__subtitle">Hochwertig, persönlich, natürlich</div>
                     <div class="teaser__description">
                         <ul>
-                            <li>In <a title="bester Lage" href="ankommen.html">bester Lage</a>, um die Seiser Alm voll
+                            <li>In <a title="bester Lage" href="ankommen.html">bester Lage</a>, um die Seiser Alm
+                                voll
                                 auszukosten und ganz Südtirol zu erkunden</li>
                             <!--<li>Hochwertiger <a title="Frühstücksgenuss"
-                                    href="/de/fruehstueck-genuss/fruehstueck.html">Frühstücksgenuss </a>für den besten
+                                    href="/fruehstueck-genuss/fruehstueck.html">Frühstücksgenuss </a>für den besten
                                 Start</li> -->
-                            <li><a title="Wellness" href="/de/entspannen/ferienwohnung-mit-sauna.html">Wellness</a>
+                            <li><a title="Wellness" href="/Wellness.html">Wellness</a>
                                 und
                                 Regeneration für echte Erholung</li>
-                            <li>Persönliche Beratung für <a title="individuelles Urlaubsdesign"
-                                    href="/de/ferienwohnungen-seis-am-schlern/neu-und-modern.html">individuelles
-                                    Urlaubsdesign</a></li>
+                            <li>In nur 6 Minuten zur Seiser Alm Bahn </li>
+                            <!-- <li>Persönliche Beratung für <a title="individuelles Urlaubsdesign"
+                                    href="/ferienwohnungen-seis-am-Bergmassiv "Schlern"/neu-und-modern.html">individuelles
+                                    Urlaubsdesign</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -120,10 +132,10 @@
                 <h1 class="w3-center">Ihr Urlaub um und auf der Seiser Alm</h1><br>
                 <h5 class="w3-center">Unbegrenzter Freiraum inmitten der Berge</h5>
                 <p class="w3-large">
-                    Spüren Sie, wie die Ruhe und Erholung allmählich das Gemüt ergreifen und den Urlaub zu etwas ganz
-                    Besonderem machen. Viel Platz und noch mehr Möglichkeiten warten.
-                    Von endlosen Wanderwegen bis zu anspruchsvollen Berg- und Mountainbiketouren bietet der Urlaub auf
-                    der Seiser Alm im Sommer jede Menge Abwechslung.
+                    Tauchen Sie ein in die ruhige und erholsame Atmosphäre, die Ihren Urlaub zu etwas ganz Besonderem
+                    macht. Hier erwartet Sie viel Platz und zahlreiche Möglichkeiten. Von endlosen Wanderwegen bis hin
+                    zu anspruchsvollen Berg- und Mountainbiketouren bietet der Sommerurlaub um und auf der Seiser Alm
+                    eine Fülle an Abwechslung.
                 </p>
             </div>
 
@@ -139,11 +151,27 @@
 
             <script>
                 $("#teaser").load("Teaser.html");
-                window.onscroll = function () {
-                    src = "PreiseListe.js"
-                    document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
-                    document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
-                };
+
+                $(document).ready(function () {
+                    console.log("Loading the prices");
+                    src = "PreiseListe.js";
+                    waitForElementToLoad();
+                });
+
+                function waitForElementToLoad() {
+                    var teaserStudElement = document.getElementById('teaser_stud');
+                    var teaserAppElement = document.getElementById('teaser_app');
+
+                    if (teaserStudElement && teaserAppElement) {
+                        // Elements are loaded, add the prices
+                        teaserStudElement.innerHTML = "ab " + prices[0].studio + ",- €";
+                        teaserAppElement.innerHTML = "ab " + prices[0].apartment + ",- €";
+                    } else {
+                        // Elements not yet loaded, wait and try again
+                        setTimeout(waitForElementToLoad, 100); // Adjust the delay as needed
+                    }
+                }
+
                 function selectElement(isRightArrow) {
                     var appTeaser = document.getElementById("app_teaser");
                     var studioTeaser = document.getElementById("studio_teaser");
@@ -156,18 +184,17 @@
                         appTeaser.classList.add("is-selected");
                     }
 
-                    // Your additional logic here for handling right or left arrow clicks
                 }
             </script>
         </div>
         <!-- End Teaser Section -->
 
-        <!-- Entespannen Section -->
+        <!-- Entespannen Section
         <div class="w3-row w3-padding-64" id="Entspannen">
             <div class="w3-col m6 w3-padding-large w3-hide-small">
                 <a href="Wellness.html">
-                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/entspannen.png"
-                        class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+                    <img src="../Database/Welness/Sauna_Finish.jpg" class="w3-round w3-image w3-opacity-min"
+                        alt="Table Setting" width="600" height="750">
                 </a>
             </div>
 
@@ -177,16 +204,12 @@
                 </a><br>
 
 
-                <h5 class="w3-center">Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für Erholung und
+                <h5 class="w3-center">Unsere Ferienwohnungen mit Wellness sorgen für Erholung und
                     Regeneration für Körper und Seele</h5>
                 <p class="w3-large">
                     Spüren Sie Erholung und Regeneration für Körper und Seele in unserer Wellnesslounge. Mit
                     ausgewählten und natürlichen Materialien aus der Region, holen wir die Natur in unsere
-                    Wellnesslounge. Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für herrliche
-                    Entspannung.
-                    Dabei setzen wir ganz bewusst auf die Elemente unserer Berglandschaft: reines Gebirgswasser,
-                    klare
-                    Almluft, starke Erde und wärmendes Feuer ziehen sich durch den Spa.
+                    Wellnesslounge.
 
 
                 </p>
@@ -194,13 +217,12 @@
                     Türen
                     zu
                     unserem Verwöhnangebot offen.
-                    Mit finnischer Sauna, Dampfbad, Infrarotkabine, Salounge und zwei Ruheräumen, tanken Sie
+                    Mit finnischer Sauna, Dampfbad und Ruheraum, tanken Sie
                     Kraft
                     für
-                    neue Bergerlebnisse. Naturreine Produkte machen unsere Massagen und Anwendungen einmalig
-                    wirkungsvoll und entspannend. All diese Momente der Entschleunigung erwarten Sie!</p>
+                    neue Bergerlebnisse. Momente der Entschleunigung erwarten Sie!</p>
             </div>
-        </div>
+        </div> -->
 
     </div>
 

@@ -2630,8 +2630,11 @@ element.style {
 }
 
 .carousel_container {
-    padding-left: 0px;
-    padding-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1200px;
 }
 
 @media screen and (min-width: 850px) {

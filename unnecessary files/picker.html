@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Slider</title>
+    <style>
+        .slider {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider img.active {
+            display: block;
+        }
+
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+        }
+
+        .slider button.prev {
+            left: 20px;
+        }
+
+        .slider button.next {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <img class="active" src="https://images.unsplash.com/photo-1558980666-cd0cb2a5dae8">
+        <img src="https://images.unsplash.com/photo-1620735489565-5990eb6777a5">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = slider.querySelectorAll('img');
+        const prevButton = slider.querySelector('.prev');
+        const nextButton = slider.querySelector('.next');
+        let currentSlide = 0;
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = slides.length - 1;
+            }
+            updateSlide();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0;
+            }
+            updateSlide();
+        });
+
+        function updateSlide() {
+            for (let i = 0; i < slides.length; i++) {
+                if (i === currentSlide) {
+                    slides[i].classList.add('active');
+                } else {
+                    slides[i].classList.remove('active');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
