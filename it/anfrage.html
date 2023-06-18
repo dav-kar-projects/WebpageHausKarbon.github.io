@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
+
 <html>
 
 <head>
@@ -6,10 +8,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../styles.css">
-  <script src="myScripts.js"></script>
+  <script src="../myScripts.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="icon" href="logo/logo.png">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/de.js"></script>
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -37,9 +40,8 @@
         'childAge6': $('input[name="childAge6"]').val(),
         'email': $('input[name="email"]').val(),
         'anrede': $('input[name="Form.Salutation"]:checked').val(),
-        'lang': "de"
+        'lang': "it"
       };
-      var warning = false;
       var warning = false;
       var today = new Date();
       // console.log(today)
@@ -57,7 +59,7 @@
         // console.log("Date Classes: ", $('input[name="dates"]').attr('class'));
         // console.log(!$('.hf-warning_dates').length)
         if (!$('.hf-warning_dates').length) {
-          $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
+          $('.form_arrival').append('<div class="hf-warning_dates" id="hf_50353m2nvdtie" aria-live="polite"> *Compilare questo campo</div>');
         }
         warning = true;
       }
@@ -69,7 +71,7 @@
         $('.anrede_dif_inner').addClass('error_full')
         if (!$('.hf-warning_anrede').length) {
           // console.log("Anrede is required");
-          $('.anrede_dif').append('<div class="hf-warning_anrede" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte wählen Sie eine Anrede aus.</div>');
+          $('.anrede_dif').append('<div class="hf-warning_anrede" id="hf_50353m2nvdtie" aria-live="polite"> * Selezionare una delle opzioni disponibili.</div>');
         }
         warning = true;
       } else {
@@ -89,7 +91,7 @@
         $('input[name="email"]').addClass('error_full')
         if (!$('.hf-warning_mail').length) {
           // console.log("E-Mail is required");
-          $('.form__group').append('<div class="hf-warning_mail" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
+          $('.form__group').append('<div class="hf-warning_mail" id="hf_50353m2nvdtie" aria-live="polite"> *Compilare questo campo</div>');
         }
         warning = true;
       }
@@ -106,7 +108,7 @@
         $('input[name="email"]').addClass('error_full')
         if (!$('.hf-warning_name').length) {
           // console.log("Last name is required");
-          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> * Bitte füllen Sie dieses Feld aus.</div>');
+          $('.form__group_name').append('<div class="hf-warning_name" id="hf_50353m2nvdtie" aria-live="polite"> *Compilare questo campo</div>');
         }
 
         warning = true;
@@ -115,7 +117,7 @@
       if (formData.Studios == 0 && formData.Appartments == 0) {
         $('input[name="Studio"]').addClass('error_full')
         $('input[name="App"]').addClass('error_full')
-        $('.form_appartmetn').append('<div class="hf-warning_name" id="hf_50353m2nvdtie33" aria-live="polite"> * Bitte wälen Sie ein Appartement Typ aus.</div>');
+        $('.form_appartmetn').append('<div class="hf-warning_name" id="hf_50353m2nvdtie33" aria-live="polite"> * Selezionare una delle opzioni disponibili.</div>');
 
         console.log("no appartment selected");
 
@@ -131,7 +133,7 @@
         return;
         console.log("returned");
       }
-      $('.form-send').val('ANFRAGE WIRD VERSENDET...');
+      $('.form-send').val('Richiesta viene mandata...');
       $('.form-send').prop('disabled', true);
 
       $.ajax({
@@ -140,7 +142,7 @@
         data: formData,
         success: function (response) {
           console.log(response);
-          $('.form-send').val('ANFRAGE GESENDET');
+          $('.form-send').val('Ricchiest');
           $('.form-send').prop('disabled', true);
           $('.form-send').css('background-color', '#9b8e7d');
           // console.log(response);
@@ -151,33 +153,21 @@
   });
 </script>
 
-<body>
-
+<body class=my_body>
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div id="header" class="nav_bar" style="letter-spacing:4px;">
     </div>
     <script>
       $("#header").load("navbar.html");
-      window.onscroll = function () {
-        if (document.getElementById("header") && heroImageHeight == 0) {
-          heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
-        }
-
-        if (document.getElementById("header") && heroImageHeight > 0) {
-          console.log("Doing the header check");
-          myFunction();
-        }
-
-      };
-      console.log("Header in file ");
     </script>
   </div>
+
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
-    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
+    <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
     <div class="side-bar__separator"></div>
-    <a href="Preise.html" title="Preise" class=" button button--primary">Prezzi</a>
+    <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
   </div>
   <!-- Text Box-->
   <div class="page-slide page-content page-content__nomarginbottom animate-in js-animate" data-slide="content">
@@ -188,7 +178,8 @@
 
         <div class="page-content__content">
           <div class="page-content__main-content">
-            Sarà un piacere elaborare un’offerta su misura per voi, confezionata sulla base delle vostre necessità. Non
+            Sarà un piacere elaborare un’offerta su misura per voi, confezionata sulla base delle vostre necessità.
+            Non
             vediamo l’ora di sentirvi o di leggere di voi!
           </div>
         </div>
@@ -196,13 +187,13 @@
 
         <div class="container_anfrage">
 
-          <form action="script.php" method="post" class="" data-scrolltoerror-offset="50" data-scrolltoerror-active=""
-            data-clear-hidden-fields="false">
+          <form action="../script.php" method="post" class="" data-scrolltoerror-offset="50"
+            data-scrolltoerror-active="" data-clear-hidden-fields="false">
 
             <div class="form__block">
               <h3 class="form__title">1. In che periodo desideri trascorrere la vacanza?</h3>
               <div class="form_arrival">
-                <input class="Ankunft" name="dates" type=" datetime-local" placeholder="Periodo" required>
+                <input class="Ankunft" name="dates" type=" datetime-local" placeholder="Data" required>
               </div>
             </div>
 
@@ -215,7 +206,6 @@
                     name="__Invariant" type="hidden" value="Form.Adults"><button type="button"
                     class="form-number__plus">+</button>
                 </div>
-
                 <div class="form__row"><label for="Form_Children">Bambini</label>
                   <div class="form-number__container"><button type="button" class="form-number__minusC">-</button><input
                       type="number" class="form__control contact__children form-number" min="0" max="5" data-val=""
@@ -265,6 +255,8 @@
                   </div>
                 </div>
               </div>
+
+
               <div class="form__block">
                 <div class="form__block">
 
@@ -290,123 +282,103 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form__block">
-                    <h3 class="form__title">Parlaci di te:</h3>
-                    <div class="form__row">
-                      <div class="form__req ">Titolo</div>
-                      <div class="anrede_dif">
-                        <ul class="form-radiobutton-list required anrede_dif_inner ">
-                          <li><input id="Form.Salutation1" type="radio" value="Gentile signora  " name="Form.Salutation"
-                              required="required"><label for="Form.Salutation1">Signora</label></li>
-                          <li><input id="Form.Salutation3" type="radio" value="Gentile signor " name="Form.Salutation"
-                              required="required"><label for="Form.Salutation3">Signor</label></li>
-                          <li><input id="Form.Salutation2" type="radio" value="Gentile famiglia " name="Form.Salutation"
-                              required="required"><label for="Form.Salutation2">Famiglia</label></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <label for="fname">Nome</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-                    <div class="form__group_name">
-                      <label class="form__req" for="lname">Cognome</label>
-                      <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-                    </div>
-
-                    <div class="form__group">
-                      <label class="form__req" for="lname">E-Mail</label>
-                      <input type="text" id="lname" name="email" placeholder="Your E-Mail.." required>
+                  <h3 class="form__title">Parlaci di te:</h3>
+                  <div class="form__row">
+                    <div class="form__req ">Titolo</div>
+                    <div class="anrede_dif">
+                      <ul class="form-radiobutton-list required anrede_dif_inner ">
+                        <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau " name="Form.Salutation"
+                            required="required"><label for="Form.Salutation1">Signora</label>
+                        </li>
+                        <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr " name="Form.Salutation"
+                            required="required"><label for="Form.Salutation3">Signor</label>
+                        </li>
+                        <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie "
+                            name="Form.Salutation" required="required"><label for="Form.Salutation2">Famiglia</label>
+                        </li>
+                      </ul>
                     </div>
                   </div>
+                  <label for="fname">Nome</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Nome..">
 
-                  <label for="country">Paese</label>
-                  <select id="country" name="country">
-                    <option value="Italia">Italia</option>
-                    <option value="Deutschland">Deutschland</option>
-                    <option value="Österreich">Österreich</option>
-                  </select>
-
-                  <label for="subject">Messaggio</label>
-                  <textarea id="subject" name="message" placeholder="Nachricht an Uns.."
-                    style="height:200px"></textarea>
-
-                  <div class="button-row">
-                    <input type="submit" value="INVIA RICHIESTA" class="form-send button button--primary">
-
-                    <form action="/script.php">
+                  <div class="form__group_name">
+                    <label class="form__req" for="lname">Cognome</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Cognome.." required>
                   </div>
-                  <div id="successPopup">Anfrage erfolgreich gesendet</div>
+
+                  <div class="form__group">
+                    <label class="form__req" for="lname">E-Mail</label>
+                    <input type="text" id="lname" name="email" placeholder="E-Mail.." required>
+                  </div>
                 </div>
+
+                <label for="country">Paese</label>
+                <select id="country" name="country">
+                  <option value="Italia">Italia</option>
+                  <option value="Deutschland">Deutschland</option>
+                  <option value="Österreich">Österreich</option>
+                </select>
+
+                <label for="subject">Messaggio</label>
+                <textarea id="subject" name="message" placeholder="Messaggio per noi.." style="height:200px"></textarea>
+
+                <div class="button-row">
+                  <input type="submit" value="INVIA RICHIESTA" class="form-send button button--primary">
+
+                  <form action="../script.php">
+                </div>
+                <div id="successPopup">Richiesta inviata con successo</div>
               </div>
             </div>
         </div>
-        <script>
-
-
-          const config = {
-            altInput: true,
-            altFormat: "D j. F Y",
-            dateFormat: "Y-m-d",
-            showMonths: 2,
-            locale: "de",
-            inline: false,
-            mode: "range",
-            minDate: "today",
-            onClose: function (selectedDates) {
-              const endInput = document.querySelector(".Ankunft");
-              // console.log(endInput)
-            },
-          };
-
-          flatpickr(".Ankunft", config);
-
-        </script>
-        <style>
-          #successPopup {
-            background-color: green;
-            color: white;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-20%);
-            padding: 1em;
-            border-radius: 0.5em;
-            display: none;
-            transition: top 0.5s ease-in-out;
-          }
-        </style>
-</body>
-<!-- Footer -->
-<footer id="Footer" class="footer-main">
-  <div class="container">
-    <div class="address">
-      <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
-        <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
-          height="110%" alt="Karbon Apartments &amp; Suites"></a>
-      <div class="address__contact">
-        <div class="address__actions">
-          <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255" data-gtm-category="Phone"
-            data-gtm-action="phoneclick" data-gtm-label="Address">
-            <i></i> +39 0471 20501012</a>
-          <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it" data-gtm-category="E-Mail"
-            data-gtm-action="mailclick" data-gtm-label="Address">
-            <i></i> info@kastelart.it</a>
-        </div>
-
-        <div class="adress_text">
-          <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
-                      " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
-            data-gtm-label="Address">
-            <i></i> Ployerweg 7, 39040 Kastelruth<br> Südtirol, Italien</a>
-        </div>
       </div>
+      <script>
 
+
+        const config = {
+          altInput: true,
+          altFormat: "D j. F Y",
+          dateFormat: "Y-m-d",
+          showMonths: 2,
+          locale: "it", // Set locale to Italian
+          inline: false,
+          mode: "range",
+          minDate: "today",
+          onClose: function (selectedDates) {
+            const endInput = document.querySelector(".Ankunft");
+            // console.log(endInput)
+          },
+        };
+
+        flatpickr(".Ankunft", config);
+
+      </script>
+      <style>
+        #successPopup {
+          background-color: green;
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-20%);
+          padding: 1em;
+          border-radius: 0.5em;
+          display: none;
+          transition: top 0.5s ease-in-out;
+        }
+      </style>
     </div>
   </div>
-  <footer id="Footer" class="footer-main">
-    <script>
-      $("#Footer").load("footer.html");
-    </script>
-  </footer>
+
+  <footer>
+    <footer id="Footer" class="footer-main">
+      <script>
+        $("#Footer").load("footer.html");
+      </script>
+    </footer>
+</body>
+
 
 </html>
