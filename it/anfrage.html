@@ -19,7 +19,7 @@
 <script>
   $(document).ready(function () {
     $('.form-send').click(function (e) {
-      e.preventDefault();
+      //e.preventDefault();
       $('.form-send').css('background-color', '#aa8817');
 
       var formData = {
@@ -46,7 +46,7 @@
       var today = new Date();
       // console.log(today)
       var selectedDate = new Date(formData.dates);
-
+      console.log(formData)
       if (selectedDate < today) {
         // console.log("Selected date is in the past");
         warning = true;
@@ -288,14 +288,14 @@
                     <div class="form__req ">Titolo</div>
                     <div class="anrede_dif">
                       <ul class="form-radiobutton-list required anrede_dif_inner ">
-                        <li><input id="Form.Salutation1" type="radio" value="Sehr geehrte Frau " name="Form.Salutation"
+                        <li><input id="Form.Salutation1" type="radio" value="Gentile Signora " name="Form.Salutation"
                             required="required"><label for="Form.Salutation1">Signora</label>
                         </li>
-                        <li><input id="Form.Salutation3" type="radio" value="Sehr geehrter Herr " name="Form.Salutation"
+                        <li><input id="Form.Salutation3" type="radio" value="Gentile Signore " name="Form.Salutation"
                             required="required"><label for="Form.Salutation3">Signor</label>
                         </li>
-                        <li><input id="Form.Salutation2" type="radio" value="Sehr geehrte Familie "
-                            name="Form.Salutation" required="required"><label for="Form.Salutation2">Famiglia</label>
+                        <li><input id="Form.Salutation2" type="radio" value="Gentile Famiglia " name="Form.Salutation"
+                            required="required"><label for="Form.Salutation2">Famiglia</label>
                         </li>
                       </ul>
                     </div>

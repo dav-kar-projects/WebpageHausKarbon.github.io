@@ -3,12 +3,7 @@
     
     $from = $_POST['email']; // the sender's email address
     $ankunft = $_POST['dates'];
-    $dates = explode(" bis ", $ankunft);
-    $date_from = $dates[0];
-    $date_to = $dates[1];
 
-    $formatted_date_from = date("d-m-Y", strtotime($date_from));
-    $formatted_date_to = date("d-m-Y", strtotime($date_to));
 
     $anrede = $_POST['anrede'];
     $first_name = $_POST['firstname'];
@@ -35,9 +30,27 @@
     $rooms = '';
     $language = $_POST['lang'];
 
+  
+
 
 if ($language == "de" || $language == "en")  {
-  
+  $dates = explode(" bis ", $ankunft);
+  $date_from = $dates[0];
+  $date_to = $dates[1];
+
+  $formatted_date_from = date("d-m-Y", strtotime($date_from));
+  $formatted_date_to = date("d-m-Y", strtotime($date_to));
+
+  // echo "From: " . $from . "<br>";
+  // echo "Ankunft: " . $ankunft . "<br>";
+  // echo "Date From: " . $date_from . "<br>";
+  // echo "Date To: " . $date_to . "<br>";
+  // echo "Formatted Date From: " . $formatted_date_from . "<br>";
+  // echo "Formatted Date To: " . $formatted_date_to . "<br>";
+  // echo "Formatted Date From: " . $formatted_date_from . "<br>";
+  // echo "Formatted Date To: " . $formatted_date_to . "<br>";
+
+
   if ($Studios ==1){
     $rooms .= "- 1 Studio\n\t";
   }
@@ -121,6 +134,12 @@ $subject2 = "Kastelart - Buchungsanfrage erhalten";
 
 if ($language == "it")
 {
+  $dates = explode(" to ", $ankunft);
+  $date_from = $dates[0];
+  $date_to = $dates[1];
+  $formatted_date_from = date("d-m-Y", strtotime($date_from));
+  $formatted_date_to = date("d-m-Y", strtotime($date_to));
+
 
   if ($children >= 1) {
     $childAges .= " - Bambino 1 Etá: $childAge1\n\t";
@@ -146,7 +165,7 @@ if ($language == "it")
 
 $message2 = $anrede . " " . $last_name . ",
 
-Grazie mille per la tua richiesta di prenotazione. Abbiamo ricevuto la tua richiesta e ti contatteremo il prima possibile.
+Grazie mille per la sua richiesta di prenotazione. Abbiamo ricevuto la  richiesta e le contatteremo il prima possibile.
 
 I dettagli della richiesta di prenotazione sono i seguenti:
 - Soggiorno: " . $formatted_date_from . " fino al " . $formatted_date_to . "

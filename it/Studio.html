@@ -5,17 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="stylesheet" href="../styles.css">
   <script src="../myScripts.js"></script>
   <script src="../PreiseListe.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="logo/logo.png">
 
-  <title>Appartamento</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+  <title>Studio</title>
 </head>
 
 <body class=my_body>
@@ -28,6 +30,7 @@
       $("#header").load("navbar.html");
     </script>
   </div>
+
   <!-- Sidebar-->
   <div class="side-bar row animate-in js-animate">
     <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
@@ -42,12 +45,14 @@
       <div class="page-content">
 
         <div class="hgroup">
-          <h1>Appartamento con camera da letto separata e balcone.</h1>
-          <h2 class="h2"> 46 m² - 2/4 Persone</h2>
+          <h1>Studio con terrazza
+            <h2 class="h2"> 33 m² - 2/3 Persone</h2>
         </div>
         <div class="page-content">
-          <div class=" hgroup page-content__main-content">Questo appartamento di 46 m² offre comfort e atmosfera di
-            libertà a volontà. Per non parlare della vista dal balcone di 20 m².</div>
+          <div class=" hgroup page-content__main-content">Atmosfera da suite su 33 m² con un balcone
+            di 20
+            m² che
+            regala una vista grandiosa verso le montagne</div>
         </div>
       </div>
     </div>
@@ -62,11 +67,12 @@
           <div class="item-list__image">
             <picture>
               <div class="main-carousel">
-                <img src="../Database/Appartment/Appartment_Chouch.JPG" class="carousel_img">
-                <img src="../Database/Appartment/DSC_2512.jpg" class="carousel_img">
-                <img src="../Database/Appartment/Reschoot_Appartmetn_Dusche_besser_wasser an.jpg" class="carousel_img">
-                <img src="../Database/Appartment/Appartmetn_Küche4.JPG" class="carousel_img">
-                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_1.png"
+                <img src="../Database/Studio/Studio_Overview.jpg" class="carousel_img">
+                <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt.jpg" class="carousel_img">
+                <img src="../Database/Studio/Studio_Bett2.JPG" class="carousel_img">
+                <img src="../Database/Studio/Studio_Küche2.JPG" class="carousel_img">
+                <img src="../Database/Studio/Studio_Tisch.JPG" class="carousel_img">
+                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/Wohnung_2.png"
                   class="carousel_img">
               </div>
             </picture>
@@ -81,16 +87,15 @@
 
             <!--Price Banner-->
             <div class="item-list__price__carousel ">
-              <div id="teaser_app" class="item-list__price--value"></div>
-              <div class="item-list__price--info">per due persone</div>
+              <div id="teaser_stud" class="item-list__price--value"></div>
+              <div class="item-list__price--info">per 2 Persone</div>
             </div>
             <!--End Price Banner-->
             <!--Description-->
             <div class="item-list__content">
               <div class="item-list__content-inner row">
-                <div class="item-list__content-inner--left"><a href="Appartment.html"
-                    class="item-list__name">Appartamento</a>
-                  <div class="item-list__subtitle">46 m² - 2/4 Persone</div>
+                <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
+                  <div class="item-list__subtitle">33 m² - 2 Persone</div>
                 </div>
                 <div class="item-list__content-inner--right">
                 </div>
@@ -105,7 +110,8 @@
                 <p><i class="fa fa-fw fa-wifi"></i> WiFi con 100 Mbit/s</p>
                 <p><i class="fa  fa-tv"></i> TV</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/garage.png"
-                      width="24" height="24"></i> Parcheggio gratuito in garage</p>
+                      width="24" height="24"></i> Parcheggio gratuito in garage
+                </p>
                 <p class=""><i><img
                       src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
                       width="24" height="24">
@@ -114,19 +120,22 @@
                 </p>
                 <p><i><img
                       src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kitchen-utensils.png"
-                      width="24" height="24"></i> Attrezzatura base per
+                      width="24" height="24"></i>Attrezzatura base per
                   cucinare</p>
                 <p><i><img src="../Database/Icons/coffee-machine.png" width="24" height="24"></i> Macchina caffè
                   espresso per caffe maccinato</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/hairdryer.png"
                       width="24" height="24"></i> Asciugacapelli</p>
 
+                <!-- <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p> -->
+
 
               </div>
               <div class="w3-col s6">
                 <p><i class="fa fa-fw fa-cutlery"></i> Cucina</p>
                 <p><i class="fa-solid fa-temperature-high"></i> Riscaldamento</p>
-                <p><i class="fa-solid fa-solid fa-snowflake"></i> Climatizzato</p>
+                <p><i><img src="../Database/Icons/thermometer.png" width="24" height="24"></i>
+                  Climatizzato</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/elevator.png"
                       width="24" height="24"></i> Ascensore</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/fridge.png"
@@ -136,23 +145,20 @@
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/kettle.png"
                       width="24" height="24"></i>
                   Bollitore</p>
+
+
                 <!-- <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/microwave-oven.png"
                     width="24" height="24"></i> Mikrowelle</p> -->
                 <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/cafe.png" width="24"
                     height="24"></i> Balcone</p>
                 <p><i><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bidet.png"
                       width="24" height="24"></i> Bidet</p>
-                <!-- <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p> -->
-
               </div>
             </div>
             <div class="item-list__content-inner item-list__button-row row">
-              <div class="item-list__content-inner--left"><a href="Studio.html"
-                  class="linkstyle underline_animation">Detagli</a>
-              </div>
               <div class="item-list__content-inner--right">
                 <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                  class="linkstyle underline_animation">Richiesta</a>
+                  class="linkstyle underline_animation">Richiseta</a>
                 <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
                   onclick="DropdownFctStudio()">Prezzi
                 </button>
@@ -176,36 +182,57 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td id="_period_0"></td>
-                        <td id="price_app_0" class="PriceColon"></td>
+                        <td id="period_0"></td>
+                        <td id="price_stud_0" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_1"></td>
+                        <td id="period_1"></td>
 
-                        <td id="price_app_1" class="PriceColon"></td>
+                        <td id="price_stud_1" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_2"></td>
-                        <td id="price_app_2" class="PriceColon"></td>
+                        <td id="period_2"></td>
+                        <td id="price_stud_2" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_3"></td>
-                        <td id="price_app_3" class="PriceColon"></td>
+                        <td id="period_3"></td>
+                        <td id="price_stud_3" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_4">2</td>
-                        <td id="price_app_4" class="PriceColon"></td>
+                        <td id="period_4">2</td>
+                        <td id="price_stud_4" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_5"></td>
-                        <td id="price_app_5" class="PriceColon"></td>
+                        <td id="period_5"></td>
+                        <td id="price_stud_5" class="PriceColon"></td>
                       </tr>
                       <tr>
-                        <td id="_period_6"></td>
-                        <td id="price_app_6" class="PriceColon"></td>
+                        <td id="period_6"></td>
+                        <td id="price_stud_6" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="period_7"></td>
+                        <td id="price_stud_7" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="period_8"></td>
+                        <td id="price_stud_8" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="period_9"></td>
+                        <td id="price_stud_9" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="period_10"></td>
+                        <td id="price_stud_10" class="PriceColon"></td>
+                      </tr>
+                      <tr>
+                        <td id="period_11"></td>
+                        <td id="price_stud_11" class="PriceColon"></td>
                       </tr>
                     </tbody>
                   </table>
+
                 </div>
                 <div class="rooms-detail__prices--info"> <br><br> <strong>Uso singolo<br></strong>
                   I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
@@ -230,7 +257,6 @@
       </div>
     </div>
   </div>
-
   <!-- end descriptionbox-->
   <h1 style="text-align: center; padding-bottom: 50px;"> Ulteriori Appartamenti</h1>
   <!-- Showcase Section-->
@@ -246,104 +272,87 @@
                   <span class="item-showcase__image">
                     <picture>
 
-                      <img src="../Database/Studio/Studio_Overview.jpg" class="fit-image">
+                      <img src="../Database/Appartment/Appartment_Chouch.JPG" class="fit-image" loading=" lazy">
                     </picture>
                   </span> <span class="item-showcase__image_left">
                     <picture>
-                      <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg" s class="fit-image"
-                        width="450px" height="540px">
+                      <img src="../Database/Appartment/DSC_2512_hoch.jpg" s class="fit-image" width="450px"
+                        height="540px" loading="lazy">
 
                     </picture>
                   </span></a>
 
 
                 <div class="item-list__content">
-                  <div class="item-list__content-inner row">
-                    <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
-                      <div class="item-list__subtitle">33 m² - 2/3 Persone</div>
+                  <div class="item-list__content-inner ">
+                    <div class="item-list__content-inner--left"><a href="Appartment.html"
+                        class="item-list__name">Appartamento</a>
+                      <div class="item-list__subtitle">46 m² - 2/4 Persone</div>
                     </div>
                     <div class="item-list__content-inner--right">
-                      <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone
-                        di 20
-                        m² che
-                        regala una vista grandiosa. Il vostro regno di benessere privato.</div>
+                      <div class="item-list__description">Questo appartamento di 46 m² offre comfort e atmosfera di
+                        libertà a volontà. Per non parlare della vista dal balcone di 20 m².</div>
                     </div>
                   </div>
-                  <div class="item-list__content-inner item-list__button-row ">
-                    <div class="item-list__content-inner--left"><a href="Studio.html"
+                  <div class="item-list__content-inner item-list__button-row row">
+                    <div class="item-list__content-inner--left"><a href="Appartment.html"
                         class="linkstyle underline_animation">Detagli</a>
-                    </div>
-                    <div class="item-list__content-inner--right">
-                      <a href="anfrage.html" class="linkstyle underline_animation">Richiesta</a>
-
-
-
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Showcase Section End-->
+
     <footer id="Footer" class="footer-main">
       <script>
         $("#Footer").load("footer.html");
       </script>
     </footer>
-
-
-
-
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script>
-      var elem = document.querySelector('.main-carousel');
-      console.log(elem)
-      var flkty = new Flickity(elem, {
-        // options
-        cellAlign: 'left',
-        contain: true
-      });
-      function DropdownFctStudio() {
-        var droopdownelement = document.getElementById("myDropdownPriceStudio");
-        if (droopdownelement.className.indexOf("show") !== -1) {
-          droopdownelement.classList.remove("show");
-          droopdownelement.classList.add("animated");
-        } else {
-          droopdownelement.classList.add("show");
-          droopdownelement.classList.remove("animated");
-        }
-      }
 
-    </script>
-
-    <script>
-      src = "PreiseListe.js"
-
-      document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
-      document.getElementById('_period_0').innerHTML = prices[0].period_it;
-      document.getElementById('_period_1').innerHTML = prices[1].period_it;
-      document.getElementById('_period_2').innerHTML = prices[2].period_it;
-      document.getElementById('_period_3').innerHTML = prices[3].period_it;
-      document.getElementById('_period_4').innerHTML = prices[4].period_it;
-      document.getElementById('_period_5').innerHTML = prices[5].period_it;
-      document.getElementById('_period_6').innerHTML = prices[6].period_it;
-      document.getElementById('price_app_0').innerHTML = prices[0].apartment + ",- €";
-      document.getElementById('price_app_1').innerHTML = prices[1].apartment + ",- €";
-      document.getElementById('price_app_2').innerHTML = prices[2].apartment + ",- €";
-      document.getElementById('price_app_3').innerHTML = prices[3].apartment + ",- €";
-      document.getElementById('price_app_4').innerHTML = prices[4].apartment + ",- €";
-      document.getElementById('price_app_5').innerHTML = prices[5].apartment + ",- €";
-      document.getElementById('price_app_6').innerHTML = prices[6].apartment + ",- €";
-      console.log(document.getElementById('period_0'));
-
-    </script>
 </body>
+<script>
+  src = "PreiseListe.js"
+  document.getElementById('period_0').innerHTML = prices[0].period_it;
+  document.getElementById('period_1').innerHTML = prices[1].period_it;
+  document.getElementById('period_2').innerHTML = prices[2].period_it;
+  document.getElementById('period_3').innerHTML = prices[3].period_it;
+  document.getElementById('period_4').innerHTML = prices[4].period_it;
+  document.getElementById('period_5').innerHTML = prices[5].period_it;
+  document.getElementById('period_6').innerHTML = prices[6].period_it;
+  document.getElementById('period_7').innerHTML = prices[7].period_it;
+  document.getElementById('period_8').innerHTML = prices[8].period_it;
+  document.getElementById('period_9').innerHTML = prices[9].period_it;
+  document.getElementById('period_10').innerHTML = prices[10].period_it;
+  document.getElementById('period_11').innerHTML = prices[11].period_it;
+  document.getElementById('price_stud_0').innerHTML = prices[0].studio + ",- €";
+  document.getElementById('price_stud_1').innerHTML = prices[1].studio + ",- €";
+  document.getElementById('price_stud_2').innerHTML = prices[2].studio + ",- €";
+  document.getElementById('price_stud_3').innerHTML = prices[3].studio + ",- €";
+  document.getElementById('price_stud_4').innerHTML = prices[4].studio + ",- €";
+  document.getElementById('price_stud_5').innerHTML = prices[5].studio + ",- €";
+  document.getElementById('price_stud_6').innerHTML = prices[6].studio + ",- €";
+  document.getElementById('price_stud_7').innerHTML = prices[7].studio + ",- €";
+  document.getElementById('price_stud_8').innerHTML = prices[8].studio + ",- €";
+  document.getElementById('price_stud_9').innerHTML = prices[9].studio + ",- €";
+  document.getElementById('price_stud_10').innerHTML = prices[10].studio + ",- €";
+  document.getElementById('price_stud_11').innerHTML = prices[11].studio + ",- €";
+</script>
+<script>
+  src = "PreiseListe.js"
+  document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
 
-
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity(elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+</script>
 
 </html>
