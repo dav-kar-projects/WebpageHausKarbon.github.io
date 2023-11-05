@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -124,77 +124,30 @@
                                     onclick="DropdownFctStudio()">Preise
                                 </button>
                             </div>
-                            <div id="myDropdownPriceStudio" class="dropdown-content">
-                                <div class="rooms-detail__prices--info">
-                                    <div class="PreisTabelleDiv"></div>
+                            <div id="myDropdownPrice" data-custom-attribute="Studio" class="dropdown-content">
 
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Zeitraum</th>
-                                                <th class="Users"><img class="userIcon"
-                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                                                        width="24" height="24">
-                                                    <img class="userIcon"
-                                                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                                                        width="24" height="24">
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td id="period_0"></td>
-                                                <td id="price_stud_0" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_1"></td>
-
-                                                <td id="price_stud_1" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_2"></td>
-                                                <td id="price_stud_2" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_3"></td>
-                                                <td id="price_stud_3" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_4">2</td>
-                                                <td id="price_stud_4" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_5"></td>
-                                                <td id="price_stud_5" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_6"></td>
-                                                <td id="price_stud_6" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_7"></td>
-                                                <td id="price_stud_7" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_8"></td>
-                                                <td id="price_stud_8" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_9"></td>
-                                                <td id="price_stud_9" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_10"></td>
-                                                <td id="price_stud_10" class="PriceColon"></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="period_11"></td>
-                                                <td id="price_stud_11" class="PriceColon"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
+                                <div class="tabButtonContainer">
+                                    <button class="tabButton activeTab" id="summerButton">Sommer</button>
+                                    <button class="tabButton" id="winterButton">Winter</button>
                                 </div>
+                                <!-- Your table structure -->
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Zeitraum</th>
+                                            <th class="Users"><img class="userIcon"
+                                                    src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                    width="24" height="24">
+                                                <img class="userIcon"
+                                                    src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                    width="24" height="24">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="price_table_body">
+                                        <!-- Table rows will be dynamically added here -->
+                                    </tbody>
+                                </table>
                                 <br> <br>
                                 <strong>Einzelnutzung<br></strong>Unser
                                 Studio kann auch zur Einzelnutzung gebucht werden, hierfür gewähren wir ein Rabatt
@@ -286,86 +239,38 @@
                                 onclick="DropdownFctApp()">Preise
                             </button>
                         </div>
-                        <div id="myDropdownPriceAppartement" class="dropdown-content">
-                            <div class="rooms-detail__prices--info">
-                                <div class="PreisTabelleDiv"></div>
+                        <div id="myDropdownPriceApp" class="dropdown-content" data-custom-attribute="Appartment">
 
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Zeitraum</th>
-                                            <th class="Users"><img class="userIcon"
-                                                    src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                                                    width="24" height="24">
-                                                <img class="userIcon"
-                                                    src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                                                    width="24" height="24">
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td id="_period_0"></td>
-                                            <td id="price_app_0" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_1"></td>
-
-                                            <td id="price_app_1" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_2"></td>
-                                            <td id="price_app_2" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_3"></td>
-                                            <td id="price_app_3" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_4">2</td>
-                                            <td id="price_app_4" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_5"></td>
-                                            <td id="price_app_5" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_6"></td>
-                                            <td id="price_app_6" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_7"></td>
-                                            <td id="price_app_7" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_8"></td>
-                                            <td id="price_app_8" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_9"></td>
-                                            <td id="price_app_9" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_10"></td>
-                                            <td id="price_app_10" class="PriceColon"></td>
-                                        </tr>
-                                        <tr>
-                                            <td id="_period_11"></td>
-                                            <td id="price_app_11" class="PriceColon"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-
-
-                                <br> <br>
-
-                                <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,10 € pro Person und Tag (Kinder
-                                unter 14 Jahren
-                                ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten.<br><br>
+                            <div class="tabButtonContainer">
+                                <button class="tabButton activeTab" id="summerButtonApp">Sommer</button>
+                                <button class="tabButton" id="winterButtonApp">Winter</button>
                             </div>
+                            <!-- Your table structure -->
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Zeitraum</th>
+                                        <th class="Users"><img class="userIcon"
+                                                src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                width="24" height="24">
+                                            <img class="userIcon"
+                                                src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
+                                                width="24" height="24">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="price_table_body_app">
+                                    <!-- Table rows will be dynamically added here -->
+                                </tbody>
+                            </table>
 
+                            <br> <br>
+
+                            <strong>Ortstaxe<br></strong>Die Ortstaxe beträgt 2,10 € pro Person und Tag (Kinder
+                            unter 14 Jahren
+                            ausgenommen). Diese Abgabe ist nicht im Gesamtpreis Ihres Aufenthalts enthalten.<br><br>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -374,67 +279,17 @@
     </div>
     </div>
     </div>
+    </div>
 
     <footer id="Footer" class="footer-main">
         <script>
             $("#Footer").load("footer.html");
+            document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
+            document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
+
         </script>
     </footer>
 
-    <script>
-        src = "PreiseListe.js"
-        document.getElementById('period_0').innerHTML = prices[0].period_de;
-        document.getElementById('period_1').innerHTML = prices[1].period_de;
-        document.getElementById('period_2').innerHTML = prices[2].period_de;
-        document.getElementById('period_3').innerHTML = prices[3].period_de;
-        document.getElementById('period_4').innerHTML = prices[4].period_de;
-        document.getElementById('period_5').innerHTML = prices[5].period_de;
-        document.getElementById('period_6').innerHTML = prices[6].period_de;
-        document.getElementById('period_7').innerHTML = prices[7].period_de;
-        document.getElementById('period_8').innerHTML = prices[8].period_de;
-        document.getElementById('period_9').innerHTML = prices[9].period_de;
-        document.getElementById('period_10').innerHTML = prices[10].period_de;
-        document.getElementById('period_11').innerHTML = prices[11].period_de;
-        document.getElementById('_period_0').innerHTML = prices[0].period_de;
-        document.getElementById('_period_1').innerHTML = prices[1].period_de;
-        document.getElementById('_period_2').innerHTML = prices[2].period_de;
-        document.getElementById('_period_3').innerHTML = prices[3].period_de;
-        document.getElementById('_period_4').innerHTML = prices[4].period_de;
-        document.getElementById('_period_5').innerHTML = prices[5].period_de;
-        document.getElementById('_period_6').innerHTML = prices[6].period_de;
-        document.getElementById('_period_7').innerHTML = prices[7].period_de;
-        document.getElementById('_period_8').innerHTML = prices[8].period_de;
-        document.getElementById('_period_9').innerHTML = prices[9].period_de;
-        document.getElementById('_period_10').innerHTML = prices[10].period_de;
-        document.getElementById('_period_11').innerHTML = prices[11].period_de;
-        document.getElementById('price_stud_0').innerHTML = prices[0].studio + ".- €";
-        document.getElementById('price_stud_1').innerHTML = prices[1].studio + ".- €";
-        document.getElementById('price_stud_2').innerHTML = prices[2].studio + ".- €";
-        document.getElementById('price_stud_3').innerHTML = prices[3].studio + ".- €";
-        document.getElementById('price_stud_4').innerHTML = prices[4].studio + ".- €";
-        document.getElementById('price_stud_5').innerHTML = prices[5].studio + ".- €";
-        document.getElementById('price_stud_6').innerHTML = prices[6].studio + ".- €";
-        document.getElementById('price_stud_7').innerHTML = prices[7].studio + ".- €";
-        document.getElementById('price_stud_8').innerHTML = prices[8].studio + ".- €";
-        document.getElementById('price_stud_9').innerHTML = prices[9].studio + ".- €";
-        document.getElementById('price_stud_10').innerHTML = prices[10].studio + ".- €";
-        document.getElementById('price_stud_11').innerHTML = prices[11].studio + ".- €";
-        document.getElementById('price_app_0').innerHTML = prices[0].apartment + ".- €";
-        document.getElementById('price_app_1').innerHTML = prices[1].apartment + ".- €";
-        document.getElementById('price_app_2').innerHTML = prices[2].apartment + ".- €";
-        document.getElementById('price_app_3').innerHTML = prices[3].apartment + ".- €";
-        document.getElementById('price_app_4').innerHTML = prices[4].apartment + ".- €";
-        document.getElementById('price_app_5').innerHTML = prices[5].apartment + ".- €";
-        document.getElementById('price_app_6').innerHTML = prices[6].apartment + ".- €";
-        document.getElementById('price_app_7').innerHTML = prices[7].apartment + ".- €";
-        document.getElementById('price_app_8').innerHTML = prices[8].apartment + ".- €";
-        document.getElementById('price_app_9').innerHTML = prices[9].apartment + ".- €";
-        document.getElementById('price_app_10').innerHTML = prices[10].apartment + ".- €";
-        document.getElementById('price_app_11').innerHTML = prices[11].apartment + ".- €";
-        document.getElementById('teaser_stud').innerHTML = "ab " + prices[0].studio + ",- €";
-        document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
-
-    </script>
 </body>
 
 </html>

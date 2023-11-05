@@ -1,82 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="../myScripts.js"></script>
+    <script src="../PreiseListe.js"></script>
     <link rel="icon" href="logo/logo.png">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <title>Wellness</title>
 </head>
 
 <body>
 
-    <body class=my_body>
-
-        <!-- Navbar (sit on top) -->
-        <div class="w3-top">
-            <div id="header" class="nav_bar" style="letter-spacing:4px;">
-            </div>
-            <script>
-                $("#header").load("navbar.html");
-            </script>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar" style="letter-spacing:4px;">
         </div>
+        <script>
+            $("#header").load("navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
+        </script>
+    </div>
 
 
-        <!-- Sidebar -->
-        <div class="side-bar row animate-in js-animate">
-            <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
-            <div class="side-bar__separator"></div>
-            <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
-        </div>
+    <!-- Sidebar -->
+    <div class="side-bar row animate-in js-animate">
+        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+        <div class="side-bar__separator"></div>
+        <a href="Preise.html" title="Preise" class=" button button--primary">Preise</a>
+    </div>
 
-        <!-- Hero Image -->
-        <div class="hero_image js_hero_idclass">
-            <div class="hero_image_slider">
-                <div class="hero_image_item">
-                    <picture>
-                        <img src="../Database/Welness/DSC_2307_hero3.jpg" class="" alt="WelnessImage">
-                    </picture>
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
+        <picture>
+            <img class="w3-image header_image js_hero_idclass" src="../Database/Welness/DSC_2307_hqTobhaeavy.jpg"
+                alt="HeroImage">
+        </picture>
+
+    </header>
+
+
+
+
+
+    <!-- Text Box -->
+    <div class="page-slide page-content" data-slide="content">
+        <div class="container">
+            <div class="page-content">
+                <div class="hgroup">
+                    <h1>Wellnesslounge</h1>
+                    <h2 class="h2"> Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für Erholung und
+                        Regeneration
+                        für Körper und Seele.</h2>
                 </div>
-            </div>
-        </div>
-
-
-
-
-        <!-- Text Box -->
-        <div class="page-slide page-content" data-slide="content">
-            <div class="container">
                 <div class="page-content">
-                    <div class="hgroup">
-                        <h1>Wellnesslounge</h1>
-                        <h2 class="h2"> Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für Erholung und
-                            Regeneration
-                            für Körper und Seele.</h2>
-                    </div>
-                    <div class="page-content">
-                        <div class=" hgroup  big_textbox_content">Spüren Sie Erholung und
-                            Regeneration für Körper und
-                            Seele in unserer Wellnesslounge.<br>
-                            Mit ausgewählten und natürlichen Materialien aus der Region, holen wir die Natur in unsere
-                            Wellnesslounge. Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für herrliche
-                            Entspannung. Dabei setzen wir ganz bewusst auf die Elemente unserer Berglandschaft: reines
-                            Gebirgswasser, klare Almluft, starke Erde ziehen sich durch den Spa.
-                            Zwischen 15.00 und 21.00 Uhr stehen Ihnen die Türen zu unserem Verwöhnangebot offen.
+                    <div class=" hgroup  big_textbox_content">Spüren Sie Erholung und
+                        Regeneration für Körper und
+                        Seele in unserer Wellnesslounge.<br>
+                        Mit ausgewählten und natürlichen Materialien aus der Region, holen wir die Natur in unsere
+                        Wellnesslounge. Unsere Ferienwohnungen mit Wellness in Südtirol sorgen für herrliche
+                        Entspannung. Dabei setzen wir ganz bewusst auf die Elemente unserer Berglandschaft: reines
+                        Gebirgswasser, klare Almluft, starke Erde ziehen sich durch den Spa.
 
-                            Mit <strong> finnisher Sauna</strong>,<strong> Dampfbad</strong>,<strong>Lounge</strong>
-                            und <strong>Ruheraum</strong>, tanken Sie Kraft
-                            für neue Bergerlebnisse.</div>
+
+                        Mit <strong> finnisher Sauna</strong>,<strong> Dampfbad</strong>,<strong>Lounge</strong>
+                        und <strong>Ruheraum</strong>, tanken Sie Kraft
+                        für neue Bergerlebnisse.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- List of Appartments-->
+    <div class="item-list page-slide" data-slide="item-list">
+        <div class="item-list__background">
+            <!--Carusell-->
+            <div class="carousel_container ">
+
+                <div class="item-list__imageblock is-selected">
+                    <div class="item-list__image">
+                        <picture>
+                            <div class="main-carousel">
+                                <img src="../Database/Welness/DSC_2346_hq.jpg" class="carousel_img">
+                                <img src="../Database/Welness/Sauna_Finish_hq.jpg" class="carousel_img">
+                                <img src="../Database/Welness/DSC_2326_hq.JPG" class="carousel_img">
+                                <img src="../Database/Welness/DSC_2262_hq.JPG" class="carousel_img">
+                                <img src="../Database/Welness/DSC_2323_hq.jpg" class="carousel_img">
+                                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wellness_.png"
+                                    class="carousel_img">
+                            </div>
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <!--End Carusell-->
+
+            <div class="container">
+                <div class="item-list__item">
+                    <div class="item-list__images  animate-in js-animate">
+                        <div class="item-list__price__carousel welness_green">
+                            <div class="item-list__price--info">Betrieben mit 100%</div>
+                            <!-- <div id="teaser_stud" class="item-list__price--value">Erneuerbaren</div> -->
+                            <div class="item-list__price--info">Erneuerbaren Energien</div>
+                        </div>
+                        <div class="item-list__content">
+                            <div class="item-list__content-inner row">
+
+                                <div class="item-list__content-inner--left"><a href="Studio.html"
+                                        class="item-list__name">Wellnesslounge </a>
+                                    <div class="item-list__subtitle">105 m² </div>
+                                </div>
+                                <div class="item-list__content-inner--left"><a href="Studio.html"
+                                        class="item-list__name"></a>
+                                </div>
+                                <div class="item-list__content-inner--right">
+                                    <div class="item-list__subtitle"> </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Description-->
+                        <!-- Description Box-->
+                        <div class="item-list__ausstattung">Ausstattung</div>
+                        <div class="w3-row w3-large">
+                            <div class="w3-col s6">
+                                <p><i><img src="../Database/Icons/Sauna.png" width="24" height="24"></i> Finnishe Sauna
+                                </p>
+                                <p><i><img src="../Database/Icons/Shower.png" width="24" height="24"></i> Erlebniss
+                                    Dusche
+                                </p>
+
+                                <p><i><img src="../Database/Icons/sofa.png" width="24" height="24"></i> Lounge
+                                </p>
+
+
+                                <!-- <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p> -->
+
+
+                            </div>
+                            <div class="w3-col s6">
+                                <p><i><img src="../Database/Icons/Steam.png" width="24" height="24"></i> Dampf Sauna
+                                </p>
+
+                                <p><i><img src="../Database/Icons/beach-chair.png" width="24" height="24"></i> Ruheraum
+                                </p>
+
+                                <p class=""><i><img
+                                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
+                                            width="24" height="24">
+                                    </i>Umkleide</p>
+                                <!-- <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/microwave-oven.png"
+                    width="24" height="24"></i> Mikrowelle</p> -->
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="item-list__background">
+
+
+        <script>
+
+            var elem = document.querySelector('.main-carousel');
+            var flkty = new Flickity(elem, {
+                // options
+                cellAlign: 'left',
+                contain: true
+            });
+        </script>
+
+
+
+
+
+        <!-- <div class="item-list__background">
             <div class="container">
                 <div class="item-list__item">
                     <div class="item-list__images row animate-in js-animate">
@@ -134,13 +251,25 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Footer -->
+
         <footer id="Footer" class="footer-main">
             <script>
                 $("#Footer").load("footer.html");
             </script>
         </footer>
-    </body>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+<script>
+
+    var elem = document.querySelector('.main-carousel');
+    var flkty = new Flickity(elem, {
+        // options
+        cellAlign: 'left',
+        contain: true
+    });
+</script>
 
 </html>

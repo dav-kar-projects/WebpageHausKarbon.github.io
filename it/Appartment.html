@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="it">
 
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../myScripts.js"></script>
+  <script>
+    src = "../PreiseListe.js"
+  </script>
   <script src="../PreiseListe.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -151,197 +154,156 @@
                   class="linkstyle underline_animation">Detagli</a>
               </div>
               <div class="item-list__content-inner--right">
-                <a href="/de/anfrage.html?roomid=12ae7179-5bdb-4e69-a929-7d3bc318fb6f"
-                  class="linkstyle underline_animation">Richiesta</a>
+                <a href="anfrage.html" class="linkstyle underline_animation">Richiesta</a>
                 <button type="button" aria-expanded="true" class=" dropbtn underline_animation"
                   onclick="DropdownFctStudio()">Prezzi
                 </button>
               </div>
-              <div id="myDropdownPriceStudio" class="dropdown-content">
-                <div class="rooms-detail__prices--info">
-                  <div class="PreisTabelleDiv"></div>
+            </div>
+            <div id="myDropdownPrice" class="dropdown-content" data-custom-attribute="Appartment">
 
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Zeitraum</th>
-                        <th class="Users"><img class="userIcon"
-                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                            width="24" height="24">
-                          <img class="userIcon"
-                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                            width="24" height="24">
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td id="_period_0"></td>
-                        <td id="price_app_0" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_1"></td>
+              <div class="tabButtonContainer">
+                <button class="tabButton activeTab" id="summerButton">Estate</button>
+                <button class="tabButton" id="winterButton">Inverno</button>
+              </div>
+              <!-- Your table structure -->
+              <table>
+                <thead>
+                  <tr>
+                    <th>Periodo</th>
+                    <th class="Users"><img class="userIcon"
+                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                        height="24">
+                      <img class="userIcon"
+                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                        height="24">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="price_table_body">
+                  <!-- Table rows will be dynamically added here -->
+                </tbody>
+              </table>
 
-                        <td id="price_app_1" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_2"></td>
-                        <td id="price_app_2" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_3"></td>
-                        <td id="price_app_3" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_4">2</td>
-                        <td id="price_app_4" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_5"></td>
-                        <td id="price_app_5" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_6"></td>
-                        <td id="price_app_6" class="PriceColon"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="rooms-detail__prices--info"> <br><br> <strong>Uso singolo<br></strong>
-                  I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
-                  singolo. In questo caso, addebitiamo un supplemento pari al 50%.
-                  <br><br>
-                  <strong>Riduzioni riservate ai bambini<br></strong>Da 0 a 2,99 anni, i bambini
-                  soggiornano gratis. Da 3 a 6,99 anni, hanno diritto al 70% di sconto, mentre da
-                  7 a
-                  11,99 anni lo sconto è del 50%. I bambini dai 12 anni di età e ospiti adulti
-                  supplementari hanno diritto al 30% di sconto. Le riduzioni riservate ai bambini
-                  sono
-                  valide in presenza di due ospiti a tariffa piena.<br><br>
-                  <strong>Imposta di soggiorno<br></strong>L’imposta di soggiorno corrisponde a
-                  2,10 €
-                  a persona e al giorno (esclusi i minori di 14 anni d’età). Essa non è inclusa
-                  nell’importo totale del vostro soggiorno e sarà da voi saldata sul posto.<br>
-                </div>
+              <div class="rooms-detail__prices--info"> <br><br> <strong>Uso singolo<br></strong>
+                I nostri appartamenti e le nostre suite possono essere prenotati anche per uso
+                singolo. In questo caso, addebitiamo un supplemento pari al 50%.
+                <br><br>
+                <strong>Riduzioni riservate ai bambini<br></strong>Da 0 a 2,99 anni, i bambini
+                soggiornano gratis. Da 3 a 6,99 anni, hanno diritto al 70% di sconto, mentre da
+                7 a
+                11,99 anni lo sconto è del 50%. I bambini dai 12 anni di età e ospiti adulti
+                supplementari hanno diritto al 30% di sconto. Le riduzioni riservate ai bambini
+                sono
+                valide in presenza di due ospiti a tariffa piena.<br><br>
+                <strong>Imposta di soggiorno<br></strong>L’imposta di soggiorno corrisponde a
+                2,10 €
+                a persona e al giorno (esclusi i minori di 14 anni d’età). Essa non è inclusa
+                nell’importo totale del vostro soggiorno e sarà da voi saldata sul posto.<br>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- end descriptionbox-->
-  <h1 style="text-align: center; padding-bottom: 50px;"> Ulteriori Appartamenti</h1>
-  <!-- Showcase Section-->
-  <div class="item-showcase page-slide" data-slide="item-showcase">
-    <div class="item-showcase__background">
-      <div class="container">
-        <div class="item-showcase__slider" tabindex="0">
-          <div class="flickity-viewport" style="height: 953px; touch-action: pan-y;">
-            <div class="flickity-slider" style="left: 0px; transform: translateX(50%);">
-              <div id="studio_teaser" class="item-showcase__item is-selected"
-                style="position: absolute; left: -50%; opacity: 1;">
-                <a href="/de/Studio.html" class="item-showcase__images">
-                  <span class="item-showcase__image">
-                    <picture>
-
-                      <img src="../Database/Studio/Studio_Overview.jpg" class="fit-image">
-                    </picture>
-                  </span> <span class="item-showcase__image_left">
-                    <picture>
-                      <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg" s class="fit-image"
-                        width="450px" height="540px">
-
-                    </picture>
-                  </span></a>
 
 
-                <div class="item-list__content">
-                  <div class="item-list__content-inner row">
-                    <div class="item-list__content-inner--left"><a href="Studio.html" class="item-list__name">Studio</a>
-                      <div class="item-list__subtitle">33 m² - 2/3 Persone</div>
+    <!-- end descriptionbox-->
+    <h1 style="text-align: center; padding-bottom: 50px;"> Ulteriori Appartamenti</h1>
+    <!-- Showcase Section-->
+    <div class="item-showcase page-slide" data-slide="item-showcase">
+      <div class="item-showcase__background">
+        <div class="container">
+          <div class="item-showcase__slider" tabindex="0">
+            <div class="flickity-viewport" style="height: 953px; touch-action: pan-y;">
+              <div class="flickity-slider" style="left: 0px; transform: translateX(50%);">
+                <div id="studio_teaser" class="item-showcase__item is-selected"
+                  style="position: absolute; left: -50%; opacity: 1;">
+                  <a href="Studio.html" class="item-showcase__images">
+                    <span class="item-showcase__image">
+                      <picture>
+
+                        <img src="../Database/Studio/Studio_Overview.jpg" class="fit-image">
+                      </picture>
+                    </span> <span class="item-showcase__image_left">
+                      <picture>
+                        <img src="../Database/Studio/Studio_Bad_Becken_Dusche_kalt_hoch.jpg" s class="fit-image"
+                          width="450px" height="540px">
+
+                      </picture>
+                    </span></a>
+
+
+                  <div class="item-list__content">
+                    <div class="item-list__content-inner row">
+                      <div class="item-list__content-inner--left"><a href="Studio.html"
+                          class="item-list__name">Studio</a>
+                        <div class="item-list__subtitle">33 m² - 2/3 Persone</div>
+                      </div>
+                      <div class="item-list__content-inner--right">
+                        <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone
+                          di 20
+                          m² che
+                          regala una vista grandiosa. Il vostro regno di benessere privato.</div>
+                      </div>
                     </div>
-                    <div class="item-list__content-inner--right">
-                      <div class="item-list__description">Atmosfera da suite su 33 m² con un balcone
-                        di 20
-                        m² che
-                        regala una vista grandiosa. Il vostro regno di benessere privato.</div>
-                    </div>
-                  </div>
-                  <div class="item-list__content-inner item-list__button-row ">
-                    <div class="item-list__content-inner--left"><a href="Studio.html"
-                        class="linkstyle underline_animation">Detagli</a>
-                    </div>
-                    <div class="item-list__content-inner--right">
-                      <a href="anfrage.html" class="linkstyle underline_animation">Richiesta</a>
+                    <div class="item-list__content-inner item-list__button-row ">
+                      <div class="item-list__content-inner--left"><a href="Studio.html"
+                          class="linkstyle underline_animation">Detagli</a>
+                      </div>
+                      <div class="item-list__content-inner--right">
+                        <a href="anfrage.html" class="linkstyle underline_animation">Richiesta</a>
 
 
 
+                      </div>
                     </div>
                   </div>
                 </div>
+
+
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Showcase Section End-->
-    <footer id="Footer" class="footer-main">
+      <!-- Showcase Section End-->
+      <footer id="Footer" class="footer-main">
+        <script>
+          $("#Footer").load("footer.html");
+        </script>
+      </footer>
+
+
+
+
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
       <script>
-        $("#Footer").load("footer.html");
-      </script>
-    </footer>
-
-
-
-
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script>
-      var elem = document.querySelector('.main-carousel');
-      console.log(elem)
-      var flkty = new Flickity(elem, {
-        // options
-        cellAlign: 'left',
-        contain: true
-      });
-      function DropdownFctStudio() {
-        var droopdownelement = document.getElementById("myDropdownPriceStudio");
-        if (droopdownelement.className.indexOf("show") !== -1) {
-          droopdownelement.classList.remove("show");
-          droopdownelement.classList.add("animated");
-        } else {
-          droopdownelement.classList.add("show");
-          droopdownelement.classList.remove("animated");
+        var elem = document.querySelector('.main-carousel');
+        console.log(elem)
+        var flkty = new Flickity(elem, {
+          // options
+          cellAlign: 'left',
+          contain: true
+        });
+        function DropdownFctStudio() {
+          var droopdownelement = document.getElementById("myDropdownPrice");
+          if (droopdownelement.className.indexOf("show") !== -1) {
+            droopdownelement.classList.remove("show");
+            droopdownelement.classList.add("animated");
+          } else {
+            droopdownelement.classList.add("show");
+            droopdownelement.classList.remove("animated");
+          }
         }
-      }
+        document.getElementById('teaser_app').innerHTML = "da " + prices[0].apartment + ",- €";
 
-    </script>
+      </script>
 
-    <script>
-      src = "PreiseListe.js"
 
-      document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
-      document.getElementById('_period_0').innerHTML = prices[0].period_it;
-      document.getElementById('_period_1').innerHTML = prices[1].period_it;
-      document.getElementById('_period_2').innerHTML = prices[2].period_it;
-      document.getElementById('_period_3').innerHTML = prices[3].period_it;
-      document.getElementById('_period_4').innerHTML = prices[4].period_it;
-      document.getElementById('_period_5').innerHTML = prices[5].period_it;
-      document.getElementById('_period_6').innerHTML = prices[6].period_it;
-      document.getElementById('price_app_0').innerHTML = prices[0].apartment + ",- €";
-      document.getElementById('price_app_1').innerHTML = prices[1].apartment + ",- €";
-      document.getElementById('price_app_2').innerHTML = prices[2].apartment + ",- €";
-      document.getElementById('price_app_3').innerHTML = prices[3].apartment + ",- €";
-      document.getElementById('price_app_4').innerHTML = prices[4].apartment + ",- €";
-      document.getElementById('price_app_5').innerHTML = prices[5].apartment + ",- €";
-      document.getElementById('price_app_6').innerHTML = prices[6].apartment + ",- €";
-      console.log(document.getElementById('period_0'));
 
-    </script>
+
+
 </body>
 
 

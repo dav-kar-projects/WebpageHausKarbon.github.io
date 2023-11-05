@@ -263,26 +263,7 @@ function myFunction() {
 
 
 // Dropdown //////////////////
-function DropdownFctStudio() {
-   var droopdownelement = document.getElementById("myDropdownPriceStudio");
-   if (droopdownelement.className.indexOf("show") !== -1) {
-      droopdownelement.classList.remove("show");
-      droopdownelement.classList.add("animated");
-   } else {
-      droopdownelement.classList.add("show");
-      droopdownelement.classList.remove("animated");
-   }
-}
-function DropdownFctApp() {
-   var droopdownelement = document.getElementById("myDropdownPriceAppartement");
-   if (droopdownelement.className.indexOf("show") !== -1) {
-      droopdownelement.classList.remove("show");
-      droopdownelement.classList.add("animated");
-   } else {
-      droopdownelement.classList.add("show");
-      droopdownelement.classList.remove("animated");
-   }
-}
+
 
 //////////Anfrage senden /////////////
 // Get the two buttons

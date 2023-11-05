@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Price Debug</title>
+    <style>
+        .tabButton {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .activeTab {
+            background-color: #ccc;
+        }
+
+        /* Additional styling for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buttons for switching between winter and summer prices -->
+    <button class="tabButton activeTab" id="summerButton">Summer Prices</button>
+    <button class="tabButton" id="winterButton">Winter Prices</button>
+
+    <!-- Your table structure -->
+    <table>
+        <thead>
+            <tr>
+                <th>Periodo</th>
+                <th class="Users"><img class="userIcon"
+                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                        height="24">
+                    <img class="userIcon"
+                        src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                        height="24">
+                </th>
+            </tr>
+        </thead>
+        <tbody id="price_table_body">
+            <!-- Table rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- Include your PreiseListe.js script here -->
+    <script src="PreiseListe.js"></script>
+
+    <script>
+        // Assuming 'winter_prices' is defined in PreiseListe.js
+        // Make sure 'winter_prices' array is properly defined and accessible
+
+        var currentPrices = prices; // Start with summer prices
+
+        // Make sure your script is loaded before using its variables
+        // You can use 'window.onload' to ensure that the DOM is fully loaded before executing your script
+        window.onload = function () {
+            var summerButton = document.getElementById('summerButton');
+            var winterButton = document.getElementById('winterButton');
+            var tableBody = document.getElementById('price_table_body');
+
+            // Function to switch to summer prices
+            function switchToSummer() {
+                currentPrices = prices;
+                updateTable();
+                summerButton.classList.add('activeTab');
+                winterButton.classList.remove('activeTab');
+            }
+
+            // Function to switch to winter prices
+            function switchToWinter() {
+                currentPrices = winter_prices;
+                updateTable();
+                winterButton.classList.add('activeTab');
+                summerButton.classList.remove('activeTab');
+            }
+
+            // Function to update the table with the current prices
+            function updateTable() {
+                tableBody.innerHTML = ''; // Clear existing rows
+
+                // Loop through currentPrices and dynamically fill the table rows
+                for (var i = 0; i < currentPrices.length; i++) {
+                    var row = document.createElement('tr');
+
+                    var periodCell = document.createElement('td');
+                    periodCell.id = '_period_' + i;
+                    periodCell.innerHTML = currentPrices[i].period_it;
+                    row.appendChild(periodCell);
+
+                    var priceCell = document.createElement('td');
+                    priceCell.id = 'price_app_' + i;
+                    priceCell.className = 'PriceColon';
+                    priceCell.innerHTML = currentPrices[i].apartment + ",- €";
+                    row.appendChild(priceCell);
+
+                    tableBody.appendChild(row);
+                }
+            }
+
+            // Attach click event listeners to the buttons
+            summerButton.addEventListener('click', switchToSummer);
+            winterButton.addEventListener('click', switchToWinter);
+
+            // Initial table update with summer prices
+            updateTable();
+        };
+    </script>
+</body>
+
+</html>

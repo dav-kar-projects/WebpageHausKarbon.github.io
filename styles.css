@@ -436,7 +436,29 @@ img {
     font-size: 100px;
 }
 
+.tabButtonContainer {
+    display: flex;
+    /* Display children in a flex container */
+}
 
+.tabButton {
+    padding: 10px 20px;
+    background-color: #dfc77d7a;
+    border: 1px solid #cea82c;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* Make the text bold */
+
+
+    margin-right: -1px;
+    /* Remove the space between buttons */
+}
+
+.activeTab {
+    background-color: #cea82c9d;
+}
 
 @media screen and (max-width: 1600px) {
     .logo {
@@ -1105,6 +1127,7 @@ textarea {
 }
 
 .item-list__content-inner--left {
+    padding-top: 30px;
     width: 100%;
     position: relative;
     min-height: 1px;
@@ -2093,7 +2116,7 @@ a {
 /************* Calender Flatpickr *******************/
 .page-slide {
     overflow: hidden;
-    margin-top: 106px;
+    margin-top: 06px;
     margin-bottom: 106px;
 }
 
@@ -2590,7 +2613,7 @@ element.style {
 .item-list__price__carousel {
     position: absolute;
     left: calc(1% - 72px);
-    top: calc(40% - 490px);
+    top: calc(40% - 890px);
     background-color: #cea82c;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -2611,6 +2634,12 @@ element.style {
     text-align: center;
     z-index: 0;
 }
+
+.welness_green {
+    background-color: #c3c335 !important;
+    top: calc(40% - 390px);
+}
+
 
 .item-list__price__carousel::after {
     content: " ";

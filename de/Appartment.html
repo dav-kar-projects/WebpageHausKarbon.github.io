@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="../styles.css">
   <script src="../myScripts.js"></script>
-  <script src="../PreiseListe.js"></script>
+  <script src="../PreiseListe.js" lang='it'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="icon" href="logo/logo.png">
@@ -161,76 +161,30 @@
                   onclick="DropdownFctStudio()">Preise
                 </button>
               </div>
-              <div id="myDropdownPriceStudio" class="dropdown-content">
-                <div class="rooms-detail__prices--info">
-                  <div class="PreisTabelleDiv"></div>
+              <div id="myDropdownPriceStudio" class="dropdown-content" data-custom-attribute="Appartament">
 
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Zeitraum</th>
-                        <th class="Users"><img class="userIcon"
-                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                            width="24" height="24">
-                          <img class="userIcon"
-                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png"
-                            width="24" height="24">
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td id="_period_0"></td>
-                        <td id="price_app_0" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_1"></td>
-
-                        <td id="price_app_1" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_2"></td>
-                        <td id="price_app_2" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_3"></td>
-                        <td id="price_app_3" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_4">2</td>
-                        <td id="price_app_4" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_5"></td>
-                        <td id="price_app_5" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_6"></td>
-                        <td id="price_app_6" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_7"></td>
-                        <td id="price_app_7" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_8"></td>
-                        <td id="price_app_8" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_9"></td>
-                        <td id="price_app_9" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_10"></td>
-                        <td id="price_app_10" class="PriceColon"></td>
-                      </tr>
-                      <tr>
-                        <td id="_period_11"></td>
-                        <td id="price_app_11" class="PriceColon"></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="tabButtonContainer">
+                  <button class="tabButton activeTab" id="summerButton">Sommer</button>
+                  <button class="tabButton" id="winterButton">Winter</button>
                 </div>
+                <!-- Your table structure -->
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Zeitraum</th>
+                      <th class="Users"><img class="userIcon"
+                          src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                          height="24">
+                        <img class="userIcon"
+                          src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/user.png" width="24"
+                          height="24">
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="price_table_body">
+                    <!-- Table rows will be dynamically added here -->
+                  </tbody>
+                </table>
                 <div id="Conditions">
                   <script>
                     $("#Conditions").load("reservierungsbedingungen.html");
@@ -331,39 +285,12 @@
             droopdownelement.classList.remove("animated");
           }
         }
-
-      </script>
-
-      <script>
-        src = "PreiseListe.js"
-
         document.getElementById('teaser_app').innerHTML = "ab " + prices[0].apartment + ",- €";
-        document.getElementById('_period_0').innerHTML = prices[0].period_de;
-        document.getElementById('_period_1').innerHTML = prices[1].period_de;
-        document.getElementById('_period_2').innerHTML = prices[2].period_de;
-        document.getElementById('_period_3').innerHTML = prices[3].period_de;
-        document.getElementById('_period_4').innerHTML = prices[4].period_de;
-        document.getElementById('_period_5').innerHTML = prices[5].period_de;
-        document.getElementById('_period_6').innerHTML = prices[6].period_de;
-        document.getElementById('_period_7').innerHTML = prices[7].period_de;
-        document.getElementById('_period_8').innerHTML = prices[8].period_de;
-        document.getElementById('_period_9').innerHTML = prices[9].period_de;
-        document.getElementById('_period_10').innerHTML = prices[10].period_de;
-        document.getElementById('_period_11').innerHTML = prices[11].period_de;
-        document.getElementById('price_app_0').innerHTML = prices[0].apartment + ".- €";
-        document.getElementById('price_app_1').innerHTML = prices[1].apartment + ".- €";
-        document.getElementById('price_app_2').innerHTML = prices[2].apartment + ".- €";
-        document.getElementById('price_app_3').innerHTML = prices[3].apartment + ".- €";
-        document.getElementById('price_app_4').innerHTML = prices[4].apartment + ".- €";
-        document.getElementById('price_app_5').innerHTML = prices[5].apartment + ".- €";
-        document.getElementById('price_app_6').innerHTML = prices[6].apartment + ".- €";
-        document.getElementById('price_app_7').innerHTML = prices[7].apartment + ".- €";
-        document.getElementById('price_app_8').innerHTML = prices[8].apartment + ".- €";
-        document.getElementById('price_app_9').innerHTML = prices[9].apartment + ".- €";
-        document.getElementById('price_app_10').innerHTML = prices[10].apartment + ".- €";
-        document.getElementById('price_app_11').innerHTML = prices[11].apartment + ".- €"; console.log(document.getElementById('period_0'));
 
       </script>
+
+
+
 </body>
 
 
