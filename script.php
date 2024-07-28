@@ -11,7 +11,6 @@
     $Appartments = $_POST['Appartments'];
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];
-    $country = $_POST['country'];
     $parents = $_POST['adults'];
     $children = $_POST['children'];
     $child1 = $_POST['childAge1'];
@@ -237,7 +236,6 @@ $message1 = "
   - Anrede: " . $anrede . " 
   - Name: " . $first_name . " " . $last_name ."
   - E-Mail: " . $email . "
-  - Land: " . $country . "
   - Erwachsene: " . $parents . "
   - Kinder: " . $children . "\n"
   . $childAges. "
