@@ -11,7 +11,6 @@
     $Appartments = $_POST['Appartments'];
     $last_name = $_POST['lastname'];
     $email = $_POST['email'];
-    $country = $_POST['country'];
     $parents = $_POST['adults'];
     $children = $_POST['children'];
     $child1 = $_POST['childAge1'];
@@ -237,7 +236,6 @@ $message1 = "
   - Anrede: " . $anrede . " 
   - Name: " . $first_name . " " . $last_name ."
   - E-Mail: " . $email . "
-  - Land: " . $country . "
   - Erwachsene: " . $parents . "
   - Kinder: " . $children . "\n"
   . $childAges. "
@@ -254,8 +252,7 @@ $headers = "From:" . $from;
 $headers2 = "From:" . $to;
 
 mail($to,$subject,$message1,$headers);
-mail($from,$subject2,$message2,$headers2);
- // sends a copy of the message to the sender
-// You can also use header('Location: thank_you.php'); to redirect to another page.
+// dont send confitmation mail. Deos not work
+// mail($from,$subject2,$message2,$headers2);
 
 ?>
