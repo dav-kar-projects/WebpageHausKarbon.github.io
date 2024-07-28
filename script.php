@@ -255,7 +255,7 @@ $headers2 = "From:" . $to;
 
 mail($to,$subject,$message1,$headers);
 mail($from,$subject2,$message2,$headers2);
-echo "Hello, this is a test message"  ; // sends a copy of the message to the sender
+ // sends a copy of the message to the sender
 // You can also use header('Location: thank_you.php'); to redirect to another page.
 
 ?>

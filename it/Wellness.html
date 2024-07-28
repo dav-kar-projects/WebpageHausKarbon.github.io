@@ -1,64 +1,55 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="../myScripts.js"></script>
-    <script src="../PreiseListe.js"></script>
-    <link rel="icon" href="logo/logo.png">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <title>Wellness</title>
 </head>
 
 <body>
-
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div id="header" class="nav_bar" style="letter-spacing:4px;">
+            <div class="left_links">
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io"
+                    class="w3-bar-item w3-button">Kastelart</a>
+            </div>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class=" center_links w3-hide-small">
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wohnen.html"
+                    class=" w3-button">Soggiorno</a>
+                <a href="Erleben.html" class="w3-bar-item w3-button">Esperienze</a>
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/Wellness.html"
+                    class=" w3-button">Relax</a>
+                <!-- <a href="#Erleben" class="w3-bar-item w3-button">Frühstück</a> -->
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/it/gallery.html"
+                    class=" w3-button">Galleria</a>
+                <a href="#Footer" class="w3-bar-item w3-button">Contatti</a>
+                <div class="right_links w3-hide-small">
+                    <a class="languages__link  language_button w3-button" href="../en/Wellness.html">EN</a>
+                    <span class="languages__separator "></span>
+                    <a class="languages__link  language_button w3-button" href="../Wellness.html">DE</a>
+                    <span class="languages__separator"></span>
+                </div>
+            </div>
         </div>
-        <script>
-            $("#header").load("navbar.html");
-            window.onscroll = function () {
-                if (document.getElementById("header") && heroImageHeight == 0) {
-                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
-                }
-
-                if (document.getElementById("header") && heroImageHeight > 0) {
-                    console.log("Doing the header check");
-                    myFunction();
-                }
-            };
-            console.log("Header in file ");
-        </script>
     </div>
-
-
-    <!-- Sidebar-->
-    <div class="side-bar row animate-in js-animate">
-        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Richiesta</a>
-        <div class="side-bar__separator"></div>
-        <a href="Preise.html" title="Preise" class=" button button--primary">Prezzi</a>
+    <!-- Hero Image -->
+    <div class="hero_image js_hero_idclass">
+        <div class="hero_image_slider">
+            <div class="hero_image_item">
+                <picture>
+                    <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wellnesHeroImage.png"
+                        class="" alt="WelnessImage">
+                </picture>
+            </div>
+        </div>
     </div>
-
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:2200px;min-width:50px" id="home">
-        <picture>
-            <img class="w3-image header_image js_hero_idclass" src="../Database/Welness/DSC_2307_hqTobhaeavy.jpg"
-                alt="HeroImage">
-        </picture>
-
-    </header>
-
 
 
 
@@ -67,8 +58,9 @@
     <div class="page-slide page-content" data-slide="content">
         <div class="container">
             <div class="page-content">
+
                 <div class="hgroup">
-                    <h1>Wellnesslounge</h1>
+                    <h1>Valeriana Wellnesslounge</h1>
                     <h2 class="h2"> I nostri appartamenti con spa in Alto Adige promettono rigenerazione e relax per
                         corpo e anima.</h2>
                 </div>
@@ -79,196 +71,121 @@
                         Wellness Lounge.<br>
                         Qui, abbiamo adottato un concetto consapevole che coinvolge gli elementi che
                         caratterizzano le nostre montagne: acqua pura di montagna, aria limpida di malga, terra forte,
-                        fuoco che scalda.Questi gli aspetti che vi accompagnano nella nostra spa. <br>
+                        fuoco che scalda.Questi gli aspetti che vi accompagnano nella nostra spa. La nostra offerta di
+                        benessere è a vostra disposizione tra le 15 e le 21.<br>
+                        Grazie alla sauna finlandese, al bagno turco, isola del relax, vi arricchite di nuova energia da
+                        investire per vivere nuove esperienze in
+                        montagna. I prodotti naturali rendono particolarmente efficaci e rilassanti i massaggi e
+                        trattamenti proposti. Per rallentare, per godersi ogni istante!
 
-                        Con <strong> Sauna Finlandese </strong>,<strong> Bagno Turco</strong>,<strong>Lounge</strong>
-                        e <strong>Sala Relax</strong>, ricaricatevi per nuove esperienze in montagna.
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- List of Appartments-->
-    <div class="item-list page-slide" data-slide="item-list">
-        <div class="item-list__background">
-            <!--Carusell-->
-            <div class="carousel_container ">
 
-                <div class="item-list__imageblock is-selected">
-                    <div class="item-list__image">
-                        <picture>
-                            <div class="main-carousel">
-                                <img src="../Database/Welness/DSC_2346_hq.jpg" class="carousel_img">
-                                <img src="../Database/Welness/Sauna_Finish_hq.jpg" class="carousel_img">
-                                <img src="../Database/Welness/DSC_2326_hq.JPG" class="carousel_img">
-                                <img src="../Database/Welness/DSC_2262_hq.JPG" class="carousel_img">
-                                <img src="../Database/Welness/DSC_2323_hq.jpg" class="carousel_img">
-                                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wellness_.png"
-                                    class="carousel_img">
+    <div class="item-list__background">
+        <div class="container">
+            <div class="item-list__item">
+                <div class="item-list__images row animate-in js-animate">
+                    <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
+                        tabindex="0">
+                        <div class="flickity-viewport" style="height: 650px;">
+                            <div class="flickity-slider" style="left: 0px;">
+                                <div class="item-list__imageblock is-selected"
+                                    style="position: absolute; left: 0%; opacity: 1;">
+                                    <div class="item-list__image">
+                                        <picture>
+                                            <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wellness_.png"
+                                                loading="lazy" style="width: 100%" alt="Wohnung_1">
+                                        </picture>
+                                    </div>
+                                </div>
                             </div>
-                        </picture>
+                        </div>
+                    </div>
+                    <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable"
+                        tabindex="0">
+                        <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
+                            <div class="flickity-slider" style="left: 0px;">
+                                <div class="item-list__imageblock is-selected" style="position: absolute;">
+                                    <div class="item-list__image item-list__image--single">
+
+                                    </div>
+                                </div>
+                                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
+                                    <div class="item-list__image item-list__image--single">
+
+                                    </div>
+                                </div>
+                                <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
+                                    <div class="item-list__image item-list__image--single">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--End Carusell-->
 
-            <div class="container">
-                <div class="item-list__item">
-                    <div class="item-list__images  animate-in js-animate">
-                        <div class="item-list__price__carousel welness_green">
-                            <div class="item-list__price--info">Alimentato al 100% da </div>
-                            <!-- <div id="teaser_stud" class="item-list__price--value">Erneuerbaren</div> -->
-                            <div class="item-list__price--info">energie rinnovabili</div>
+                <div class="item-list__content">
+                    <div class="item-list__content-inner row">
+                        <div class="item-list__content-inner--left"><a href="" class="item-list__name">Wellnesslounge
+                            </a>
+                            <div class="item-list__subtitle">105 m² </div>
                         </div>
-                        <div class="item-list__content">
-                            <div class="item-list__content-inner row">
-
-                                <div class="item-list__content-inner--left"><a href="Studio.html"
-                                        class="item-list__name">Wellnesslounge </a>
-                                    <div class="item-list__subtitle">105 m² </div>
-                                </div>
-                                <div class="item-list__content-inner--left"><a href="Studio.html"
-                                        class="item-list__name"></a>
-                                </div>
-                                <div class="item-list__content-inner--right">
-                                    <div class="item-list__subtitle"> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Description-->
-                        <!-- Description Box-->
-                        <div class="item-list__ausstattung">Dotazioni</div>
-                        <div class="w3-row w3-large">
-                            <div class="w3-col s6">
-                                <p><i><img src="../Database/Icons/Sauna.png" width="24" height="24"></i>Sauna finlandese
-                                </p>
-                                <p><i><img src="../Database/Icons/Shower.png" width="24" height="24"></i> Doccia
-                                    sensoriale
-                                </p>
-
-                                <p><i><img src="../Database/Icons/sofa.png" width="24" height="24"></i> Lounge
-                                </p>
-
-
-                                <!-- <p><i><img src="../icons/Schlafsofa.png" width="24" height="24"></i> 1 Schlafsofa</p> -->
-
-
-                            </div>
-                            <div class="w3-col s6">
-                                <p><i><img src="../Database/Icons/Steam.png" width="24" height="24"></i> Bagno turco
-                                </p>
-
-                                <p><i><img src="../Database/Icons/beach-chair.png" width="24" height="24"></i> Sala
-                                    relax
-                                </p>
-
-                                <p class=""><i><img
-                                            src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/bed-sheets.png"
-                                            width="24" height="24">
-                                    </i>Spogliatoio</p>
-                                <!-- <p><img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/icons/microwave-oven.png"
-                    width="24" height="24"></i> Mikrowelle</p> -->
-
-                            </div>
+                        <div class="item-list__content-inner--right">
+                            <div class="item-list__description"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</body>
+<!-- Footer -->
+<footer id="Footer" class="footer-main">
+    <div class="container">
+        <div class="address">
+            <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/index.html" class="address__logo">
+                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/logo/logo1.svg" width="110%"
+                    height="110%" alt="Karbon Apartments &amp; Suites"></a>
+            <div class="address__contact">
+                <div class="address__actions">
+                    <a class="flaticon-phone" href="tel:+39 0471 188 025 5" title="+3904711880255"
+                        data-gtm-category="Phone" data-gtm-action="phoneclick" data-gtm-label="Address">
+                        <i></i> +39 0471 20501012</a>
+                    <a class="flaticon-mail" href="mailto:info@kastelart.it" title="info@kastelart.it"
+                        data-gtm-category="E-Mail" data-gtm-action="mailclick" data-gtm-label="Address">
+                        <i></i> info@kastelart.it</a>
+                </div>
 
-
-
-        <script>
-
-            var elem = document.querySelector('.main-carousel');
-            var flkty = new Flickity(elem, {
-                // options
-                cellAlign: 'left',
-                contain: true
-            });
-        </script>
-
-
-
-
-
-        <!-- <div class="item-list__background">
-            <div class="container">
-                <div class="item-list__item">
-                    <div class="item-list__images row animate-in js-animate">
-                        <div class="item-list__imageslider item-list__imageslider--desktop flickity-enabled is-draggable is-fade"
-                            tabindex="0">
-                            <div class="flickity-viewport" style="height: 650px;">
-                                <div class="flickity-slider" style="left: 0px;">
-                                    <div class="item-list__imageblock is-selected"
-                                        style="position: absolute; left: 0%; opacity: 1;">
-                                        <div class="item-list__image">
-                                            <picture>
-                                                <img src="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/imgs/wellness_.png"
-                                                    loading="lazy" style="width: 100%" alt="Wohnung_1">
-                                            </picture>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-list__imageslider item-list__imageslider--mobile flickity-enabled is-draggable"
-                            tabindex="0">
-                            <div class="flickity-viewport" style="height: 0px; touch-action: pan-y;">
-                                <div class="flickity-slider" style="left: 0px;">
-                                    <div class="item-list__imageblock is-selected" style="position: absolute;">
-                                        <div class="item-list__image item-list__image--single">
-
-                                        </div>
-                                    </div>
-                                    <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                                        <div class="item-list__image item-list__image--single">
-
-                                        </div>
-                                    </div>
-                                    <div class="item-list__imageblock" aria-hidden="true" style="position: absolute;">
-                                        <div class="item-list__image item-list__image--single">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item-list__content">
-                        <div class="item-list__content-inner row">
-                            <div class="item-list__content-inner--left"><a href="Studio.html"
-                                    class="item-list__name">Wellnesslounge </a>
-                                <div class="item-list__subtitle">105 m² </div>
-                            </div>
-                            <div class="item-list__content-inner--right">
-                                <div class="item-list__description">Mit finnischer Sauna, Dampfbad, Lounge und Ruheraum
-                                    tanken Sie Kraft für neue Bergerlebnisse.</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="adress_text">
+                    <a class="location_ref" href="https://goo.gl/maps/oQ8Pnr1QPhGjarcj7 
+                        " title="maps position" data-gtm-category="Phone" data-gtm-action="phoneclick"
+                        data-gtm-label="Address">
+                        <i></i> Via Ployer7, 39040 Castelrotto<br> Alto Adige</a>
                 </div>
             </div>
-        </div>-->
-        <!-- Footer -->
 
-        <footer id="Footer" class="footer-main">
-            <script>
-                $("#Footer").load("footer.html");
-            </script>
-        </footer>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        </div>
+        <nav class="nav-footer">
+            <span class="nav-footer__level-0">
+                <a href="/de/wetter-webcam.html" class="link-button nav-footer__menu-0" target="_self">Wetter &amp;
+                    Webcam</a>
+            </span>
+            <span class="nav-footer__level-0">
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/ankommen.html"
+                    class="link-button nav-footer__menu-0" target="_self">Anreise</a>
+            </span>
+            </span> <span class="nav-footer__level-0">
+                <a href="https://dav-kar-projects.github.io/WebpageHausKarbon.github.io/gallery.html"
+                    class="link-button nav-footer__menu-0" target="_self">Fotogalerie</a>
+            </span>
+        </nav>
+    </div>
 
-</body>
-<script>
 
-    var elem = document.querySelector('.main-carousel');
-    var flkty = new Flickity(elem, {
-        // options
-        cellAlign: 'left',
-        contain: true
-    });
-</script>
+</footer>
 
 </html>
