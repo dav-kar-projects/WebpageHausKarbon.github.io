@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="myScripts.js"></script>
+    <link rel="icon" href="logo/favicon.png" type="image/png">
+
+    <title>Ankommen</title>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div id="header" class="nav_bar" style="letter-spacing:4px;">
+        </div>
+        <script>
+            $("#header").load("de/navbar.html");
+            window.onscroll = function () {
+                if (document.getElementById("header") && heroImageHeight == 0) {
+                    heroImageHeight = document.querySelector('.js_hero_idclass').offsetHeight;
+                }
+
+                if (document.getElementById("header") && heroImageHeight > 0) {
+                    console.log("Doing the header check");
+                    myFunction();
+                }
+            };
+            console.log("Header in file ");
+        </script>
+    </div>
+
+    <!-- Header -->
+
+
+    <!-- Sidebar -->
+    <div class="side-bar row animate-in js-animate">
+        <a href="anfrage.html" title="Anfragen" class=" button button--primary">Anfragen</a>
+        <div class="side-bar__separator"></div>
+        <a href="buchen.html" title="Preise" class=" button button--primary">Preise</a>
+    </div>
+
+    <div class="container container-no_header_image">
+        <div class="">
+            <div class="hgroup">
+                <h1> Impressum</h1>
+            </div>
+            <div class="base">
+                <div class="imprint page-content__container" data-slide="imprint"><br><br><strong>Karbon Norbert
+                        KG/SAS</strong><br>Plojerweg 7<br>39040 Kastelruth (BZ)<br>Tel.: <a href="tel:+393383882008">+39
+                        3383882008</a><br>E-mail: <a href="mailto:info@lapaula.info">info@kastelart.it</a><br>Web:
+                    <a href="https://www.kastelart.it">kastelart.it</a><br>IVA:
+                    IT02254330216<br>
+                    CIN: IT021019B4TMVNM7YM<br>
+                    <br>
+                </div>
+
+            </div>
+            <footer id="Footer" class="footer-main">
+                <script>
+                    $("#Footer").load("de/footer.html");
+                </script>
+            </footer>
+</body>
+
+</html>

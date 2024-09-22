@@ -73,8 +73,6 @@ summary {
     transition: top 0.5s ease-in-out;
 }
 
-
-
 audio,
 canvas,
 progress,
@@ -1189,8 +1187,43 @@ textarea {
     left: 0;
     right: 0;
     background-color: rgba(206, 168, 44, .1);
-    padding: 56px 0 52px 0;
+    padding: 56px 0 0 0;
 }
+
+.nav-bottom {
+    background-color: white;
+    padding: 30px 30px 30px 30px;
+
+
+}
+
+@media (max-width: 600px) {
+    .nav-bottom {
+        padding-bottom: 30px;
+        padding-bottom: 96px;
+        /* Adjusts the padding-bottom to 30px */
+    }
+}
+
+.nav-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    /* Extends content to the edges */
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    /* Sets maximum width to 300px */
+    margin: 0 auto;
+    /* Centers the nav within its parent */
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #484036;
+}
+
+
+
 
 .address {
     display: flex;
@@ -1446,6 +1479,10 @@ a.underline_animation:hover:before {
 
 
 /* Ankommen */
+.container-no_header_image {
+    padding-top: 80px;
+
+}
 
 .container {
     color: #000;
